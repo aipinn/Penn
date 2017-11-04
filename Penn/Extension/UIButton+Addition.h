@@ -1,5 +1,5 @@
 //
-//  PNButton.h
+//  UIButton+Addition.h
 //  Penn
 //
 //  Created by SanRong on 2017/11/4.
@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PNButton : UIButton
-
-@property(nonatomic, assign) CGSize imageSize;
-@property(nonatomic, assign) CGSize titleSize;
+@interface UIButton (Addition)
 
 
 @end

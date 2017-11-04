@@ -10,30 +10,19 @@
 
 @implementation PNButton
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        
-    }
-    return self;
-}
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
+// 每次点击会触发此方法, 将按钮添加到视图上时会调用
 -(void)layoutSubviews{
     [super layoutSubviews];
-    
-    
-    
+
 }
 
+
+
+
+//供子类调用, 不会改变自身size的大小, 子类重写此方法可以限制返回的view的大小
+//默认返回自身大小
+//- (CGSize)sizeThatFits:(CGSize)size{
+//    return self.frame.size;
+//}
 
 @end

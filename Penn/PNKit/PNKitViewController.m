@@ -8,6 +8,8 @@
 
 #import "PNKitViewController.h"
 #import "PNButton.h"
+#import "UIButton+Addition.h"
+#import "PNButton+Addition.h"
 
 @interface PNKitViewController ()
 
@@ -17,11 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    PNButton * button = [[PNButton alloc] init];
-    [self.view addSubview:button];
-
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    PNButton * button = [[PNButton alloc] initWithFrame:CGRectMake(10, 100, 0, 0)];
+    button.backgroundColor = [UIColor orangeColor];
+    [button setTitle:@"按下试试" forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"card"] forState:UIControlStateNormal];
+    [button sizeToFit];
+    [self.view addSubview:button];
+    [button imageRight];
+
 }
 
 - (void)didReceiveMemoryWarning {

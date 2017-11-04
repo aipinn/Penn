@@ -25,6 +25,8 @@
 		D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD0291FAD6F9E0098D8DF /* PNKitViewController.m */; };
 		D5BAD02C1FAD6F9E0098D8DF /* PNKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD02A1FAD6F9E0098D8DF /* PNKitViewController.xib */; };
 		D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD02E1FAD704E0098D8DF /* BaseViewController.m */; };
+		D5BAD0361FADC08F0098D8DF /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD0351FADC08F0098D8DF /* UIButton+Addition.m */; };
+		D5BAD0391FADC2AF0098D8DF /* PNButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD0381FADC2AF0098D8DF /* PNButton+Addition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,10 @@
 		D5BAD02E1FAD704E0098D8DF /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		D5BAD0311FAD87630098D8DF /* Penn.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Penn.pch; sourceTree = SOURCE_ROOT; };
 		D5BAD0321FAD87AC0098D8DF /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = SOURCE_ROOT; };
+		D5BAD0341FADC08F0098D8DF /* UIButton+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Addition.h"; sourceTree = "<group>"; };
+		D5BAD0351FADC08F0098D8DF /* UIButton+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
+		D5BAD0371FADC2AF0098D8DF /* PNButton+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNButton+Addition.h"; sourceTree = "<group>"; };
+		D5BAD0381FADC2AF0098D8DF /* PNButton+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNButton+Addition.m"; sourceTree = "<group>"; };
 		D823900ADE1F8B9ECCE49560 /* Pods-PennTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PennTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PennTests/Pods-PennTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +218,10 @@
 			children = (
 				D5BAD0191FAD63980098D8DF /* PNButton.h */,
 				D5BAD01A1FAD63980098D8DF /* PNButton.m */,
+				D5BAD0341FADC08F0098D8DF /* UIButton+Addition.h */,
+				D5BAD0351FADC08F0098D8DF /* UIButton+Addition.m */,
+				D5BAD0371FADC2AF0098D8DF /* PNButton+Addition.h */,
+				D5BAD0381FADC2AF0098D8DF /* PNButton+Addition.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -551,12 +561,14 @@
 			files = (
 				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
 				D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */,
+				D5BAD0361FADC08F0098D8DF /* UIButton+Addition.m in Sources */,
 				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
 				D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
 				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
 				D5B7C2421F611501001FA29C /* main.m in Sources */,
+				D5BAD0391FADC2AF0098D8DF /* PNButton+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
