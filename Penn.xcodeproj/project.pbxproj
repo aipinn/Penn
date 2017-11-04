@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C298848B1D410EE17A9D983 /* libPods-PennTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAB1F823A83E0823CAEB201 /* libPods-PennTests.a */; };
+		79033104716E326486151E85 /* libPods-Penn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F082FB021F53830D624BA7 /* libPods-Penn.a */; };
+		7FA712938C3F76CFD8344382 /* libPods-PennUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C30E7A2F4D373AAEFFB11046 /* libPods-PennUITests.a */; };
 		D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */ = {isa = PBXBuildFile; fileRef = D585341C1F63FE2F00F4C588 /* PNSocketController.m */; };
 		D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D585341D1F63FE2F00F4C588 /* PNSocketController.xib */; };
 		D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58534211F63FF6800F4C588 /* PNHomeViewController.m */; };
@@ -42,6 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2AAB1F823A83E0823CAEB201 /* libPods-PennTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PennTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DE08D8D3DCFA2AD6A3D3571 /* Pods-PennUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PennUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PennUITests/Pods-PennUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A58AB53F3ACAE3BE3C87FB3 /* Pods-Penn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Penn/Pods-Penn.release.xcconfig"; sourceTree = "<group>"; };
+		57F082FB021F53830D624BA7 /* libPods-Penn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Penn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		593A64EA783FBAAED87A2823 /* Pods-PennUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PennUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PennUITests/Pods-PennUITests.release.xcconfig"; sourceTree = "<group>"; };
+		927F83609C70876345A0ED36 /* Pods-PennTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PennTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PennTests/Pods-PennTests.debug.xcconfig"; sourceTree = "<group>"; };
+		971DC9A86F7BC0CD644EE23A /* Pods-Penn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Penn/Pods-Penn.debug.xcconfig"; sourceTree = "<group>"; };
+		C30E7A2F4D373AAEFFB11046 /* libPods-PennUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PennUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D585341B1F63FE2F00F4C588 /* PNSocketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNSocketController.h; sourceTree = "<group>"; };
 		D585341C1F63FE2F00F4C588 /* PNSocketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNSocketController.m; sourceTree = "<group>"; };
 		D585341D1F63FE2F00F4C588 /* PNSocketController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PNSocketController.xib; sourceTree = "<group>"; };
@@ -72,6 +83,7 @@
 		D5BAD02E1FAD704E0098D8DF /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		D5BAD0311FAD87630098D8DF /* Penn.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Penn.pch; sourceTree = SOURCE_ROOT; };
 		D5BAD0321FAD87AC0098D8DF /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = SOURCE_ROOT; };
+		D823900ADE1F8B9ECCE49560 /* Pods-PennTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PennTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PennTests/Pods-PennTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79033104716E326486151E85 /* libPods-Penn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C298848B1D410EE17A9D983 /* libPods-PennTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,12 +107,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA712938C3F76CFD8344382 /* libPods-PennUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98EC7010CD840C1D9E9A39AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57F082FB021F53830D624BA7 /* libPods-Penn.a */,
+				2AAB1F823A83E0823CAEB201 /* libPods-PennTests.a */,
+				C30E7A2F4D373AAEFFB11046 /* libPods-PennUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D5B7C2341F611501001FA29C = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +131,8 @@
 				D5B7C2591F611501001FA29C /* PennTests */,
 				D5B7C2641F611501001FA29C /* PennUITests */,
 				D5B7C23E1F611501001FA29C /* Products */,
+				EC8966BE9110E360ED289F5B /* Pods */,
+				98EC7010CD840C1D9E9A39AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +242,19 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		EC8966BE9110E360ED289F5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				971DC9A86F7BC0CD644EE23A /* Pods-Penn.debug.xcconfig */,
+				4A58AB53F3ACAE3BE3C87FB3 /* Pods-Penn.release.xcconfig */,
+				927F83609C70876345A0ED36 /* Pods-PennTests.debug.xcconfig */,
+				D823900ADE1F8B9ECCE49560 /* Pods-PennTests.release.xcconfig */,
+				3DE08D8D3DCFA2AD6A3D3571 /* Pods-PennUITests.debug.xcconfig */,
+				593A64EA783FBAAED87A2823 /* Pods-PennUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,9 +262,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5B7C26A1F611501001FA29C /* Build configuration list for PBXNativeTarget "Penn" */;
 			buildPhases = (
+				F277577C4ECF3D9A435F0DC2 /* [CP] Check Pods Manifest.lock */,
 				D5B7C2391F611501001FA29C /* Sources */,
 				D5B7C23A1F611501001FA29C /* Frameworks */,
 				D5B7C23B1F611501001FA29C /* Resources */,
+				3BBF728D4E18176E59337019 /* [CP] Embed Pods Frameworks */,
+				E05D0B2230DE1843156E0472 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,9 +282,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5B7C26D1F611501001FA29C /* Build configuration list for PBXNativeTarget "PennTests" */;
 			buildPhases = (
+				701BC58FA7A0DC189341C7D0 /* [CP] Check Pods Manifest.lock */,
 				D5B7C2521F611501001FA29C /* Sources */,
 				D5B7C2531F611501001FA29C /* Frameworks */,
 				D5B7C2541F611501001FA29C /* Resources */,
+				2364A54AEF25BF0706EFA887 /* [CP] Embed Pods Frameworks */,
+				5B1B26FED48054A008B6D1BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,9 +303,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5B7C2701F611501001FA29C /* Build configuration list for PBXNativeTarget "PennUITests" */;
 			buildPhases = (
+				053CFBC047141A7BA35F607E /* [CP] Check Pods Manifest.lock */,
 				D5B7C25D1F611501001FA29C /* Sources */,
 				D5B7C25E1F611501001FA29C /* Frameworks */,
 				D5B7C25F1F611501001FA29C /* Resources */,
+				B8C9FCD32F53DBC62BD0D28B /* [CP] Embed Pods Frameworks */,
+				C33653676D0141A8312607EF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -348,6 +397,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		053CFBC047141A7BA35F607E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2364A54AEF25BF0706EFA887 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PennTests/Pods-PennTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BBF728D4E18176E59337019 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Penn/Pods-Penn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B1B26FED48054A008B6D1BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PennTests/Pods-PennTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		701BC58FA7A0DC189341C7D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B8C9FCD32F53DBC62BD0D28B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PennUITests/Pods-PennUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C33653676D0141A8312607EF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PennUITests/Pods-PennUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E05D0B2230DE1843156E0472 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Penn/Pods-Penn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F277577C4ECF3D9A435F0DC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D5B7C2391F611501001FA29C /* Sources */ = {
@@ -510,6 +697,7 @@
 		};
 		D5B7C26B1F611501001FA29C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 971DC9A86F7BC0CD644EE23A /* Pods-Penn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
@@ -524,6 +712,7 @@
 		};
 		D5B7C26C1F611501001FA29C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A58AB53F3ACAE3BE3C87FB3 /* Pods-Penn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
@@ -538,6 +727,7 @@
 		};
 		D5B7C26E1F611501001FA29C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 927F83609C70876345A0ED36 /* Pods-PennTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
@@ -551,6 +741,7 @@
 		};
 		D5B7C26F1F611501001FA29C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D823900ADE1F8B9ECCE49560 /* Pods-PennTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
@@ -564,6 +755,7 @@
 		};
 		D5B7C2711F611501001FA29C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DE08D8D3DCFA2AD6A3D3571 /* Pods-PennUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
 				INFOPLIST_FILE = PennUITests/Info.plist;
@@ -576,6 +768,7 @@
 		};
 		D5B7C2721F611501001FA29C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 593A64EA783FBAAED87A2823 /* Pods-PennUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
 				INFOPLIST_FILE = PennUITests/Info.plist;
