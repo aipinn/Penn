@@ -22,7 +22,7 @@
 //常用单例
 #define MYNotification [NSNotificationCenter defaultCenter]
 #define MYUserDefaults  [NSUserDefaults standardUserDefaults]
-#define myColor(R, G, B) [UIColor colorWithRed:(R) / 255.0f green:(G) / 255.0f blue:(B) / 255.0f alpha:1]
+#define MYColor(R, G, B) [UIColor colorWithRed:(R) / 255.0f green:(G) / 255.0f blue:(B) / 255.0f alpha:1]
 #define APPDELEGATE  ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #define APPKeyWindow ([UIApplication sharedApplication].keyWindow)
 //--常用方法--
