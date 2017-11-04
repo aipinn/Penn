@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */ = {isa = PBXBuildFile; fileRef = D585341C1F63FE2F00F4C588 /* PNSocketController.m */; };
+		D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D585341D1F63FE2F00F4C588 /* PNSocketController.xib */; };
+		D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58534211F63FF6800F4C588 /* PNHomeViewController.m */; };
 		D5B7C2421F611501001FA29C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2411F611501001FA29C /* main.m */; };
 		D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2441F611501001FA29C /* AppDelegate.m */; };
 		D5B7C2481F611501001FA29C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2471F611501001FA29C /* ViewController.m */; };
@@ -15,6 +18,7 @@
 		D5B7C2501F611501001FA29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B7C24E1F611501001FA29C /* LaunchScreen.storyboard */; };
 		D5B7C25B1F611501001FA29C /* PennTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C25A1F611501001FA29C /* PennTests.m */; };
 		D5B7C2661F611501001FA29C /* PennUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2651F611501001FA29C /* PennUITests.m */; };
+		D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD01A1FAD63980098D8DF /* PNButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D585341B1F63FE2F00F4C588 /* PNSocketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNSocketController.h; sourceTree = "<group>"; };
+		D585341C1F63FE2F00F4C588 /* PNSocketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNSocketController.m; sourceTree = "<group>"; };
+		D585341D1F63FE2F00F4C588 /* PNSocketController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PNSocketController.xib; sourceTree = "<group>"; };
+		D58534201F63FF6800F4C588 /* PNHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNHomeViewController.h; sourceTree = "<group>"; };
+		D58534211F63FF6800F4C588 /* PNHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNHomeViewController.m; sourceTree = "<group>"; };
+		D58534251F6402A600F4C588 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		D58534261F6402A600F4C588 /* Penn.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Penn.pch; sourceTree = "<group>"; };
 		D5B7C23D1F611501001FA29C /* Penn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Penn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B7C2411F611501001FA29C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D5B7C2431F611501001FA29C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +62,8 @@
 		D5B7C2611F611501001FA29C /* PennUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PennUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B7C2651F611501001FA29C /* PennUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennUITests.m; sourceTree = "<group>"; };
 		D5B7C2671F611501001FA29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5BAD0191FAD63980098D8DF /* PNButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNButton.h; sourceTree = "<group>"; };
+		D5BAD01A1FAD63980098D8DF /* PNButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +114,10 @@
 		D5B7C23F1F611501001FA29C /* Penn */ = {
 			isa = PBXGroup;
 			children = (
-				D5B7C2431F611501001FA29C /* AppDelegate.h */,
-				D5B7C2441F611501001FA29C /* AppDelegate.m */,
-				D5B7C2461F611501001FA29C /* ViewController.h */,
-				D5B7C2471F611501001FA29C /* ViewController.m */,
-				D5B7C2491F611501001FA29C /* Main.storyboard */,
-				D5B7C24C1F611501001FA29C /* Assets.xcassets */,
-				D5B7C24E1F611501001FA29C /* LaunchScreen.storyboard */,
-				D5B7C2511F611501001FA29C /* Info.plist */,
+				D5BAD0221FAD65CE0098D8DF /* Func */,
+				D5BAD0251FAD663E0098D8DF /* Home */,
+				D5BAD0261FAD66510098D8DF /* Extension */,
+				D5BAD0271FAD66720098D8DF /* Main */,
 				D5B7C2401F611501001FA29C /* Supporting Files */,
 			);
 			path = Penn;
@@ -117,6 +126,9 @@
 		D5B7C2401F611501001FA29C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D5B7C2511F611501001FA29C /* Info.plist */,
+				D58534251F6402A600F4C588 /* Global.h */,
+				D58534261F6402A600F4C588 /* Penn.pch */,
 				D5B7C2411F611501001FA29C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +150,48 @@
 				D5B7C2671F611501001FA29C /* Info.plist */,
 			);
 			path = PennUITests;
+			sourceTree = "<group>";
+		};
+		D5BAD0221FAD65CE0098D8DF /* Func */ = {
+			isa = PBXGroup;
+			children = (
+				D585341B1F63FE2F00F4C588 /* PNSocketController.h */,
+				D585341C1F63FE2F00F4C588 /* PNSocketController.m */,
+				D585341D1F63FE2F00F4C588 /* PNSocketController.xib */,
+			);
+			path = Func;
+			sourceTree = "<group>";
+		};
+		D5BAD0251FAD663E0098D8DF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D58534201F63FF6800F4C588 /* PNHomeViewController.h */,
+				D58534211F63FF6800F4C588 /* PNHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D5BAD0261FAD66510098D8DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D5BAD0191FAD63980098D8DF /* PNButton.h */,
+				D5BAD01A1FAD63980098D8DF /* PNButton.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D5BAD0271FAD66720098D8DF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D5B7C2431F611501001FA29C /* AppDelegate.h */,
+				D5B7C2441F611501001FA29C /* AppDelegate.m */,
+				D5B7C2461F611501001FA29C /* ViewController.h */,
+				D5B7C2471F611501001FA29C /* ViewController.m */,
+				D5B7C2491F611501001FA29C /* Main.storyboard */,
+				D5B7C24C1F611501001FA29C /* Assets.xcassets */,
+				D5B7C24E1F611501001FA29C /* LaunchScreen.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +256,7 @@
 		D5B7C2351F611501001FA29C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = PN;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = SanRong;
 				TargetAttributes = {
@@ -251,6 +306,7 @@
 			files = (
 				D5B7C2501F611501001FA29C /* LaunchScreen.storyboard in Resources */,
 				D5B7C24D1F611501001FA29C /* Assets.xcassets in Resources */,
+				D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */,
 				D5B7C24B1F611501001FA29C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,8 +332,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
+				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
+				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
 				D5B7C2421F611501001FA29C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +489,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Penn.pch";
 				INFOPLIST_FILE = Penn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.penn.Penn;
@@ -442,6 +503,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Penn.pch";
 				INFOPLIST_FILE = Penn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.penn.Penn;
@@ -518,6 +581,7 @@
 				D5B7C26C1F611501001FA29C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5B7C26D1F611501001FA29C /* Build configuration list for PBXNativeTarget "PennTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +590,7 @@
 				D5B7C26F1F611501001FA29C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5B7C2701F611501001FA29C /* Build configuration list for PBXNativeTarget "PennUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +599,7 @@
 				D5B7C2721F611501001FA29C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
