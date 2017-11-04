@@ -6,8 +6,7 @@
 //  Copyright © 2017年 SanRong. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface PNKitViewController : UIViewController
+#import "BaseViewController.h"
+@interface PNKitViewController : BaseViewController
 
 @end

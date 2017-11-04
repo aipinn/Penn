@@ -8,14 +8,13 @@
 
 #import "PNHomeViewController.h"
 #import "PNSocketController.h"
+#import "PNKitViewController.h"
 
 #import "Global.h"
 
-static NSString * const socketCellIdentifer = @"PNSocketController";
+static NSString * const reuseCellId = @"HomeCell";
 
-@interface PNHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
-
-@property(nonatomic, strong) UITableView * tableView;
+@interface PNHomeViewController ()
 
 @end
 
@@ -23,53 +22,43 @@ static NSString * const socketCellIdentifer = @"PNSocketController";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupUI];
+    [self.dataSource addObjectsFromArray:@[
+                                           @"PNKitViewController",
+                                           @"PNSocketController"
+                                           ]];
+
     
-    [self configTableView];
 }
 
 #pragma mark - TableView Delegate/DataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:socketCellIdentifer forIndexPath:indexPath];
-    cell.textLabel.text = NSStringFromClass([PNSocketController class]);
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:reuseCellId forIndexPath:indexPath];
+    cell.textLabel.text = self.dataSource[indexPath.row];
     return cell;
     
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-
-    return nil;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    PNSocketController * socketVC = [[PNSocketController alloc]init];
+    NSString * clsName = self.dataSource[indexPath.row];
+    BaseViewController * vc = [[NSClassFromString(clsName) alloc] init];
     
-    [self.navigationController pushViewController:socketVC animated:YES];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
 #pragma mark - Private Methods
 
-- (void)configTableView{
+- (void)setupUI{
+    [super setupUI];
     
-    UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    [self.view addSubview:tableView];
-    self.tableView = tableView;
- 
-//    [self.tableView registerNib:[UINib nibWithNibName:socketCellIdentifer bundle:[NSBundle mainBundle]] forCellReuseIdentifier:socketCellIdentifer];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:socketCellIdentifer];
+    //    [self.tableView registerNib:[UINib nibWithNibName:socketCellIdentifer bundle:0] forCellReuseIdentifier:socketCellIdentifer];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseCellId];
 }
+
 
 
 @end

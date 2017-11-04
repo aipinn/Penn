@@ -6,8 +6,8 @@
 //  Copyright © 2017年 SanRong. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface PNSocketController : UIViewController
+@interface PNSocketController : BaseViewController
 
 @end
