@@ -19,16 +19,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor whiteColor];
-    PNButton * button = [[PNButton alloc] initWithFrame:CGRectMake(10, 100, 0, 0)];
+    
+    PNButton * button = [[PNButton alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH/4, 100)];
+    button.contentMode = PNButtonContentModeTopImage;
     button.backgroundColor = [UIColor orangeColor];
-    [button setTitle:@"按下试试" forState:UIControlStateNormal];
+    [button setTitle:@"按下" forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"card"] forState:UIControlStateNormal];
-    [button sizeToFit];
     [self.view addSubview:button];
-    [button imageRight];
 
+    PNButton * button2 = [[PNButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/4 +2, 100, SCREEN_WIDTH/4, 100)];
+    button2.contentMode = PNButtonContentModeBottomImage;
+    button2.backgroundColor = [UIColor orangeColor];
+    [button2 setTitle:@"按下" forState:UIControlStateNormal];
+    [button2 setImage:[UIImage imageNamed:@"card"] forState:UIControlStateNormal];
+    [self.view addSubview:button2];
+    
+    PNButton * button3 = [[PNButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2 + 4, 100, SCREEN_WIDTH/4, 100)];
+    button3.contentMode = PNButtonContentModeRightImage;
+    button3.backgroundColor = [UIColor orangeColor];
+    [button3 setTitle:@"按下" forState:UIControlStateNormal];
+    [button3 setImage:[UIImage imageNamed:@"card"] forState:UIControlStateNormal];
+    [self.view addSubview:button3];
 }
 
 - (void)didReceiveMemoryWarning {

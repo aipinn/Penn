@@ -10,8 +10,6 @@
 
 @implementation PNButton (Addition)
 
-
-
 - (void)imageRight{
     
     self.titleEdgeInsets = UIEdgeInsetsMake(0, -self.imageSize.width, 0, self.imageSize.width);
@@ -21,6 +19,11 @@
 
 - (void)imageTop{
     
+}
+
+- (void)imageBottom{
+    
     
 }
+
 @end

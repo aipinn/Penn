@@ -15,5 +15,8 @@
  */
 - (void)imageRight;
 
+- (void)imageTop;
+
+- (void)imageBottom;
 
 @end

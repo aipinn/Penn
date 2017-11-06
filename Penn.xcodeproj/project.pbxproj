@@ -21,6 +21,9 @@
 		D5B7C2501F611501001FA29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B7C24E1F611501001FA29C /* LaunchScreen.storyboard */; };
 		D5B7C25B1F611501001FA29C /* PennTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C25A1F611501001FA29C /* PennTests.m */; };
 		D5B7C2661F611501001FA29C /* PennUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2651F611501001FA29C /* PennUITests.m */; };
+		D5B92B2E1FAFFE4200726C35 /* PNSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B92B2D1FAFFE4200726C35 /* PNSwiftViewController.swift */; };
+		D5B92B301FAFFF6E00726C35 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B92B2F1FAFFF6E00726C35 /* UIButton+Extension.swift */; };
+		D5B92B321FAFFFDD00726C35 /* PNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B92B311FAFFFDD00726C35 /* PNButton.swift */; };
 		D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD01A1FAD63980098D8DF /* PNButton.m */; };
 		D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD0291FAD6F9E0098D8DF /* PNKitViewController.m */; };
 		D5BAD02C1FAD6F9E0098D8DF /* PNKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD02A1FAD6F9E0098D8DF /* PNKitViewController.xib */; };
@@ -76,6 +79,10 @@
 		D5B7C2611F611501001FA29C /* PennUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PennUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B7C2651F611501001FA29C /* PennUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennUITests.m; sourceTree = "<group>"; };
 		D5B7C2671F611501001FA29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5B92B2C1FAFFE4100726C35 /* Penn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Penn-Bridging-Header.h"; sourceTree = "<group>"; };
+		D5B92B2D1FAFFE4200726C35 /* PNSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNSwiftViewController.swift; sourceTree = "<group>"; };
+		D5B92B2F1FAFFF6E00726C35 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		D5B92B311FAFFFDD00726C35 /* PNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNButton.swift; sourceTree = "<group>"; };
 		D5BAD0191FAD63980098D8DF /* PNButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNButton.h; sourceTree = "<group>"; };
 		D5BAD01A1FAD63980098D8DF /* PNButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNButton.m; sourceTree = "<group>"; };
 		D5BAD0281FAD6F9E0098D8DF /* PNKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNKitViewController.h; sourceTree = "<group>"; };
@@ -222,6 +229,8 @@
 				D5BAD0351FADC08F0098D8DF /* UIButton+Addition.m */,
 				D5BAD0371FADC2AF0098D8DF /* PNButton+Addition.h */,
 				D5BAD0381FADC2AF0098D8DF /* PNButton+Addition.m */,
+				D5B92B2F1FAFFF6E00726C35 /* UIButton+Extension.swift */,
+				D5B92B311FAFFFDD00726C35 /* PNButton.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -253,9 +262,11 @@
 		D5BAD0331FADA3D10098D8DF /* PNKit */ = {
 			isa = PBXGroup;
 			children = (
+				D5B92B2D1FAFFE4200726C35 /* PNSwiftViewController.swift */,
 				D5BAD0281FAD6F9E0098D8DF /* PNKitViewController.h */,
 				D5BAD0291FAD6F9E0098D8DF /* PNKitViewController.m */,
 				D5BAD02A1FAD6F9E0098D8DF /* PNKitViewController.xib */,
+				D5B92B2C1FAFFE4100726C35 /* Penn-Bridging-Header.h */,
 			);
 			path = PNKit;
 			sourceTree = "<group>";
@@ -351,6 +362,7 @@
 					D5B7C23C1F611501001FA29C = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 4B2WMR5XE5;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					D5B7C2551F611501001FA29C = {
@@ -559,10 +571,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5B92B2E1FAFFE4200726C35 /* PNSwiftViewController.swift in Sources */,
 				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
 				D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */,
+				D5B92B321FAFFFDD00726C35 /* PNButton.swift in Sources */,
 				D5BAD0361FADC08F0098D8DF /* UIButton+Addition.m in Sources */,
 				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
+				D5B92B301FAFFF6E00726C35 /* UIButton+Extension.swift in Sources */,
 				D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
@@ -732,6 +747,7 @@
 			baseConfigurationReference = 971DC9A86F7BC0CD644EE23A /* Pods-Penn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Penn.pch";
@@ -739,6 +755,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.penn.Penn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Penn/PNKit/Penn-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -748,6 +767,7 @@
 			baseConfigurationReference = 4A58AB53F3ACAE3BE3C87FB3 /* Pods-Penn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Penn.pch";
@@ -755,6 +775,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.penn.Penn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Penn/PNKit/Penn-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -763,6 +785,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 927F83609C70876345A0ED36 /* Pods-PennTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
 				INFOPLIST_FILE = PennTests/Info.plist;
@@ -777,6 +800,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D823900ADE1F8B9ECCE49560 /* Pods-PennTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
 				INFOPLIST_FILE = PennTests/Info.plist;
@@ -791,6 +815,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3DE08D8D3DCFA2AD6A3D3571 /* Pods-PennUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
 				INFOPLIST_FILE = PennUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -804,6 +829,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 593A64EA783FBAAED87A2823 /* Pods-PennUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
 				INFOPLIST_FILE = PennUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
