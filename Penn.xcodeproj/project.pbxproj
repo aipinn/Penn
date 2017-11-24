@@ -13,6 +13,21 @@
 		D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */ = {isa = PBXBuildFile; fileRef = D585341C1F63FE2F00F4C588 /* PNSocketController.m */; };
 		D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D585341D1F63FE2F00F4C588 /* PNSocketController.xib */; };
 		D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58534211F63FF6800F4C588 /* PNHomeViewController.m */; };
+		D594E31A1FB69A3D00255114 /* PNFundationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D594E3191FB69A3D00255114 /* PNFundationController.m */; };
+		D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5591FC7EAA700A9BD86 /* PNCrazyButton.m */; };
+		D5AAC55E1FC7EAD100A9BD86 /* PNCrazyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC55D1FC7EAD100A9BD86 /* PNCrazyButton.xib */; };
+		D5AAC5621FC7ED5B00A9BD86 /* action-remove@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC5601FC7ED5B00A9BD86 /* action-remove@3x.png */; };
+		D5AAC5631FC7ED5B00A9BD86 /* action-remove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC5611FC7ED5B00A9BD86 /* action-remove@2x.png */; };
+		D5AAC5661FC7ED7C00A9BD86 /* backRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC5641FC7ED7C00A9BD86 /* backRed@2x.png */; };
+		D5AAC5671FC7ED7C00A9BD86 /* backRed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC5651FC7ED7C00A9BD86 /* backRed@3x.png */; };
+		D5AAC56A1FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC5681FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png */; };
+		D5AAC56B1FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC5691FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png */; };
+		D5AAC56E1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC56C1FC7EDA900A9BD86 /* btn_addPicture_BgImage@3x.png */; };
+		D5AAC56F1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC56D1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@2x.png */; };
+		D5AAC5751FC7F17D00A9BD86 /* PNCrazyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5741FC7F17D00A9BD86 /* PNCrazyButton.swift */; };
+		D5AAC57C1FC8029200A9BD86 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC57B1FC8029200A9BD86 /* BaseTabBarController.m */; };
+		D5AAC5801FC8030300A9BD86 /* PNProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC57F1FC8030300A9BD86 /* PNProfileViewController.m */; };
+		D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5821FC8039C00A9BD86 /* BaseNavigationController.m */; };
 		D5B7C2421F611501001FA29C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2411F611501001FA29C /* main.m */; };
 		D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2441F611501001FA29C /* AppDelegate.m */; };
 		D5B7C2481F611501001FA29C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2471F611501001FA29C /* ViewController.m */; };
@@ -22,14 +37,10 @@
 		D5B7C25B1F611501001FA29C /* PennTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C25A1F611501001FA29C /* PennTests.m */; };
 		D5B7C2661F611501001FA29C /* PennUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2651F611501001FA29C /* PennUITests.m */; };
 		D5B92B2E1FAFFE4200726C35 /* PNSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B92B2D1FAFFE4200726C35 /* PNSwiftViewController.swift */; };
-		D5B92B301FAFFF6E00726C35 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B92B2F1FAFFF6E00726C35 /* UIButton+Extension.swift */; };
-		D5B92B321FAFFFDD00726C35 /* PNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B92B311FAFFFDD00726C35 /* PNButton.swift */; };
 		D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD01A1FAD63980098D8DF /* PNButton.m */; };
 		D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD0291FAD6F9E0098D8DF /* PNKitViewController.m */; };
 		D5BAD02C1FAD6F9E0098D8DF /* PNKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD02A1FAD6F9E0098D8DF /* PNKitViewController.xib */; };
 		D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD02E1FAD704E0098D8DF /* BaseViewController.m */; };
-		D5BAD0361FADC08F0098D8DF /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD0351FADC08F0098D8DF /* UIButton+Addition.m */; };
-		D5BAD0391FADC2AF0098D8DF /* PNButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD0381FADC2AF0098D8DF /* PNButton+Addition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +74,26 @@
 		D585341D1F63FE2F00F4C588 /* PNSocketController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PNSocketController.xib; sourceTree = "<group>"; };
 		D58534201F63FF6800F4C588 /* PNHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNHomeViewController.h; sourceTree = "<group>"; };
 		D58534211F63FF6800F4C588 /* PNHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNHomeViewController.m; sourceTree = "<group>"; };
+		D594E3181FB69A3D00255114 /* PNFundationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNFundationController.h; sourceTree = "<group>"; };
+		D594E3191FB69A3D00255114 /* PNFundationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNFundationController.m; sourceTree = "<group>"; };
+		D5AAC5581FC7EAA700A9BD86 /* PNCrazyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCrazyButton.h; sourceTree = "<group>"; };
+		D5AAC5591FC7EAA700A9BD86 /* PNCrazyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCrazyButton.m; sourceTree = "<group>"; };
+		D5AAC55D1FC7EAD100A9BD86 /* PNCrazyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNCrazyButton.xib; sourceTree = "<group>"; };
+		D5AAC5601FC7ED5B00A9BD86 /* action-remove@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-remove@3x.png"; sourceTree = "<group>"; };
+		D5AAC5611FC7ED5B00A9BD86 /* action-remove@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-remove@2x.png"; sourceTree = "<group>"; };
+		D5AAC5641FC7ED7C00A9BD86 /* backRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backRed@2x.png"; sourceTree = "<group>"; };
+		D5AAC5651FC7ED7C00A9BD86 /* backRed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backRed@3x.png"; sourceTree = "<group>"; };
+		D5AAC5681FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottomNav-forwardEngaged@3x.png"; sourceTree = "<group>"; };
+		D5AAC5691FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bottomNav-forwardEngaged@3x.png"; path = "../../../Downloads/firefox-ios-master/Client/Frontend/Menu/Menu.xcassets/bottomNav-forwardEngaged.imageset/bottomNav-forwardEngaged@3x.png"; sourceTree = "<group>"; };
+		D5AAC56C1FC7EDA900A9BD86 /* btn_addPicture_BgImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_addPicture_BgImage@3x.png"; sourceTree = "<group>"; };
+		D5AAC56D1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_addPicture_BgImage@2x.png"; sourceTree = "<group>"; };
+		D5AAC5741FC7F17D00A9BD86 /* PNCrazyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNCrazyButton.swift; sourceTree = "<group>"; };
+		D5AAC57A1FC8029200A9BD86 /* BaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		D5AAC57B1FC8029200A9BD86 /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		D5AAC57E1FC8030300A9BD86 /* PNProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNProfileViewController.h; sourceTree = "<group>"; };
+		D5AAC57F1FC8030300A9BD86 /* PNProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNProfileViewController.m; sourceTree = "<group>"; };
+		D5AAC5811FC8039C00A9BD86 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		D5AAC5821FC8039C00A9BD86 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		D5B7C23D1F611501001FA29C /* Penn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Penn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B7C2411F611501001FA29C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D5B7C2431F611501001FA29C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,8 +112,6 @@
 		D5B7C2671F611501001FA29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5B92B2C1FAFFE4100726C35 /* Penn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Penn-Bridging-Header.h"; sourceTree = "<group>"; };
 		D5B92B2D1FAFFE4200726C35 /* PNSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNSwiftViewController.swift; sourceTree = "<group>"; };
-		D5B92B2F1FAFFF6E00726C35 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		D5B92B311FAFFFDD00726C35 /* PNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNButton.swift; sourceTree = "<group>"; };
 		D5BAD0191FAD63980098D8DF /* PNButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNButton.h; sourceTree = "<group>"; };
 		D5BAD01A1FAD63980098D8DF /* PNButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNButton.m; sourceTree = "<group>"; };
 		D5BAD0281FAD6F9E0098D8DF /* PNKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNKitViewController.h; sourceTree = "<group>"; };
@@ -92,10 +121,6 @@
 		D5BAD02E1FAD704E0098D8DF /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		D5BAD0311FAD87630098D8DF /* Penn.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Penn.pch; sourceTree = SOURCE_ROOT; };
 		D5BAD0321FAD87AC0098D8DF /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = SOURCE_ROOT; };
-		D5BAD0341FADC08F0098D8DF /* UIButton+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Addition.h"; sourceTree = "<group>"; };
-		D5BAD0351FADC08F0098D8DF /* UIButton+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
-		D5BAD0371FADC2AF0098D8DF /* PNButton+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNButton+Addition.h"; sourceTree = "<group>"; };
-		D5BAD0381FADC2AF0098D8DF /* PNButton+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNButton+Addition.m"; sourceTree = "<group>"; };
 		D823900ADE1F8B9ECCE49560 /* Pods-PennTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PennTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PennTests/Pods-PennTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +162,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D594E31B1FB69A4A00255114 /* PNFundation */ = {
+			isa = PBXGroup;
+			children = (
+				D594E3181FB69A3D00255114 /* PNFundationController.h */,
+				D594E3191FB69A3D00255114 /* PNFundationController.m */,
+			);
+			path = PNFundation;
+			sourceTree = "<group>";
+		};
+		D5AAC55F1FC7EBD200A9BD86 /* NativeImg */ = {
+			isa = PBXGroup;
+			children = (
+				D5AAC56D1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@2x.png */,
+				D5AAC56C1FC7EDA900A9BD86 /* btn_addPicture_BgImage@3x.png */,
+				D5AAC5691FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png */,
+				D5AAC5681FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png */,
+				D5AAC5641FC7ED7C00A9BD86 /* backRed@2x.png */,
+				D5AAC5651FC7ED7C00A9BD86 /* backRed@3x.png */,
+				D5AAC5611FC7ED5B00A9BD86 /* action-remove@2x.png */,
+				D5AAC5601FC7ED5B00A9BD86 /* action-remove@3x.png */,
+			);
+			name = NativeImg;
+			sourceTree = "<group>";
+		};
+		D5AAC5761FC7F63E00A9BD86 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5AAC5581FC7EAA700A9BD86 /* PNCrazyButton.h */,
+				D5AAC5591FC7EAA700A9BD86 /* PNCrazyButton.m */,
+				D5AAC55D1FC7EAD100A9BD86 /* PNCrazyButton.xib */,
+				D5AAC5741FC7F17D00A9BD86 /* PNCrazyButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5AAC57D1FC802E600A9BD86 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D5AAC57E1FC8030300A9BD86 /* PNProfileViewController.h */,
+				D5AAC57F1FC8030300A9BD86 /* PNProfileViewController.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		D5B7C2341F611501001FA29C = {
 			isa = PBXGroup;
 			children = (
@@ -162,12 +231,14 @@
 		D5B7C23F1F611501001FA29C /* Penn */ = {
 			isa = PBXGroup;
 			children = (
+				D5AAC57D1FC802E600A9BD86 /* Profile */,
 				D5BAD0221FAD65CE0098D8DF /* Func */,
 				D5BAD0251FAD663E0098D8DF /* Home */,
 				D5BAD0261FAD66510098D8DF /* Extension */,
 				D5BAD0271FAD66720098D8DF /* Main */,
-				D5B7C2401F611501001FA29C /* Supporting Files */,
 				D5BAD0331FADA3D10098D8DF /* PNKit */,
+				D594E31B1FB69A4A00255114 /* PNFundation */,
+				D5B7C2401F611501001FA29C /* Supporting Files */,
 			);
 			path = Penn;
 			sourceTree = "<group>";
@@ -175,6 +246,7 @@
 		D5B7C2401F611501001FA29C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D5AAC55F1FC7EBD200A9BD86 /* NativeImg */,
 				D5BAD0321FAD87AC0098D8DF /* Global.h */,
 				D5B7C2511F611501001FA29C /* Info.plist */,
 				D5B7C2411F611501001FA29C /* main.m */,
@@ -225,12 +297,6 @@
 			children = (
 				D5BAD0191FAD63980098D8DF /* PNButton.h */,
 				D5BAD01A1FAD63980098D8DF /* PNButton.m */,
-				D5BAD0341FADC08F0098D8DF /* UIButton+Addition.h */,
-				D5BAD0351FADC08F0098D8DF /* UIButton+Addition.m */,
-				D5BAD0371FADC2AF0098D8DF /* PNButton+Addition.h */,
-				D5BAD0381FADC2AF0098D8DF /* PNButton+Addition.m */,
-				D5B92B2F1FAFFF6E00726C35 /* UIButton+Extension.swift */,
-				D5B92B311FAFFFDD00726C35 /* PNButton.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -255,6 +321,10 @@
 			children = (
 				D5BAD02D1FAD704E0098D8DF /* BaseViewController.h */,
 				D5BAD02E1FAD704E0098D8DF /* BaseViewController.m */,
+				D5AAC57A1FC8029200A9BD86 /* BaseTabBarController.h */,
+				D5AAC57B1FC8029200A9BD86 /* BaseTabBarController.m */,
+				D5AAC5811FC8039C00A9BD86 /* BaseNavigationController.h */,
+				D5AAC5821FC8039C00A9BD86 /* BaseNavigationController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -262,6 +332,7 @@
 		D5BAD0331FADA3D10098D8DF /* PNKit */ = {
 			isa = PBXGroup;
 			children = (
+				D5AAC5761FC7F63E00A9BD86 /* View */,
 				D5B92B2D1FAFFE4200726C35 /* PNSwiftViewController.swift */,
 				D5BAD0281FAD6F9E0098D8DF /* PNKitViewController.h */,
 				D5BAD0291FAD6F9E0098D8DF /* PNKitViewController.m */,
@@ -404,10 +475,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5AAC5671FC7ED7C00A9BD86 /* backRed@3x.png in Resources */,
 				D5B7C2501F611501001FA29C /* LaunchScreen.storyboard in Resources */,
+				D5AAC56E1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@3x.png in Resources */,
+				D5AAC56F1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@2x.png in Resources */,
+				D5AAC55E1FC7EAD100A9BD86 /* PNCrazyButton.xib in Resources */,
+				D5AAC5631FC7ED5B00A9BD86 /* action-remove@2x.png in Resources */,
+				D5AAC5661FC7ED7C00A9BD86 /* backRed@2x.png in Resources */,
 				D5B7C24D1F611501001FA29C /* Assets.xcassets in Resources */,
 				D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */,
+				D5AAC5621FC7ED5B00A9BD86 /* action-remove@3x.png in Resources */,
+				D5AAC56B1FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png in Resources */,
 				D5B7C24B1F611501001FA29C /* Main.storyboard in Resources */,
+				D5AAC56A1FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png in Resources */,
 				D5BAD02C1FAD6F9E0098D8DF /* PNKitViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,17 +653,19 @@
 			files = (
 				D5B92B2E1FAFFE4200726C35 /* PNSwiftViewController.swift in Sources */,
 				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
+				D5AAC5801FC8030300A9BD86 /* PNProfileViewController.m in Sources */,
 				D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */,
-				D5B92B321FAFFFDD00726C35 /* PNButton.swift in Sources */,
-				D5BAD0361FADC08F0098D8DF /* UIButton+Addition.m in Sources */,
 				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
-				D5B92B301FAFFF6E00726C35 /* UIButton+Extension.swift in Sources */,
 				D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */,
+				D594E31A1FB69A3D00255114 /* PNFundationController.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
+				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
+				D5AAC57C1FC8029200A9BD86 /* BaseTabBarController.m in Sources */,
+				D5AAC5751FC7F17D00A9BD86 /* PNCrazyButton.swift in Sources */,
 				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
 				D5B7C2421F611501001FA29C /* main.m in Sources */,
-				D5BAD0391FADC2AF0098D8DF /* PNButton+Addition.m in Sources */,
+				D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

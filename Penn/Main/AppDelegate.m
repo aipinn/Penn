@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "PNHomeViewController.h"
+#import "BaseTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -19,9 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     UIWindow * window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    PNHomeViewController * homeVC = [[PNHomeViewController alloc]init];
-    UINavigationController * navc = [[UINavigationController alloc]initWithRootViewController:homeVC];
-    window.rootViewController = navc;
+    BaseTabBarController * tabBar = [[BaseTabBarController alloc] init];
+    window.rootViewController = tabBar;
     window.backgroundColor = [UIColor whiteColor];
     [window makeKeyAndVisible];
     self.window = window;

@@ -22,7 +22,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.contentEdgeInsets = UIEdgeInsetsMake(8, 4, 8, 4);
+//        self.contentEdgeInsets = UIEdgeInsetsMake(8, 4, 8, 4);
     }
     return self;
 }
@@ -30,7 +30,7 @@
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
     
-    switch (self.contentMode) {
+    switch (self.pn_contentMode) {
         case PNButtonContentModeDefault:
             
             break;

@@ -21,6 +21,8 @@ typedef NS_ENUM(NSInteger, PNButtonContentMode){
 
 @property(nonatomic, assign) CGSize imageSize;
 @property(nonatomic, assign) CGSize titleSize;
-@property (nonatomic, assign) PNButtonContentMode contentMode;
+@property (nonatomic, assign) PNButtonContentMode pn_contentMode;
+
+
 
 @end

@@ -9,6 +9,7 @@
 #import "PNHomeViewController.h"
 #import "PNSocketController.h"
 #import "PNKitViewController.h"
+#import "PNFundationController.h"
 
 #import "Global.h"
 
@@ -25,10 +26,16 @@ static NSString * const reuseCellId = @"HomeCell";
     [self setupUI];
     [self.dataSource addObjectsFromArray:@[
                                            @"PNKitViewController",
-                                           @"PNSocketController"
+                                           @"PNSocketController",
+                                           @"PNFundationController"
                                            ]];
 
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
 }
 
 #pragma mark - TableView Delegate/DataSource
@@ -55,7 +62,6 @@ static NSString * const reuseCellId = @"HomeCell";
 - (void)setupUI{
     [super setupUI];
     
-    //    [self.tableView registerNib:[UINib nibWithNibName:socketCellIdentifer bundle:0] forCellReuseIdentifier:socketCellIdentifer];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseCellId];
 }
 
