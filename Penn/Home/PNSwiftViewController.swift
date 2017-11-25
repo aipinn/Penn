@@ -12,12 +12,12 @@ class PNSwiftViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Swift"
         let button = PICrazyButton().crazyButton(imageStr:"bicycle", title:"自行车")
         button.center = view.center
         view.addSubview(button)
-        
-
+        button.addTarget(self, action: #selector(nextStep), for:.touchUpInside)
+     
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +25,11 @@ class PNSwiftViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @objc func nextStep() {
+        
+        let profile = PNProfileViewController()
+        navigationController?.pushViewController(profile, animated: true)
+    }
 
     
 }

@@ -6,3 +6,4 @@
 #import "BaseTabBarController.h"
 #import "BaseViewController.h"
 #import "BaseNavigationController.h"
+#import "PNProfileViewController.h"

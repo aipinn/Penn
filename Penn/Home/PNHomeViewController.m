@@ -22,6 +22,7 @@ static NSString * const reuseCellId = @"HomeCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Home";
     [self setupUI];
     [self.dataSource addObjectsFromArray:@[
                                            @"PNKitViewController",
@@ -72,7 +73,9 @@ static NSString * const reuseCellId = @"HomeCell";
     //下一级:swift
     UIBarButtonItem * right = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"bottomNav-forwardEngaged"] style:UIBarButtonItemStylePlain target:self action:@selector(nextSwift)];
     self.navigationItem.rightBarButtonItem = right;
-    
+    //左边按钮
+    UIBarButtonItem * left = [[UIBarButtonItem alloc] initWithTitle:@"试试" style:UIBarButtonItemStylePlain target:self action:nil];
+    self.navigationItem.leftBarButtonItem = left;
     
 
     
