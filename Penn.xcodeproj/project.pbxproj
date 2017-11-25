@@ -24,10 +24,13 @@
 		D5AAC56B1FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC5691FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png */; };
 		D5AAC56E1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC56C1FC7EDA900A9BD86 /* btn_addPicture_BgImage@3x.png */; };
 		D5AAC56F1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC56D1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@2x.png */; };
-		D5AAC5751FC7F17D00A9BD86 /* PNCrazyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5741FC7F17D00A9BD86 /* PNCrazyButton.swift */; };
+		D5AAC5751FC7F17D00A9BD86 /* PICrazyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5741FC7F17D00A9BD86 /* PICrazyButton.swift */; };
 		D5AAC57C1FC8029200A9BD86 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC57B1FC8029200A9BD86 /* BaseTabBarController.m */; };
 		D5AAC5801FC8030300A9BD86 /* PNProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC57F1FC8030300A9BD86 /* PNProfileViewController.m */; };
 		D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5821FC8039C00A9BD86 /* BaseNavigationController.m */; };
+		D5AAC5851FC8112500A9BD86 /* PNSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5841FC8112500A9BD86 /* PNSwiftViewController.swift */; };
+		D5AAC58A1FC8130D00A9BD86 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5891FC8130D00A9BD86 /* UIButton+Addition.m */; };
+		D5AAC5D51FC915C200A9BD86 /* PICrazyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC5D41FC915C200A9BD86 /* PICrazyButton.xib */; };
 		D5B7C2421F611501001FA29C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2411F611501001FA29C /* main.m */; };
 		D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2441F611501001FA29C /* AppDelegate.m */; };
 		D5B7C2481F611501001FA29C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2471F611501001FA29C /* ViewController.m */; };
@@ -36,7 +39,6 @@
 		D5B7C2501F611501001FA29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B7C24E1F611501001FA29C /* LaunchScreen.storyboard */; };
 		D5B7C25B1F611501001FA29C /* PennTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C25A1F611501001FA29C /* PennTests.m */; };
 		D5B7C2661F611501001FA29C /* PennUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2651F611501001FA29C /* PennUITests.m */; };
-		D5B92B2E1FAFFE4200726C35 /* PNSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B92B2D1FAFFE4200726C35 /* PNSwiftViewController.swift */; };
 		D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD01A1FAD63980098D8DF /* PNButton.m */; };
 		D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD0291FAD6F9E0098D8DF /* PNKitViewController.m */; };
 		D5BAD02C1FAD6F9E0098D8DF /* PNKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD02A1FAD6F9E0098D8DF /* PNKitViewController.xib */; };
@@ -87,13 +89,17 @@
 		D5AAC5691FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bottomNav-forwardEngaged@3x.png"; path = "../../../Downloads/firefox-ios-master/Client/Frontend/Menu/Menu.xcassets/bottomNav-forwardEngaged.imageset/bottomNav-forwardEngaged@3x.png"; sourceTree = "<group>"; };
 		D5AAC56C1FC7EDA900A9BD86 /* btn_addPicture_BgImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_addPicture_BgImage@3x.png"; sourceTree = "<group>"; };
 		D5AAC56D1FC7EDAA00A9BD86 /* btn_addPicture_BgImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_addPicture_BgImage@2x.png"; sourceTree = "<group>"; };
-		D5AAC5741FC7F17D00A9BD86 /* PNCrazyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNCrazyButton.swift; sourceTree = "<group>"; };
+		D5AAC5741FC7F17D00A9BD86 /* PICrazyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PICrazyButton.swift; sourceTree = "<group>"; };
 		D5AAC57A1FC8029200A9BD86 /* BaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
 		D5AAC57B1FC8029200A9BD86 /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		D5AAC57E1FC8030300A9BD86 /* PNProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNProfileViewController.h; sourceTree = "<group>"; };
 		D5AAC57F1FC8030300A9BD86 /* PNProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNProfileViewController.m; sourceTree = "<group>"; };
 		D5AAC5811FC8039C00A9BD86 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		D5AAC5821FC8039C00A9BD86 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		D5AAC5841FC8112500A9BD86 /* PNSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNSwiftViewController.swift; sourceTree = "<group>"; };
+		D5AAC5881FC8130D00A9BD86 /* UIButton+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Addition.h"; sourceTree = "<group>"; };
+		D5AAC5891FC8130D00A9BD86 /* UIButton+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
+		D5AAC5D41FC915C200A9BD86 /* PICrazyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PICrazyButton.xib; sourceTree = "<group>"; };
 		D5B7C23D1F611501001FA29C /* Penn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Penn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B7C2411F611501001FA29C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D5B7C2431F611501001FA29C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,7 +117,6 @@
 		D5B7C2651F611501001FA29C /* PennUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennUITests.m; sourceTree = "<group>"; };
 		D5B7C2671F611501001FA29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5B92B2C1FAFFE4100726C35 /* Penn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Penn-Bridging-Header.h"; sourceTree = "<group>"; };
-		D5B92B2D1FAFFE4200726C35 /* PNSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNSwiftViewController.swift; sourceTree = "<group>"; };
 		D5BAD0191FAD63980098D8DF /* PNButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNButton.h; sourceTree = "<group>"; };
 		D5BAD01A1FAD63980098D8DF /* PNButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNButton.m; sourceTree = "<group>"; };
 		D5BAD0281FAD6F9E0098D8DF /* PNKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNKitViewController.h; sourceTree = "<group>"; };
@@ -192,7 +197,8 @@
 				D5AAC5581FC7EAA700A9BD86 /* PNCrazyButton.h */,
 				D5AAC5591FC7EAA700A9BD86 /* PNCrazyButton.m */,
 				D5AAC55D1FC7EAD100A9BD86 /* PNCrazyButton.xib */,
-				D5AAC5741FC7F17D00A9BD86 /* PNCrazyButton.swift */,
+				D5AAC5741FC7F17D00A9BD86 /* PICrazyButton.swift */,
+				D5AAC5D41FC915C200A9BD86 /* PICrazyButton.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,9 +241,9 @@
 				D5BAD0221FAD65CE0098D8DF /* Func */,
 				D5BAD0251FAD663E0098D8DF /* Home */,
 				D5BAD0261FAD66510098D8DF /* Extension */,
-				D5BAD0271FAD66720098D8DF /* Main */,
 				D5BAD0331FADA3D10098D8DF /* PNKit */,
 				D594E31B1FB69A4A00255114 /* PNFundation */,
+				D5BAD0271FAD66720098D8DF /* Main */,
 				D5B7C2401F611501001FA29C /* Supporting Files */,
 			);
 			path = Penn;
@@ -247,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				D5AAC55F1FC7EBD200A9BD86 /* NativeImg */,
+				D5B92B2C1FAFFE4100726C35 /* Penn-Bridging-Header.h */,
 				D5BAD0321FAD87AC0098D8DF /* Global.h */,
 				D5B7C2511F611501001FA29C /* Info.plist */,
 				D5B7C2411F611501001FA29C /* main.m */,
@@ -288,6 +295,7 @@
 			children = (
 				D58534201F63FF6800F4C588 /* PNHomeViewController.h */,
 				D58534211F63FF6800F4C588 /* PNHomeViewController.m */,
+				D5AAC5841FC8112500A9BD86 /* PNSwiftViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -297,6 +305,8 @@
 			children = (
 				D5BAD0191FAD63980098D8DF /* PNButton.h */,
 				D5BAD01A1FAD63980098D8DF /* PNButton.m */,
+				D5AAC5881FC8130D00A9BD86 /* UIButton+Addition.h */,
+				D5AAC5891FC8130D00A9BD86 /* UIButton+Addition.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -333,11 +343,9 @@
 			isa = PBXGroup;
 			children = (
 				D5AAC5761FC7F63E00A9BD86 /* View */,
-				D5B92B2D1FAFFE4200726C35 /* PNSwiftViewController.swift */,
 				D5BAD0281FAD6F9E0098D8DF /* PNKitViewController.h */,
 				D5BAD0291FAD6F9E0098D8DF /* PNKitViewController.m */,
 				D5BAD02A1FAD6F9E0098D8DF /* PNKitViewController.xib */,
-				D5B92B2C1FAFFE4100726C35 /* Penn-Bridging-Header.h */,
 			);
 			path = PNKit;
 			sourceTree = "<group>";
@@ -485,6 +493,7 @@
 				D5B7C24D1F611501001FA29C /* Assets.xcassets in Resources */,
 				D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */,
 				D5AAC5621FC7ED5B00A9BD86 /* action-remove@3x.png in Resources */,
+				D5AAC5D51FC915C200A9BD86 /* PICrazyButton.xib in Resources */,
 				D5AAC56B1FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png in Resources */,
 				D5B7C24B1F611501001FA29C /* Main.storyboard in Resources */,
 				D5AAC56A1FC7ED9400A9BD86 /* bottomNav-forwardEngaged@3x.png in Resources */,
@@ -651,21 +660,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5B92B2E1FAFFE4200726C35 /* PNSwiftViewController.swift in Sources */,
 				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
 				D5AAC5801FC8030300A9BD86 /* PNProfileViewController.m in Sources */,
 				D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */,
 				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
+				D5AAC5851FC8112500A9BD86 /* PNSwiftViewController.swift in Sources */,
 				D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */,
 				D594E31A1FB69A3D00255114 /* PNFundationController.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
 				D5AAC57C1FC8029200A9BD86 /* BaseTabBarController.m in Sources */,
-				D5AAC5751FC7F17D00A9BD86 /* PNCrazyButton.swift in Sources */,
+				D5AAC5751FC7F17D00A9BD86 /* PICrazyButton.swift in Sources */,
 				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
 				D5B7C2421F611501001FA29C /* main.m in Sources */,
 				D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */,
+				D5AAC58A1FC8130D00A9BD86 /* UIButton+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,6 +761,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -770,6 +781,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = Penn;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -806,6 +818,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -818,6 +831,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = Penn;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -830,6 +844,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Penn.pch";
@@ -837,7 +852,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.penn.Penn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Penn/PNKit/Penn-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Penn/Penn-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -850,6 +865,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4B2WMR5XE5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Penn.pch";
@@ -857,7 +873,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.penn.Penn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Penn/PNKit/Penn-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Penn/Penn-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -9,8 +9,10 @@
 #import "PNKitViewController.h"
 #import "PNButton.h"
 #import "PNCrazyButton.h"
+#import "Penn-Swift.h"
 
 @interface PNKitViewController ()
+
 
 @end
 
@@ -21,6 +23,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self customCrazyBtn];
+
+    
+    
+    
+    
 
 }
 
@@ -57,6 +64,13 @@
     btn.center = self.view.center;
     [btn addTarget:self action:@selector(clickRedBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
+    PNButton * button = [[PNButton alloc] init];
+    [button buttonImage:@"bottomNav-forwardEngaged" title:nil];
+    button.callBack = ^(UIButton *button) {
+
+        
+    };
 }
 
 - (void)customButton{

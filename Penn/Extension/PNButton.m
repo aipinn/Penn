@@ -14,20 +14,66 @@
 // 每次点击会触发此方法, 将按钮添加到视图上时会调用
 -(void)layoutSubviews{
     [super layoutSubviews];
-//    self.imageView.backgroundColor = [UIColor purpleColor];
-//    self.titleLabel.backgroundColor = [UIColor greenColor];
-    
 }
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        self.contentEdgeInsets = UIEdgeInsetsMake(8, 4, 8, 4);
+        [self addAction];
+        [self setupUI];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self addAction];
+        [self setupUI];
     }
     return self;
 }
 
+/**block 按钮回调事件*/
+- (void)doAction:(UIButton *)sender{
+    if (self.callBack) {
+        self.callBack(sender);
+    }
+}
 
+- (void)setupUI{
+    
+    
+}
+
+- (void)addAction{
+    
+    [self addTarget:self action:@selector(doAction:) forControlEvents:UIControlEventTouchUpInside];
+
+}
+
+- (void)buttonImage:(NSString *)string title:(NSString *)title{
+    [self setImage:[UIImage imageNamed:string] forState:UIControlStateNormal];
+    [self setTitle:title forState:UIControlStateNormal];
+}
+- (void)buttonImage:(NSString *)string highlightedImage:(NSString *)highStr title:(NSString *)title{
+    [self buttonImage:string title:title];
+    [self setImage:[UIImage imageNamed:string] forState:UIControlStateHighlighted];
+}
+
+- (void)buttonImage:(NSString *)string selectedImage:(NSString *)highStr title:(NSString *)title selectedTitle:(NSString *)selectedTitle{
+    [self buttonImage:string title:title];
+    [self setImage:[UIImage imageNamed:highStr] forState:UIControlStateSelected];
+    [self setTitle:selectedTitle forState:UIControlStateSelected];
+}
+
+
+
+
+
+#pragma mark - Origin Methods
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
     
     switch (self.pn_contentMode) {

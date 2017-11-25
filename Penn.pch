@@ -13,6 +13,8 @@
 
 #import "Global.h"
 
+#import "UIButton+Addition.h"
+#import "PNButton.h"
 
 #endif
 #endif /* Penn_pch */

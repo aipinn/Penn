@@ -10,8 +10,7 @@
 #import "PNSocketController.h"
 #import "PNKitViewController.h"
 #import "PNFundationController.h"
-
-#import "Global.h"
+#import "Penn-Swift.h"
 
 static NSString * const reuseCellId = @"HomeCell";
 
@@ -56,13 +55,27 @@ static NSString * const reuseCellId = @"HomeCell";
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+#pragma mark - Action
+
+- (void)nextSwift{
+    PNSwiftViewController * swift = [[PNSwiftViewController alloc] init];
+    [self.navigationController pushViewController:swift animated:YES];
+}
 
 #pragma mark - Private Methods
 
 - (void)setupUI{
     [super setupUI];
-    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseCellId];
+    
+    //下一级
+
+    UIBarButtonItem * right = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"bottomNav-forwardEngaged"] style:UIBarButtonItemStylePlain target:self action:@selector(nextSwift)];
+    self.navigationItem.rightBarButtonItem = right;
+    
+    
+
+    
 }
 
 
