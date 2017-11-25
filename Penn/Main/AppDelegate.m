@@ -25,34 +25,42 @@
     [window makeKeyAndVisible];
     self.window = window;
     
+    [self customTabBarAppearance];
+    
     return YES;
 }
 
+/**
+ tabbar 显示样式
+ */
+- (void)customTabBarAppearance{
+    //1. 总体颜色
+    //背景色 / tintColor
+    //方法一:UIView的属性
+    //[[UITabBar appearance] setBackgroundColor:[UIColor colorWithWhite:0.8 alpha:1]];
+    //方法二: UITabBar的特有属性
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithWhite:0.8 alpha:1]];
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-}
+    
+    //2.字体设置
+    //方法一:简单设置
+    [[UITabBar appearance] setUnselectedItemTintColor:[UIColor greenColor]];
+    [[UITabBar appearance] setTintColor:[UIColor orangeColor]];
+    //方法二:可以更加多样化设置
+    //    [[UITabBarItem appearance] setTitleTextAttributes:@{
+    //                                                        NSForegroundColorAttributeName:[UIColor darkTextColor]
+    //                                                        } forState:UIControlStateNormal];
+    //    [[UITabBarItem appearance] setTitleTextAttributes:@{
+    //                                                        NSForegroundColorAttributeName:[UIColor purpleColor]
+    //                                                        } forState:UIControlStateSelected];
+    
+    //3. 图片颜色
+    //方法一:直接在Assets中选中tabbar的图片,在检视板中设置属性:sender as-->original image
+    //方法二:在BaseTabbar中设置图片时使用图片的渲染模式:UIImageRenderingModeAlwaysOriginal
+    //方法三:storyboard中:identity inspector 添加kvc属性
 
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-}
-
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    
 }
 
 

@@ -21,6 +21,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = MYColor(39,40,34);
 
+
     
 }
 

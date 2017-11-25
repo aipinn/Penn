@@ -58,6 +58,7 @@ static NSString * const reuseCellId = @"HomeCell";
 #pragma mark - Action
 
 - (void)nextSwift{
+    
     PNSwiftViewController * swift = [[PNSwiftViewController alloc] init];
     [self.navigationController pushViewController:swift animated:YES];
 }
@@ -68,8 +69,7 @@ static NSString * const reuseCellId = @"HomeCell";
     [super setupUI];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseCellId];
     
-    //下一级
-
+    //下一级:swift
     UIBarButtonItem * right = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"bottomNav-forwardEngaged"] style:UIBarButtonItemStylePlain target:self action:@selector(nextSwift)];
     self.navigationItem.rightBarButtonItem = right;
     

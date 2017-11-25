@@ -31,6 +31,7 @@
 		D5AAC5851FC8112500A9BD86 /* PNSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5841FC8112500A9BD86 /* PNSwiftViewController.swift */; };
 		D5AAC58A1FC8130D00A9BD86 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5891FC8130D00A9BD86 /* UIButton+Addition.m */; };
 		D5AAC5D51FC915C200A9BD86 /* PICrazyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5AAC5D41FC915C200A9BD86 /* PICrazyButton.xib */; };
+		D5AAC5DA1FC9449900A9BD86 /* PNFuncController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AAC5D91FC9449900A9BD86 /* PNFuncController.m */; };
 		D5B7C2421F611501001FA29C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2411F611501001FA29C /* main.m */; };
 		D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2441F611501001FA29C /* AppDelegate.m */; };
 		D5B7C2481F611501001FA29C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B7C2471F611501001FA29C /* ViewController.m */; };
@@ -100,6 +101,8 @@
 		D5AAC5881FC8130D00A9BD86 /* UIButton+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Addition.h"; sourceTree = "<group>"; };
 		D5AAC5891FC8130D00A9BD86 /* UIButton+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
 		D5AAC5D41FC915C200A9BD86 /* PICrazyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PICrazyButton.xib; sourceTree = "<group>"; };
+		D5AAC5D81FC9449900A9BD86 /* PNFuncController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNFuncController.h; sourceTree = "<group>"; };
+		D5AAC5D91FC9449900A9BD86 /* PNFuncController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNFuncController.m; sourceTree = "<group>"; };
 		D5B7C23D1F611501001FA29C /* Penn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Penn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B7C2411F611501001FA29C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D5B7C2431F611501001FA29C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -237,12 +240,12 @@
 		D5B7C23F1F611501001FA29C /* Penn */ = {
 			isa = PBXGroup;
 			children = (
-				D5AAC57D1FC802E600A9BD86 /* Profile */,
-				D5BAD0221FAD65CE0098D8DF /* Func */,
 				D5BAD0251FAD663E0098D8DF /* Home */,
-				D5BAD0261FAD66510098D8DF /* Extension */,
 				D5BAD0331FADA3D10098D8DF /* PNKit */,
 				D594E31B1FB69A4A00255114 /* PNFundation */,
+				D5BAD0221FAD65CE0098D8DF /* Func */,
+				D5AAC57D1FC802E600A9BD86 /* Profile */,
+				D5BAD0261FAD66510098D8DF /* Extension */,
 				D5BAD0271FAD66720098D8DF /* Main */,
 				D5B7C2401F611501001FA29C /* Supporting Files */,
 			);
@@ -286,6 +289,8 @@
 				D585341B1F63FE2F00F4C588 /* PNSocketController.h */,
 				D585341C1F63FE2F00F4C588 /* PNSocketController.m */,
 				D585341D1F63FE2F00F4C588 /* PNSocketController.xib */,
+				D5AAC5D81FC9449900A9BD86 /* PNFuncController.h */,
+				D5AAC5D91FC9449900A9BD86 /* PNFuncController.m */,
 			);
 			path = Func;
 			sourceTree = "<group>";
@@ -674,6 +679,7 @@
 				D5AAC5751FC7F17D00A9BD86 /* PICrazyButton.swift in Sources */,
 				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
 				D5B7C2421F611501001FA29C /* main.m in Sources */,
+				D5AAC5DA1FC9449900A9BD86 /* PNFuncController.m in Sources */,
 				D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */,
 				D5AAC58A1FC8130D00A9BD86 /* UIButton+Addition.m in Sources */,
 			);
