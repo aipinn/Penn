@@ -31,6 +31,13 @@
 #pragma mark - overwrite
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    //0. push之前隐藏/展示tabbar
+    if (self.viewControllers.count == 1) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }else{
+        viewController.hidesBottomBarWhenPushed = NO;
+        
+    }
     [super pushViewController:viewController animated:animated];
     
     //1.获取特定类的所有导航类条,并修改属性
@@ -45,6 +52,7 @@
     }
     
     //2. 设置返回:一般是最后一级为'上一级的标题'; 更深层次为"返回"
+    //2.1 push之后隐藏活显示tabbar
     if (self.viewControllers.count == 1) {
 
     }else{

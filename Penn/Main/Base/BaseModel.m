@@ -10,4 +10,7 @@
 
 @implementation BaseModel
 
+- (NSString *)modelDescription{
+    return [super modelDescription];
+}
 @end
