@@ -11,8 +11,11 @@
 #import "PNCrazyButton.h"
 #import "Penn-Swift.h"
 
+static NSString * const reuseCellId = @"PNKitCell";
+
 @interface PNKitViewController ()
 
+@property (nonatomic, strong) NSArray * clsNameArr;
 
 @end
 
@@ -21,15 +24,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    [self customCrazyBtn];
-
-    
-    
+    self.title = @"Kit";
+    [self setupUI];
     
     
 
 }
+#pragma mark - TableView Delegate/DataSource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:reuseCellId forIndexPath:indexPath];
+    cell.textLabel.text = self.dataSource[indexPath.row];
+    return cell;
+    
+}
+
 
 #pragma mark - Action
 
@@ -42,7 +52,6 @@
         
         CGAffineTransform t = sender.imageView.transform;
         //1. sender.imageView.transform = CGAffineTransformMakeRotation(M_PI);
-        //2.
         sender.imageView.transform = CGAffineTransformRotate(t, M_PI);
 
         sender.imageView.alpha = 0;
@@ -100,7 +109,23 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - PrepareData
 
+- (void)prepareData{
+    
+    self.dataSource = [NSMutableArray arrayWithArray:@[
+                                                       @"PNKeyboardController"
+                                                       ]];
+}
+
+#pragma mark - SetupUI
+
+- (void)setupUI{
+    [super setupUI];
+    [self prepareData];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseCellId];
+}
 
 
 @end

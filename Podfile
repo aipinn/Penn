@@ -9,5 +9,6 @@ pod 'SDWebImage'
 pod 'AFNetworking'
 pod 'YYKit'
 pod 'pop'
+pod 'MJRefresh'
 
 end

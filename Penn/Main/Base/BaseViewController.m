@@ -38,7 +38,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [[UITableViewCell alloc] init];
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSString * clsName = self.dataSource[indexPath.row];
+    BaseViewController * vc = [[NSClassFromString(clsName) alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 #pragma mark - UI
 
 - (void)setupUI{

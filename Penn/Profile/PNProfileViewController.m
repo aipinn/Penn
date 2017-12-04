@@ -7,6 +7,7 @@
 //
 
 #import "PNProfileViewController.h"
+#import "PNLoginView.h"
 
 @interface PNProfileViewController ()
 
@@ -14,24 +15,42 @@
 
 @implementation PNProfileViewController
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self addPopLoginView];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - pop loginView
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)addPopLoginView{
+    
+    PNLoginView * loginView = [PNLoginView loginView];
+    //loginView.bounds = CGRectMake(self.view.centerX, 0, 200, 150);
+    loginView.centerX = self.view.centerX;
+    [self.view addSubview:loginView];
+    //1. 创建spring动画
+    POPSpringAnimation * anim = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    //2. 设置动画属性
+    anim.fromValue = @(0);
+    anim.toValue = @(self.view.centerY);
+    //[0, 20] default 12
+    anim.springSpeed = 10;
+    //anim.velocity = @(20);
+    //[0, 20] default 4
+    anim.springBounciness = 20;
+    //3. 添加动画
+    [loginView pop_addAnimation:anim forKey:nil];
 }
-*/
 
 @end

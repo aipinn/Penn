@@ -10,4 +10,7 @@
 
 @interface PNLoginView : UIView
 
+@property (weak, nonatomic) IBOutlet UIButton *close;
++ (PNLoginView *)loginView;
+
 @end
