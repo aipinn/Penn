@@ -20,5 +20,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
+#import "Penn-Swift.h"
+
 #endif
 #endif /* Penn_pch */

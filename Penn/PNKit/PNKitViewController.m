@@ -123,9 +123,16 @@ static NSString * const reuseCellId = @"PNKitCell";
 - (void)setupUI{
     [super setupUI];
     [self prepareData];
-    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseCellId];
+    //下一级:swift
+    UIBarButtonItem * right = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"bottomNav-forwardEngaged"] style:UIBarButtonItemStylePlain target:self action:@selector(nextSwift)];
+    self.navigationItem.rightBarButtonItem = right;
 }
 
+#pragma mark - Action
+- (void)nextSwift{
+    PNKitSwiftViewController * swift = [[PNKitSwiftViewController alloc] init];
+    [self.navigationController pushViewController:swift animated:YES];
+}
 
 @end
