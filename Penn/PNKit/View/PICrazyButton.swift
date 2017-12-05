@@ -16,14 +16,14 @@ class PICrazyButton: UIControl {
     var image:UIImage?
     
     
-    func crazyButton(imageStr: String , title: String) -> PICrazyButton {
+    class func crazyButton(imageStr: String , title: String) -> PICrazyButton {
 
          let nib = UINib(nibName:"PICrazyButton", bundle: nil)
          let btn = nib.instantiate(withOwner: nil, options: nil)[0] as! PICrazyButton
-        btn.imageView.image = UIImage(named: imageStr)
-        btn.titleLabel.text = title
+            btn.imageView.image = UIImage(named: imageStr)
+            btn.titleLabel.text = title
 
-         return btn
+        return btn
 
         
     }

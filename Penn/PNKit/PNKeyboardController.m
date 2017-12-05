@@ -27,20 +27,21 @@
     self.tv1.delegate = self;
     //self.tv2.delegate = self;
     self.tf.delegate = self;
+
     //添加键盘通知
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(KeyboardWillChangeFrame:)
                                                  name:UIKeyboardWillChangeFrameNotification
-                                               object:self.tv1];
+                                               object:nil];
     
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-   // [self.tv1 becomeFirstResponder];
+
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.tv1 resignFirstResponder];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -65,16 +66,23 @@
     }];
     
 }
+/**
+    为textfield添加辅助视图inputAccessoryView, 并且切换inputView
+ */
 - (void)changeKeyboard{
+    //必须通过通知才能准确实时获取键盘高度, 此处是271
     //1. 创建新视图,指定高度即可
-    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 253)];
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 271)];
     view.backgroundColor = [UIColor orangeColor];
     //2. 设置视图
-    self.tv1.inputView = view;
+    self.tf.inputView = view;
     //3. 刷新视图
-    [self.tv1 reloadInputViews];
+    [self.tf reloadInputViews];
     //4. option: 设置辅助视图
-    self.tv1.inputAccessoryView = self.toolbar;
+    //不能直接使用self.toolbar, 辅助视图不能有父视图
+    UIToolbar * tb = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+    tb.backgroundColor = [UIColor blueColor];
+    self.tf.inputAccessoryView = tb;
 
 }
 
@@ -84,10 +92,15 @@
 
 }
 - (void)textViewDidBeginEditing:(UITextView *)textView{
+   
     
 }
+
+#pragma mark - UITextFieldDelegate
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     [self changeKeyboard];
 }
+
 
 @end

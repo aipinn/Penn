@@ -15,8 +15,12 @@ class PNKitSwiftViewController: BaseViewController {
     @IBOutlet weak var tv2: UITextView!
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
     
+    var customKeyboard: PNCustomKeyboard?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        customKeyboard = PNCustomKeyboard.customKeyboardView()
         ///注册键盘监听通知
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChangeFrame),
                                                name: NSNotification.Name.UIKeyboardWillChangeFrame,
@@ -50,5 +54,19 @@ class PNKitSwiftViewController: BaseViewController {
         }
         
     }
+    
+    
 
 }
+
+//MARK: TextViewDelegate
+extension PNKitSwiftViewController: UITextViewDelegate{
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        //1.
+        tv1.inputView = customKeyboard
+        //2. 切记刷新
+        tv1.reloadInputViews()
+    }
+}
+

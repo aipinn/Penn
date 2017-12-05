@@ -13,7 +13,7 @@ class PNSwiftViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Swift"
-        let button = PICrazyButton().crazyButton(imageStr:"bicycle", title:"自行车")
+        let button = PICrazyButton.crazyButton(imageStr:"bicycle", title:"自行车")
         button.center = view.center
         view.addSubview(button)
         button.addTarget(self, action: #selector(nextStep), for:.touchUpInside)

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AFA3269A0284ADD10DACE575 /* Pods_Penn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E2548721EB82E0044BD24E /* Pods_Penn.framework */; };
+		D507CDB51FD69FBA00401C4E /* PNCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507CDB41FD69FBA00401C4E /* PNCustomKeyboard.swift */; };
+		D507CDB71FD69FC900401C4E /* PNCustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = D507CDB61FD69FC900401C4E /* PNCustomKeyboard.xib */; };
+		D507CDBA1FD6AA4000401C4E /* PNCustomKeyboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507CDB81FD6AA4000401C4E /* PNCustomKeyboardCell.swift */; };
+		D507CDBB1FD6AA4000401C4E /* PNCustomKeyboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D507CDB91FD6AA4000401C4E /* PNCustomKeyboardCell.xib */; };
 		D529F36A1FD296B8008C67F3 /* backRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D529F3631FD296B7008C67F3 /* backRed@2x.png */; };
 		D529F36B1FD296B8008C67F3 /* action-remove@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D529F3641FD296B7008C67F3 /* action-remove@3x.png */; };
 		D529F36C1FD296B8008C67F3 /* btn_addPicture_BgImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D529F3651FD296B7008C67F3 /* btn_addPicture_BgImage@3x.png */; };
@@ -73,6 +77,10 @@
 		64E2548721EB82E0044BD24E /* Pods_Penn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Penn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971DC9A86F7BC0CD644EE23A /* Pods-Penn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Penn/Pods-Penn.debug.xcconfig"; sourceTree = "<group>"; };
 		C30E7A2F4D373AAEFFB11046 /* libPods-PennUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PennUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D507CDB41FD69FBA00401C4E /* PNCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNCustomKeyboard.swift; sourceTree = "<group>"; };
+		D507CDB61FD69FC900401C4E /* PNCustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNCustomKeyboard.xib; sourceTree = "<group>"; };
+		D507CDB81FD6AA4000401C4E /* PNCustomKeyboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNCustomKeyboardCell.swift; sourceTree = "<group>"; };
+		D507CDB91FD6AA4000401C4E /* PNCustomKeyboardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNCustomKeyboardCell.xib; sourceTree = "<group>"; };
 		D529F3631FD296B7008C67F3 /* backRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backRed@2x.png"; sourceTree = "<group>"; };
 		D529F3641FD296B7008C67F3 /* action-remove@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-remove@3x.png"; sourceTree = "<group>"; };
 		D529F3651FD296B7008C67F3 /* btn_addPicture_BgImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_addPicture_BgImage@3x.png"; sourceTree = "<group>"; };
@@ -208,6 +216,10 @@
 				D5AAC55D1FC7EAD100A9BD86 /* PNCrazyButton.xib */,
 				D5AAC5741FC7F17D00A9BD86 /* PICrazyButton.swift */,
 				D5AAC5D41FC915C200A9BD86 /* PICrazyButton.xib */,
+				D507CDB41FD69FBA00401C4E /* PNCustomKeyboard.swift */,
+				D507CDB61FD69FC900401C4E /* PNCustomKeyboard.xib */,
+				D507CDB81FD6AA4000401C4E /* PNCustomKeyboardCell.swift */,
+				D507CDB91FD6AA4000401C4E /* PNCustomKeyboardCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -497,6 +509,7 @@
 				D529F36B1FD296B8008C67F3 /* action-remove@3x.png in Resources */,
 				D5B7C2501F611501001FA29C /* LaunchScreen.storyboard in Resources */,
 				D529F36C1FD296B8008C67F3 /* btn_addPicture_BgImage@3x.png in Resources */,
+				D507CDBB1FD6AA4000401C4E /* PNCustomKeyboardCell.xib in Resources */,
 				D5AAC55E1FC7EAD100A9BD86 /* PNCrazyButton.xib in Resources */,
 				D529F3781FD2A18B008C67F3 /* PNLoginView.xib in Resources */,
 				D529F3701FD296B8008C67F3 /* bottomNav-forwardEngaged@3x.png in Resources */,
@@ -511,6 +524,7 @@
 				D5BAD02C1FAD6F9E0098D8DF /* PNKitViewController.xib in Resources */,
 				D529F36A1FD296B8008C67F3 /* backRed@2x.png in Resources */,
 				D529F36D1FD296B8008C67F3 /* action-remove@2x.png in Resources */,
+				D507CDB71FD69FC900401C4E /* PNCustomKeyboard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +600,7 @@
 				D529F3731FD29B50008C67F3 /* BaseModel.m in Sources */,
 				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
 				D5AAC5801FC8030300A9BD86 /* PNProfileViewController.m in Sources */,
+				D507CDB51FD69FBA00401C4E /* PNCustomKeyboard.swift in Sources */,
 				D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */,
 				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
 				D529F3761FD2A17D008C67F3 /* PNLoginView.m in Sources */,
@@ -596,6 +611,7 @@
 				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
 				D5AAC57C1FC8029200A9BD86 /* BaseTabBarController.m in Sources */,
+				D507CDBA1FD6AA4000401C4E /* PNCustomKeyboardCell.swift in Sources */,
 				D5AAC5751FC7F17D00A9BD86 /* PICrazyButton.swift in Sources */,
 				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
 				D5B7C2421F611501001FA29C /* main.m in Sources */,
