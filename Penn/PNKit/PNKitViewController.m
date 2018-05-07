@@ -10,6 +10,8 @@
 #import "PNButton.h"
 #import "PNCrazyButton.h"
 #import "Penn-Swift.h"
+#import "PNViewButton.h"
+#import "PNEmptyButton.h"
 
 @interface PNKitViewController ()
 
@@ -24,10 +26,6 @@
     
     [self customCrazyBtn];
 
-    
-    
-    
-    
 
 }
 
@@ -54,23 +52,51 @@
     
 }
 
+- (void)clickviewbtn:(UIControl *)sender{
+    NSLog(@"viewBtn clicked");
+}
+- (void)clickemptyBtn:(UIControl *)sender{
+    NSLog(@"emptyBtn clicked");
+}
 #pragma mark - CustomView
 
 - (void)customCrazyBtn{
-    
-    PNCrazyButton * btn = [PNCrazyButton crazyButton];
-    btn.backgroundColor = [UIColor grayColor];
-    [btn crazyButtonImage:@"backRed" title:@"返回"];
-    btn.center = self.view.center;
-    [btn addTarget:self action:@selector(clickRedBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    
-    PNButton * button = [[PNButton alloc] init];
-    [button buttonImage:@"bottomNav-forwardEngaged" title:nil];
-    button.callBack = ^(UIButton *button) {
 
-        
-    };
+    PNEmptyButton * emptyBtn = [PNEmptyButton emptyButton];
+//    emptyBtn.frame = CGRectMake(100, 200, 200, 50);
+//    [emptyBtn addTarget:self action:@selector(clickemptyBtn:) forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer * etap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickemptyBtn:)];
+    [emptyBtn addGestureRecognizer:etap];
+    [self.view addSubview:emptyBtn];
+        [emptyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.view);
+            make.size.mas_equalTo(CGSizeMake(200, 50));
+        }];
+    
+//    PNViewButton * viewbtn = [PNViewButton viewButton];
+//    viewbtn.frame = CGRectMake(100, 100, 100, 100);
+//    UITapGestureRecognizer * vtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickviewbtn:)];
+//    [viewbtn addGestureRecognizer:vtap];
+////    [viewbtn addTarget:self action:@selector(clickviewbtn:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:viewbtn];
+//    [viewbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self.view);
+//        make.size.mas_equalTo(CGSizeMake(200, 200));
+//    }];
+    
+//    PNCrazyButton * btn = [PNCrazyButton crazyButton];
+//    btn.backgroundColor = [UIColor grayColor];
+//    [btn crazyButtonImage:@"backRed" title:@"返回"];
+//    btn.center = self.view.center;
+//    [btn addTarget:self action:@selector(clickRedBtn:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:btn];
+//
+//    PNButton * button = [[PNButton alloc] init];
+//    [button buttonImage:@"bottomNav-forwardEngaged" title:nil];
+//    button.callBack = ^(UIButton *button) {
+//
+//
+//    };
 }
 
 - (void)customButton{

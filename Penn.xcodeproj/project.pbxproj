@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236BAA0E209FE9B5006BD6B9 /* PNViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 236BAA0D209FE9B5006BD6B9 /* PNViewButton.m */; };
+		236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA0F209FEA4B006BD6B9 /* PNViewButton.xib */; };
+		236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */; };
+		236BAA15209FEC81006BD6B9 /* PNEmptyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */; };
 		AFA3269A0284ADD10DACE575 /* Pods_Penn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E2548721EB82E0044BD24E /* Pods_Penn.framework */; };
 		D529F36A1FD296B8008C67F3 /* backRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D529F3631FD296B7008C67F3 /* backRed@2x.png */; };
 		D529F36B1FD296B8008C67F3 /* action-remove@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D529F3641FD296B7008C67F3 /* action-remove@3x.png */; };
@@ -62,6 +66,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		236BAA0C209FE9B5006BD6B9 /* PNViewButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNViewButton.h; sourceTree = "<group>"; };
+		236BAA0D209FE9B5006BD6B9 /* PNViewButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNViewButton.m; sourceTree = "<group>"; };
+		236BAA0F209FEA4B006BD6B9 /* PNViewButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNViewButton.xib; sourceTree = "<group>"; };
+		236BAA11209FEC77006BD6B9 /* PNEmptyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNEmptyButton.h; sourceTree = "<group>"; };
+		236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNEmptyButton.m; sourceTree = "<group>"; };
+		236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNEmptyButton.xib; sourceTree = "<group>"; };
 		2AAB1F823A83E0823CAEB201 /* libPods-PennTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PennTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A58AB53F3ACAE3BE3C87FB3 /* Pods-Penn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Penn/Pods-Penn.release.xcconfig"; sourceTree = "<group>"; };
 		64E2548721EB82E0044BD24E /* Pods_Penn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Penn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +204,12 @@
 				D5AAC55D1FC7EAD100A9BD86 /* PNCrazyButton.xib */,
 				D5AAC5741FC7F17D00A9BD86 /* PICrazyButton.swift */,
 				D5AAC5D41FC915C200A9BD86 /* PICrazyButton.xib */,
+				236BAA0C209FE9B5006BD6B9 /* PNViewButton.h */,
+				236BAA0D209FE9B5006BD6B9 /* PNViewButton.m */,
+				236BAA0F209FEA4B006BD6B9 /* PNViewButton.xib */,
+				236BAA11209FEC77006BD6B9 /* PNEmptyButton.h */,
+				236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */,
+				236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,7 +386,6 @@
 				D5B7C23A1F611501001FA29C /* Frameworks */,
 				D5B7C23B1F611501001FA29C /* Resources */,
 				3BBF728D4E18176E59337019 /* [CP] Embed Pods Frameworks */,
-				E05D0B2230DE1843156E0472 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -480,8 +495,10 @@
 				D5B7C24D1F611501001FA29C /* Assets.xcassets in Resources */,
 				D529F36E1FD296B8008C67F3 /* btn_addPicture_BgImage@2x.png in Resources */,
 				D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */,
+				236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */,
 				D5AAC5D51FC915C200A9BD86 /* PICrazyButton.xib in Resources */,
 				D5B7C24B1F611501001FA29C /* Main.storyboard in Resources */,
+				236BAA15209FEC81006BD6B9 /* PNEmptyButton.xib in Resources */,
 				D529F36F1FD296B8008C67F3 /* backRed@3x.png in Resources */,
 				D5BAD02C1FAD6F9E0098D8DF /* PNKitViewController.xib in Resources */,
 				D529F36A1FD296B8008C67F3 /* backRed@2x.png in Resources */,
@@ -512,28 +529,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Penn/Pods-Penn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Penn/Pods-Penn-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E05D0B2230DE1843156E0472 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Penn/Pods-Penn-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F277577C4ECF3D9A435F0DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -542,13 +555,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Penn-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -564,10 +580,12 @@
 				D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */,
 				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
 				D5AAC5851FC8112500A9BD86 /* PNSwiftViewController.swift in Sources */,
+				236BAA0E209FE9B5006BD6B9 /* PNViewButton.m in Sources */,
 				D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */,
 				D594E31A1FB69A3D00255114 /* PNFundationController.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
+				236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
 				D5AAC57C1FC8029200A9BD86 /* BaseTabBarController.m in Sources */,
 				D5AAC5751FC7F17D00A9BD86 /* PICrazyButton.swift in Sources */,

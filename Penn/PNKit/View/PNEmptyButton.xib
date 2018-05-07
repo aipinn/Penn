@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="pF1-p3-hIa" customClass="PNEmptyButton">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="124"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="bicycle" translatesAutoresizingMaskIntoConstraints="NO" id="d3J-QI-c7Y">
+                    <rect key="frame" x="90" y="88" width="60" height="36"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFp-Nm-ZEI">
+                    <rect key="frame" x="0.0" y="0.0" width="67" height="30"/>
+                    <state key="normal" title="emptyBtn"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.94958204909824451" blue="0.619967976683655" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="d3J-QI-c7Y" firstAttribute="bottom" secondItem="d7s-xB-KaN" secondAttribute="bottom" id="4lY-9A-u0z"/>
+                <constraint firstItem="XFp-Nm-ZEI" firstAttribute="leading" secondItem="d7s-xB-KaN" secondAttribute="leading" id="MQV-CV-lh8"/>
+                <constraint firstItem="d3J-QI-c7Y" firstAttribute="trailing" secondItem="d7s-xB-KaN" secondAttribute="trailing" id="Y0O-Sw-15h"/>
+                <constraint firstItem="XFp-Nm-ZEI" firstAttribute="top" secondItem="d7s-xB-KaN" secondAttribute="top" id="jzJ-Wa-a6P"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="d7s-xB-KaN"/>
+            <connections>
+                <outlet property="imgView" destination="d3J-QI-c7Y" id="GNA-ne-F8M"/>
+            </connections>
+            <point key="canvasLocation" x="111" y="-441"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bicycle" width="60" height="36"/>
+    </resources>
+</document>
