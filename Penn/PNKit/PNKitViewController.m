@@ -2,8 +2,8 @@
 //  PNKitViewController.m
 //  Penn
 //
-//  Created by SanRong on 2017/11/4.
-//  Copyright © 2017年 SanRong. All rights reserved.
+//  Created by PENN on 2017/11/4.
+//  Copyright © 2017年 PENN. All rights reserved.
 //
 
 #import "PNKitViewController.h"
@@ -25,7 +25,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self customCrazyBtn];
+    [self customButton];
 
+    NSMutableDictionary * dict = [NSMutableDictionary new];
+    NSString * str = nil;
+    [dict setObject:str forKey:@"key"];
 
 }
 
@@ -62,41 +66,40 @@
 
 - (void)customCrazyBtn{
 
+    //1. Empty xib中手动添加view 可以使用frame控制控件位置大小
     PNEmptyButton * emptyBtn = [PNEmptyButton emptyButton];
-//    emptyBtn.frame = CGRectMake(100, 200, 200, 50);
-//    [emptyBtn addTarget:self action:@selector(clickemptyBtn:) forControlEvents:UIControlEventTouchUpInside];
+    emptyBtn.frame = CGRectMake(SCREEN_WIDTH-150, 88, 150, 50);
+    //    [emptyBtn addTarget:self action:@selector(clickemptyBtn:) forControlEvents:UIControlEventTouchUpInside];
     UITapGestureRecognizer * etap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickemptyBtn:)];
     [emptyBtn addGestureRecognizer:etap];
     [self.view addSubview:emptyBtn];
-        [emptyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self.view);
-            make.size.mas_equalTo(CGSizeMake(200, 50));
-        }];
+    // 或者使用约束
+    //        [emptyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    //            make.center.equalTo(self.view);
+    //            make.size.mas_equalTo(CGSizeMake(200, 50));
+    //        }];
     
-//    PNViewButton * viewbtn = [PNViewButton viewButton];
-//    viewbtn.frame = CGRectMake(100, 100, 100, 100);
-//    UITapGestureRecognizer * vtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickviewbtn:)];
-//    [viewbtn addGestureRecognizer:vtap];
-////    [viewbtn addTarget:self action:@selector(clickviewbtn:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:viewbtn];
-//    [viewbtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(self.view);
-//        make.size.mas_equalTo(CGSizeMake(200, 200));
-//    }];
+    //2. View xib默认的xib不能使用frame控制控件的位置大小
+    PNViewButton * viewbtn = [PNViewButton viewButton];
+    //    viewbtn.frame = CGRectMake(0, 200, 100, 50);
+    UITapGestureRecognizer * vtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickviewbtn:)];
+    [viewbtn addGestureRecognizer:vtap];
+    //    [viewbtn addTarget:self action:@selector(clickviewbtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:viewbtn];
+    [viewbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(200, 50));
+    }];
     
-//    PNCrazyButton * btn = [PNCrazyButton crazyButton];
-//    btn.backgroundColor = [UIColor grayColor];
-//    [btn crazyButtonImage:@"backRed" title:@"返回"];
-//    btn.center = self.view.center;
-//    [btn addTarget:self action:@selector(clickRedBtn:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:btn];
-//
-//    PNButton * button = [[PNButton alloc] init];
-//    [button buttonImage:@"bottomNav-forwardEngaged" title:nil];
-//    button.callBack = ^(UIButton *button) {
-//
-//
-//    };
+    //3. Empty 使用示例
+    PNCrazyButton * btn = [PNCrazyButton crazyButton];
+    btn.frame = CGRectMake(0, 100, 60, 80);
+    btn.backgroundColor = [UIColor grayColor];
+    btn.imageView.image = [UIImage imageNamed:@"backRed"];
+    btn.titleLabel.text = @"返回";
+    [btn addTarget:self action:@selector(clickRedBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+
 }
 
 - (void)customButton{

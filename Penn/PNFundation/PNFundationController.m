@@ -2,11 +2,14 @@
 //  PNFundationController.m
 //  Penn
 //
-//  Created by SanRong on 2017/11/11.
-//  Copyright © 2017年 SanRong. All rights reserved.
+//  Created by PENN on 2017/11/11.
+//  Copyright © 2017年 PENN. All rights reserved.
 //
 
 #import "PNFundationController.h"
+#import "PNGrandparent.h"
+#import "PNParent.h"
+#import "PNSon.h"
 
 @interface PNFundationController ()
 
@@ -16,9 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    [self aboutSet];
-   
+
+    
+    
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,8 +31,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Fundation Tips
 
+/*
+ 测试子类重写父类的setter方法遇到的问题:
+ 1. 子类不能使用"_属性"的原因
+ 2. synchronize autosynchronize dynamic的交替
+ 3. 继承
+ 4. 对象和类的数据结构 继承关系链
+ 5. runtime获取类的实例变量和属性
+ */
+- (void)testSubClassOverwriteSuperclassProperty{
+
+    PNGrandparent * gp = [PNGrandparent new];
+    gp.lastname = @"John";
+    gp.firstname = @"Tom";
+    
+    PNParent * p = [PNParent new];
+    p.firstname = @"Jean";
+    NSLog(@"ap:%@", gp.firstname);
+    
+    PNSon * s = [PNSon new];
+    s.firstname = @"Jack";
+    
+    [gp work];
+    [p work];
+}
+#pragma mark - Fundation Tips
 - (void)aboutSet{
     
     NSArray *array1 = @[@"1",@"2",@"3"];//before
