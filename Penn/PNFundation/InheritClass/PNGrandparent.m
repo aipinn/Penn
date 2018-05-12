@@ -9,7 +9,9 @@
 #import "PNGrandparent.h"
 
 @implementation PNGrandparent
-
++ (void)load{
+    NSLog(@"load+%s", __FUNCTION__);
+}
 - (void)setLastname:(NSString *)lastname{
     _lastname = lastname;
     NSLog(@"%s",__FUNCTION__);
@@ -23,7 +25,6 @@
 }
 
 - (void)work{
-    
     NSLog(@"%@ is working...", self.firstname);
 }
 

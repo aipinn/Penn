@@ -10,6 +10,8 @@
 #import "PNGrandparent.h"
 #import "PNParent.h"
 #import "PNSon.h"
+#import "NSMutableDictionary+PNSafe.h"
+#import "PNGrandparent+PNAdd.h"
 
 @interface PNFundationController ()
 
@@ -19,10 +21,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    NSString * str = nil;
+    [dict setObject:@"231" forKey:@"aKey"];
     
     
-
+    PNGrandparent * grand = [[PNGrandparent alloc]init];
+    [grand work];
     
 }
 

@@ -27,10 +27,8 @@
     [self customCrazyBtn];
     [self customButton];
 
-    NSMutableDictionary * dict = [NSMutableDictionary new];
-    NSString * str = nil;
-    [dict setObject:str forKey:@"key"];
 
+ 
 }
 
 #pragma mark - Action
@@ -86,6 +84,7 @@
     [viewbtn addGestureRecognizer:vtap];
     //    [viewbtn addTarget:self action:@selector(clickviewbtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:viewbtn];
+    
     [viewbtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.view);
         make.size.mas_equalTo(CGSizeMake(200, 50));

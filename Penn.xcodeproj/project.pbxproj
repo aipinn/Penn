@@ -12,6 +12,8 @@
 		236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */; };
 		236BAA15209FEC81006BD6B9 /* PNEmptyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */; };
 		AFA3269A0284ADD10DACE575 /* Pods_Penn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E2548721EB82E0044BD24E /* Pods_Penn.framework */; };
+		BC034F1120A59A33001117ED /* NSMutableDictionary+PNSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = BC034F1020A59A33001117ED /* NSMutableDictionary+PNSafe.m */; };
+		BC034F1420A59F05001117ED /* PNGrandparent+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BC034F1320A59F05001117ED /* PNGrandparent+PNAdd.m */; };
 		BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683720A4132C009FB674 /* PNGrandparent.m */; };
 		BC05683B20A41349009FB674 /* PNParent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683A20A41349009FB674 /* PNParent.m */; };
 		BC05683E20A41382009FB674 /* PNSon.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683D20A41382009FB674 /* PNSon.m */; };
@@ -79,6 +81,10 @@
 		4A58AB53F3ACAE3BE3C87FB3 /* Pods-Penn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Penn/Pods-Penn.release.xcconfig"; sourceTree = "<group>"; };
 		64E2548721EB82E0044BD24E /* Pods_Penn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Penn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971DC9A86F7BC0CD644EE23A /* Pods-Penn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Penn/Pods-Penn.debug.xcconfig"; sourceTree = "<group>"; };
+		BC034F0F20A59A33001117ED /* NSMutableDictionary+PNSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+PNSafe.h"; sourceTree = "<group>"; };
+		BC034F1020A59A33001117ED /* NSMutableDictionary+PNSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+PNSafe.m"; sourceTree = "<group>"; };
+		BC034F1220A59F05001117ED /* PNGrandparent+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNGrandparent+PNAdd.h"; sourceTree = "<group>"; };
+		BC034F1320A59F05001117ED /* PNGrandparent+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNGrandparent+PNAdd.m"; sourceTree = "<group>"; };
 		BC05683620A4132C009FB674 /* PNGrandparent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNGrandparent.h; sourceTree = "<group>"; };
 		BC05683720A4132C009FB674 /* PNGrandparent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNGrandparent.m; sourceTree = "<group>"; };
 		BC05683920A41349009FB674 /* PNParent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNParent.h; sourceTree = "<group>"; };
@@ -182,17 +188,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D594E31B1FB69A4A00255114 /* PNFundation */ = {
+		BC034F0B20A59304001117ED /* InheritClass */ = {
 			isa = PBXGroup;
 			children = (
-				D594E3181FB69A3D00255114 /* PNFundationController.h */,
-				D594E3191FB69A3D00255114 /* PNFundationController.m */,
 				BC05683620A4132C009FB674 /* PNGrandparent.h */,
 				BC05683720A4132C009FB674 /* PNGrandparent.m */,
 				BC05683920A41349009FB674 /* PNParent.h */,
 				BC05683A20A41349009FB674 /* PNParent.m */,
 				BC05683C20A41382009FB674 /* PNSon.h */,
 				BC05683D20A41382009FB674 /* PNSon.m */,
+				BC034F1220A59F05001117ED /* PNGrandparent+PNAdd.h */,
+				BC034F1320A59F05001117ED /* PNGrandparent+PNAdd.m */,
+			);
+			path = InheritClass;
+			sourceTree = "<group>";
+		};
+		D594E31B1FB69A4A00255114 /* PNFundation */ = {
+			isa = PBXGroup;
+			children = (
+				D594E3181FB69A3D00255114 /* PNFundationController.h */,
+				D594E3191FB69A3D00255114 /* PNFundationController.m */,
+				BC034F0B20A59304001117ED /* InheritClass */,
+				BC034F0F20A59A33001117ED /* NSMutableDictionary+PNSafe.h */,
+				BC034F1020A59A33001117ED /* NSMutableDictionary+PNSafe.m */,
 			);
 			path = PNFundation;
 			sourceTree = "<group>";
@@ -589,6 +607,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC034F1120A59A33001117ED /* NSMutableDictionary+PNSafe.m in Sources */,
 				D529F3731FD29B50008C67F3 /* BaseModel.m in Sources */,
 				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
 				D5AAC5801FC8030300A9BD86 /* PNProfileViewController.m in Sources */,
@@ -609,6 +628,7 @@
 				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
 				D5B7C2421F611501001FA29C /* main.m in Sources */,
 				D5AAC5DA1FC9449900A9BD86 /* PNFuncController.m in Sources */,
+				BC034F1420A59F05001117ED /* PNGrandparent+PNAdd.m in Sources */,
 				D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */,
 				D5AAC58A1FC8130D00A9BD86 /* UIButton+Addition.m in Sources */,
 				BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */,
