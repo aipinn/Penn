@@ -10,5 +10,7 @@ pod 'AFNetworking'
 pod 'YYKit'
 pod 'pop'
 pod 'Masonry'
+pod 'Toast'
+pod 'FBRetainCycleDetector'
 
 end

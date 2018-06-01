@@ -14,37 +14,45 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - FBRetainCycleDetector (0.1.4)
   - Masonry (1.1.0)
   - pop (1.0.10)
   - SDWebImage (4.1.2):
     - SDWebImage/Core (= 4.1.2)
   - SDWebImage/Core (4.1.2)
+  - Toast (4.0.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking
+  - FBRetainCycleDetector
   - Masonry
   - pop
   - SDWebImage
+  - Toast
   - YYKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - FBRetainCycleDetector
     - Masonry
     - pop
     - SDWebImage
+    - Toast
     - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: b9d6acb2e0b462c49c9d54fb0a4e783c3c020429
+PODFILE CHECKSUM: c5d15a2b2b5e388b303fb56ac9f42c23d2ad729c
 
 COCOAPODS: 1.5.0

@@ -19,6 +19,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.titleLabel.backgroundColor = [UIColor cyanColor];
+        self.imageView.backgroundColor = [UIColor purpleColor];
         [self addAction];
         [self setupUI];
     }

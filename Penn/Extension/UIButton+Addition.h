@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^BtnClickBlock)(void);
+
 @interface UIButton (Addition)
+
+@property (nonatomic, copy) NSString * title;
+
+@property (nonatomic, strong) NSMutableArray * taps;
+
+@property (nonatomic, copy) BtnClickBlock callBack;
 
 + (UIButton *)buttonImage:(NSString *)string title:(NSString *)title;
 

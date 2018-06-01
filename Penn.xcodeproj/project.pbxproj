@@ -12,11 +12,16 @@
 		236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */; };
 		236BAA15209FEC81006BD6B9 /* PNEmptyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */; };
 		AFA3269A0284ADD10DACE575 /* Pods_Penn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E2548721EB82E0044BD24E /* Pods_Penn.framework */; };
-		BC034F1120A59A33001117ED /* NSMutableDictionary+PNSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = BC034F1020A59A33001117ED /* NSMutableDictionary+PNSafe.m */; };
 		BC034F1420A59F05001117ED /* PNGrandparent+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BC034F1320A59F05001117ED /* PNGrandparent+PNAdd.m */; };
 		BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683720A4132C009FB674 /* PNGrandparent.m */; };
 		BC05683B20A41349009FB674 /* PNParent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683A20A41349009FB674 /* PNParent.m */; };
 		BC05683E20A41382009FB674 /* PNSon.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683D20A41382009FB674 /* PNSon.m */; };
+		BC3E3CED20AAC86600D0CED6 /* PNParent+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CEC20AAC86600D0CED6 /* PNParent+PNAdd.m */; };
+		BCC68F1A20B2B8E000EE9334 /* PNTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC68F1920B2B8E000EE9334 /* PNTask.m */; };
+		BCF77CC720B510B000BA34CD /* UIViewController+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF77CC620B510B000BA34CD /* UIViewController+PNAdd.m */; };
+		BCF77CCA20B510C500BA34CD /* UILabel+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF77CC920B510C500BA34CD /* UILabel+PNAdd.m */; };
+		BCF77CD620B55A7E00BA34CD /* NSMutableArray+PNAddE.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF77CD220B55A7E00BA34CD /* NSMutableArray+PNAddE.m */; };
+		BCF77CD920B55A9C00BA34CD /* NSObject+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF77CD820B55A9C00BA34CD /* NSObject+PNAdd.m */; };
 		D529F36A1FD296B8008C67F3 /* backRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D529F3631FD296B7008C67F3 /* backRed@2x.png */; };
 		D529F36B1FD296B8008C67F3 /* action-remove@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D529F3641FD296B7008C67F3 /* action-remove@3x.png */; };
 		D529F36C1FD296B8008C67F3 /* btn_addPicture_BgImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D529F3651FD296B7008C67F3 /* btn_addPicture_BgImage@3x.png */; };
@@ -81,8 +86,6 @@
 		4A58AB53F3ACAE3BE3C87FB3 /* Pods-Penn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Penn/Pods-Penn.release.xcconfig"; sourceTree = "<group>"; };
 		64E2548721EB82E0044BD24E /* Pods_Penn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Penn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971DC9A86F7BC0CD644EE23A /* Pods-Penn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Penn/Pods-Penn.debug.xcconfig"; sourceTree = "<group>"; };
-		BC034F0F20A59A33001117ED /* NSMutableDictionary+PNSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+PNSafe.h"; sourceTree = "<group>"; };
-		BC034F1020A59A33001117ED /* NSMutableDictionary+PNSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+PNSafe.m"; sourceTree = "<group>"; };
 		BC034F1220A59F05001117ED /* PNGrandparent+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNGrandparent+PNAdd.h"; sourceTree = "<group>"; };
 		BC034F1320A59F05001117ED /* PNGrandparent+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNGrandparent+PNAdd.m"; sourceTree = "<group>"; };
 		BC05683620A4132C009FB674 /* PNGrandparent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNGrandparent.h; sourceTree = "<group>"; };
@@ -91,6 +94,18 @@
 		BC05683A20A41349009FB674 /* PNParent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNParent.m; sourceTree = "<group>"; };
 		BC05683C20A41382009FB674 /* PNSon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNSon.h; sourceTree = "<group>"; };
 		BC05683D20A41382009FB674 /* PNSon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNSon.m; sourceTree = "<group>"; };
+		BC3E3CEB20AAC86600D0CED6 /* PNParent+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNParent+PNAdd.h"; sourceTree = "<group>"; };
+		BC3E3CEC20AAC86600D0CED6 /* PNParent+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNParent+PNAdd.m"; sourceTree = "<group>"; };
+		BCC68F1820B2B8E000EE9334 /* PNTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNTask.h; sourceTree = "<group>"; };
+		BCC68F1920B2B8E000EE9334 /* PNTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNTask.m; sourceTree = "<group>"; };
+		BCF77CC520B510AF00BA34CD /* UIViewController+PNAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PNAdd.h"; sourceTree = "<group>"; };
+		BCF77CC620B510B000BA34CD /* UIViewController+PNAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PNAdd.m"; sourceTree = "<group>"; };
+		BCF77CC820B510C500BA34CD /* UILabel+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+PNAdd.h"; sourceTree = "<group>"; };
+		BCF77CC920B510C500BA34CD /* UILabel+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+PNAdd.m"; sourceTree = "<group>"; };
+		BCF77CD220B55A7E00BA34CD /* NSMutableArray+PNAddE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+PNAddE.m"; sourceTree = "<group>"; };
+		BCF77CD420B55A7E00BA34CD /* NSMutableArray+PNAddE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+PNAddE.h"; sourceTree = "<group>"; };
+		BCF77CD720B55A9C00BA34CD /* NSObject+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PNAdd.h"; sourceTree = "<group>"; };
+		BCF77CD820B55A9C00BA34CD /* NSObject+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PNAdd.m"; sourceTree = "<group>"; };
 		C30E7A2F4D373AAEFFB11046 /* libPods-PennUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PennUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D529F3631FD296B7008C67F3 /* backRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backRed@2x.png"; sourceTree = "<group>"; };
 		D529F3641FD296B7008C67F3 /* action-remove@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-remove@3x.png"; sourceTree = "<group>"; };
@@ -199,6 +214,8 @@
 				BC05683D20A41382009FB674 /* PNSon.m */,
 				BC034F1220A59F05001117ED /* PNGrandparent+PNAdd.h */,
 				BC034F1320A59F05001117ED /* PNGrandparent+PNAdd.m */,
+				BC3E3CEB20AAC86600D0CED6 /* PNParent+PNAdd.h */,
+				BC3E3CEC20AAC86600D0CED6 /* PNParent+PNAdd.m */,
 			);
 			path = InheritClass;
 			sourceTree = "<group>";
@@ -209,8 +226,6 @@
 				D594E3181FB69A3D00255114 /* PNFundationController.h */,
 				D594E3191FB69A3D00255114 /* PNFundationController.m */,
 				BC034F0B20A59304001117ED /* InheritClass */,
-				BC034F0F20A59A33001117ED /* NSMutableDictionary+PNSafe.h */,
-				BC034F1020A59A33001117ED /* NSMutableDictionary+PNSafe.m */,
 			);
 			path = PNFundation;
 			sourceTree = "<group>";
@@ -349,10 +364,18 @@
 		D5BAD0261FAD66510098D8DF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BCF77CD420B55A7E00BA34CD /* NSMutableArray+PNAddE.h */,
+				BCF77CD220B55A7E00BA34CD /* NSMutableArray+PNAddE.m */,
+				BCF77CC520B510AF00BA34CD /* UIViewController+PNAdd.h */,
+				BCF77CC620B510B000BA34CD /* UIViewController+PNAdd.m */,
 				D5BAD0191FAD63980098D8DF /* PNButton.h */,
 				D5BAD01A1FAD63980098D8DF /* PNButton.m */,
 				D5AAC5881FC8130D00A9BD86 /* UIButton+Addition.h */,
 				D5AAC5891FC8130D00A9BD86 /* UIButton+Addition.m */,
+				BCF77CC820B510C500BA34CD /* UILabel+PNAdd.h */,
+				BCF77CC920B510C500BA34CD /* UILabel+PNAdd.m */,
+				BCF77CD720B55A9C00BA34CD /* NSObject+PNAdd.h */,
+				BCF77CD820B55A9C00BA34CD /* NSObject+PNAdd.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -394,6 +417,8 @@
 				D5BAD0281FAD6F9E0098D8DF /* PNKitViewController.h */,
 				D5BAD0291FAD6F9E0098D8DF /* PNKitViewController.m */,
 				D5BAD02A1FAD6F9E0098D8DF /* PNKitViewController.xib */,
+				BCC68F1820B2B8E000EE9334 /* PNTask.h */,
+				BCC68F1920B2B8E000EE9334 /* PNTask.m */,
 			);
 			path = PNKit;
 			sourceTree = "<group>";
@@ -564,16 +589,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Penn/Pods-Penn-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -607,31 +636,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC034F1120A59A33001117ED /* NSMutableDictionary+PNSafe.m in Sources */,
 				D529F3731FD29B50008C67F3 /* BaseModel.m in Sources */,
 				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
 				D5AAC5801FC8030300A9BD86 /* PNProfileViewController.m in Sources */,
 				D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */,
+				BCC68F1A20B2B8E000EE9334 /* PNTask.m in Sources */,
 				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
 				D5AAC5851FC8112500A9BD86 /* PNSwiftViewController.swift in Sources */,
 				BC05683E20A41382009FB674 /* PNSon.m in Sources */,
 				236BAA0E209FE9B5006BD6B9 /* PNViewButton.m in Sources */,
+				BCF77CD620B55A7E00BA34CD /* NSMutableArray+PNAddE.m in Sources */,
 				D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */,
 				D594E31A1FB69A3D00255114 /* PNFundationController.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
+				BC3E3CED20AAC86600D0CED6 /* PNParent+PNAdd.m in Sources */,
+				BC034F1420A59F05001117ED /* PNGrandparent+PNAdd.m in Sources */,
 				BC05683B20A41349009FB674 /* PNParent.m in Sources */,
+				BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */,
 				236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
 				D5AAC57C1FC8029200A9BD86 /* BaseTabBarController.m in Sources */,
 				D5AAC5751FC7F17D00A9BD86 /* PICrazyButton.swift in Sources */,
+				BCF77CCA20B510C500BA34CD /* UILabel+PNAdd.m in Sources */,
+				BCF77CD920B55A9C00BA34CD /* NSObject+PNAdd.m in Sources */,
 				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
 				D5B7C2421F611501001FA29C /* main.m in Sources */,
+				BCF77CC720B510B000BA34CD /* UIViewController+PNAdd.m in Sources */,
 				D5AAC5DA1FC9449900A9BD86 /* PNFuncController.m in Sources */,
-				BC034F1420A59F05001117ED /* PNGrandparent+PNAdd.m in Sources */,
 				D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */,
 				D5AAC58A1FC8130D00A9BD86 /* UIButton+Addition.m in Sources */,
-				BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,7 +29,7 @@
 @property (nonatomic, copy) NSString * firstname;
 @property (nonatomic, copy) NSString * lastname;
 
-
 - (void)work;
+- (void)play;
 
 @end

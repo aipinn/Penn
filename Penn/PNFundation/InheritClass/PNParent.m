@@ -49,12 +49,15 @@
 //    [super setFirstname:firstname];
 //
 //}
-
-
-
-- (void)work{
-   
-    NSLog(@"%@ is working...", self.firstname);
+//========================================//
+//+ (void)load{
+//    NSLog(@"load+%s", __FUNCTION__);
+//}
++ (void)initialize
+{
+    if (self == [self class]) {
+        NSLog(@"initialize: %s", __FUNCTION__);
+    }
 }
 
 - (void)getAllIvars{
@@ -74,5 +77,16 @@
     }
     free(ivars);
 }
+#pragma mark - self methods
+- (void)fly{
+    NSLog(@"%s", __FUNCTION__);
+}
+
+#pragma mark - super methods
+
+- (void)work{
+    NSLog(@"%@ is working...", self.firstname);
+}
+
 
 @end

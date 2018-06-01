@@ -17,10 +17,10 @@
 
 @interface BaseTabBarController ()
 
-@property (nonatomic, strong) NSArray * titleArr;
-@property (nonatomic, strong) NSArray * imageArr;
-@property (nonatomic, strong) NSArray * imageSelArr;
-@property (nonatomic, strong) NSArray * clsNameArr;
+@property (nonatomic, copy) NSArray * titleArr;
+@property (nonatomic, copy) NSArray * imageArr;
+@property (nonatomic, copy) NSArray * imageSelArr;
+@property (nonatomic, copy) NSArray * clsNameArr;
 
 @end
 
@@ -44,7 +44,7 @@
  反射创建控制器
  */
 - (void)createControllers{
-    
+
     NSInteger i = 0;
     NSMutableArray * clsArr = [[NSMutableArray alloc] init];
     for (NSString * clsName in self.clsNameArr) {

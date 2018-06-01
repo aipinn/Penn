@@ -9,16 +9,21 @@
 #import "PNGrandparent+PNAdd.h"
 
 @implementation PNGrandparent (PNAdd)
-+ (void)load{
-    NSLog(@"load+%s", __FUNCTION__);
-}
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+//+ (void)load{
+//    NSLog(@"category+%s", __FUNCTION__);
+//}
 
-- (void)work{
-    NSLog(@"category+%s", __FUNCTION__);
++ (void)initialize
+{
+    if (self == [self class]) {
+        NSLog(@"category-initialize: %s", __FUNCTION__);
+    }
 }
 
-#pragma clang diagnostic pop
+//Any methods that you declare in a category will be available to all instances of the original class, as well as any subclasses of the original class.
+- (void)play{
+    NSLog(@"%s", __FUNCTION__);
+}
+
 
 @end

@@ -8,13 +8,35 @@
 
 #import "PNGrandparent.h"
 
+//static const int kInterval = 10;
+//static NSMutableArray * kArr;
 @implementation PNGrandparent
 + (void)load{
     NSLog(@"load+%s", __FUNCTION__);
+    NSLog(@"load-PNGrandparent:%@", [NSThread currentThread]);
+}
++ (void)initialize
+{
+    if (self == [self class]) {
+        NSLog(@"initialize: %s", __FUNCTION__);
+        NSLog(@"initialize-PNGrandparent:%@", [NSThread currentThread]);
+        // doSomethingThatUseItsInternalData...
+//        kArr = [NSMutableArray new];
+       
+    }
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
 }
 - (void)setLastname:(NSString *)lastname{
     _lastname = lastname;
     NSLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)setFirstname:(NSString *)firstname{
@@ -22,10 +44,6 @@
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"In Grandparent:%@", self);
     
-}
-
-- (void)work{
-    NSLog(@"%@ is working...", self.firstname);
 }
 
 //获取属性列表,不包含指定类(class_copyPropertyList(self.class,xxx)的父类的属性
@@ -43,4 +61,13 @@
     }
     free(propertys);
 }
+#pragma mark - Method
+- (void)work{
+    NSLog(@"%@ is working...", self.firstname);
+}
+
+- (void)play{
+    NSLog(@"%s", __FUNCTION__);
+}
+
 @end

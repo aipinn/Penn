@@ -12,4 +12,7 @@
 
 //@property (nonatomic, copy) NSString * firstname;
 
+
+- (void)fly;
+
 @end
