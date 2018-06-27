@@ -12,11 +12,11 @@
 
 - (instancetype)initWithFrame:(CGRect)frame text:(NSString *)text ansText:(NSString *)ansText{
     if ([super initWithFrame:frame]) {
-        self.text = text;
-        self.ansText = ansText;
-      
-        [self createTextItems:text];
-        
+        _text = text;
+        _ansText = ansText;
+        [self configUI];
+        [self initTextItems:text];
+
     }
     return self;
 }
@@ -48,7 +48,7 @@
     }
 }
 
-- (void)createTextItems:(NSString *)textStr{
+- (void)initTextItems:(NSString *)textStr{
 
     NSMutableAttributedString *text = [NSMutableAttributedString new];
     text.lineSpacing = 4;
@@ -81,8 +81,10 @@
             [mArr addObject:effective];
         }
     }
+    //初始化数组容器
     self.items = mArr;
-    
+    self.ansItems = mArr;
+    //为"____"元素添加下划线
     for (NSString * str in mArr) {
         if ([str isEqualToString:@"____"]) {
             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:str];
@@ -97,8 +99,6 @@
                                  NSString * tapStr = [aText.string substringWithRange:range];
                                  NSLog(@"%@", tapStr);
                                  
-                                 self.tapText = @"";
-                                 self.range = NSMakeRange(0, 0);
                                  self.tapText = tapStr;
                                  self.range = range;
                                  
@@ -115,30 +115,35 @@
         }
     }
     
-    
-    
-    
+    //显示
     CGSize size = [self calculateAttributeStringSize:text];
     YYLabel *label = [YYLabel new];
     label.attributedText = text;
-    label.right = 0;
-    label.width = self.width;
-    label.height = size.height;
     label.top = 10;
-    label.textAlignment = NSTextAlignmentCenter;
+    label.width = self.width;
+    label.height = size.height+20;
+    
     label.numberOfLines = 0;
     label.backgroundColor = [UIColor colorWithWhite:0.933 alpha:1.000];
     [self addSubview:label];
+    //创建可以弹出键盘的视图
+    UITextView * tv = [[UITextView alloc]init];
+    tv.frame = CGRectMake(-100, -100, 0, 0);
+    tv.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    [self addSubview:tv];
+    tv.inputAccessoryView = self.inputAccView;
+    self.virtualTextVTiew = tv;
+    
 }
 
 - (void)setAnsText:(NSString *)ansText{
     _ansText = ansText;
     [self removeAllSubviews];
     [self configUI];
-    [self createAnsTextItems:ansText];
+    [self resetAnsTextItems:ansText];
 }
-
-- (void)createAnsTextItems:(NSString *)textStr{
+// 重新赋值
+- (void)resetAnsTextItems:(NSString *)textStr{
     self.ansItems = [NSMutableArray new];
     [self.ansItems addObjectsFromArray:_items];
     NSMutableAttributedString *text = [NSMutableAttributedString new];
@@ -155,21 +160,17 @@
         }
     }
     //替换
-    NSMutableArray * result = [NSMutableArray new];
+
     if ([_text hasPrefix:@"___"]) {
-        [result addObjectsFromArray:mArr];
         for (NSInteger i = 0; i< _ansItems.count; i++) {
-            
             if (i%2==0) {
-                [_ansItems replaceObjectAtIndex:i withObject:result[i/2]];
+                [_ansItems replaceObjectAtIndex:i withObject:mArr[i/2]];
             }
         }
     }else{
-        [result addObjectsFromArray:mArr];
         for (NSInteger i = 0; i< _ansItems.count; i++) {
-            
             if (i%2==1) {
-                [_ansItems replaceObjectAtIndex:i withObject:result[i/2]];
+                [_ansItems replaceObjectAtIndex:i withObject:mArr[i/2]];
             }
         }
     }
@@ -192,12 +193,13 @@
                                      //弹出键盘
                                      NSString * tapStr = [aText.string substringWithRange:range];
                                      NSLog(@"%@", tapStr);
-
-                                     self.tapText = @"";
-                                     self.range = NSMakeRange(0, 0);
                                      self.tapText = tapStr;
                                      self.range = range;
-
+                                     if ([tapStr isEqualToString:@"____"]) {
+                                          self.realTextVTiew.text = @"";
+                                     }else{
+                                         self.realTextVTiew.text = tapStr;
+                                     }
                                      [self.virtualTextVTiew becomeFirstResponder];
                                      [self.realTextVTiew becomeFirstResponder];
 
@@ -234,34 +236,9 @@
     [self addSubview:tv];
     tv.inputAccessoryView = self.inputAccView;
     self.virtualTextVTiew = tv;
-    
-    NSMutableString * newstr = [NSMutableString new];
-    for (NSString * sss in self.ansItems) {
-        [newstr appendString:sss];
-    }
 
     
 }
-- (NSMutableArray *)creatArray:(NSArray *)arr1 arr:(NSArray *)arr2{
-
-    NSMutableArray *arr3 = [[NSMutableArray alloc] init];
-    for(int i = 0; i < arr1.count; i++){
-        [arr3 addObject:arr1[i]];
-        for (int j = 0; j < arr2.count; j++) {
-            if (i >= j && ![arr3 containsObject:arr2[j]]) {
-                [arr3 addObject:arr2[j]];
-            }
-            
-        }
-        
-    }
-    
-    for (int i = 0; i < arr3.count; i++) {
-        NSLog(@"%@",arr3[i]);
-    }
-    return arr3;
-}
-//----------
 
 - (CGSize)calculateAttributeStringSize:(NSAttributedString *)string{
     

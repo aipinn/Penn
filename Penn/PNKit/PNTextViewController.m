@@ -10,7 +10,7 @@
 #import "PNFillTextView.h"
 
 #define kQQuestionText  @"晶体的对称性可由____点群表征，晶体的排列可分为____种布喇菲格子，其中六角密积结构____布喇菲格子____。"
-#define kAnsQuestionText  @"晶体的对称性可由____点群表征，晶体的排列可分为不知道种布喇菲格子，其中六角密积结构8956sadjfhs撒大哥级布喇菲格子1234。"
+//#define kAnsQuestionText  @"晶体的对称性可由____点群表征，晶体的排列可分为不知道种布喇菲格子，其中六角密积结构8956sadjfhs撒大哥级布喇菲格子1234。"
 
 
 @interface PNTextViewController ()<PNFillViewDelegate>
@@ -45,7 +45,9 @@
 }
 
 - (void)fillViewAccViewDidComplete:(NSString *)content tapText:(NSString *)tapText range:(NSRange)range Info:(NSDictionary *)info{
-    
+    if ([content isEqualToString:@""]) {
+        content = @"____";
+    }
     if ([self.textView.text isEqualToString:self.textView.ansText]) {
         NSString * newText =  [self.textView.text stringByReplacingOccurrencesOfString:tapText withString:content options:0 range:range];
         self.textView.ansText = newText;
