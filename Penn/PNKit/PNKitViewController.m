@@ -14,6 +14,7 @@
 #import "PNEmptyButton.h"
 #import "UIButton+Addition.h"
 #import "PNTask.h"
+#import "PNTextViewController.h"
 
 @interface PNKitViewController ()
 
@@ -26,6 +27,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
 
+    
 //    [self customCrazyBtn];
 //    [self customButton];
 //    [self newButton];
@@ -103,6 +105,8 @@
     __weak typeof(btn) weakBtn = btn;
     btn.callBack = ^{
         NSLog(@"哈哈哈, 添加回调成功. %@", weakBtn.taps);
+        PNTextViewController * vc = [[PNTextViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     };
     
     // btn-->block-->btn

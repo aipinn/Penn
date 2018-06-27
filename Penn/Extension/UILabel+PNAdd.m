@@ -23,7 +23,7 @@
  label的所有字体大小增加5
  */
 - (void)pn_bigerFont:(UIFont *)font{
-    UIFont * newFont = [UIFont systemFontOfSize:font.pointSize+5];
+    UIFont * newFont = [UIFont systemFontOfSize:font.pointSize];
     [self pn_bigerFont:newFont];
 }
 
