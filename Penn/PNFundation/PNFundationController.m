@@ -12,9 +12,11 @@
 #import "PNSon.h"
 #import "PNGrandparent+PNAdd.h"
 //#import "NSMutableArray+PNAddE.h"
+#import "PNRuntimeController.h"
 
 #import "NSObject+PNAdd.h"
 
+#import <sys/utsname.h>
 @interface PNFundationController ()
 
 @property (nonatomic, assign) BOOL ret;
@@ -26,69 +28,80 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+   
     
-    NSCache * cache = [[NSCache alloc] init];
-    /*Unlike an NSMutableDictionary object, a cache does not copy the key objects that are put into it.*/
-    [cache setObject:@"a" forKey:@"a"];
     
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
-    NSString * str = nil;
-    NSString * value = @"value";
+    UIButton * btn = [UIButton buttonImage:@"backRed" title:@"Runtime"];
+    NSString * name;
+    //object_setIvar(btn, (__bridge Ivar _Nonnull)(name), @"peng");
+    btn.frame = CGRectMake(0, 100, 100, 60);
+    [self.view addSubview:btn];
+    btn.callBack = ^{
+        PNRuntimeController * rt = [PNRuntimeController new];
+        [self.navigationController pushViewController:rt animated:YES];
+        NSLog(@"");
+    };
     
-//    [dict setObject:@"123" forKey:@""];
-//    [dict setObject:str forKey:@"zero"];
-//    [dict setValue:@"" forKey:@"one"];
-//    [dict setValue:str forKey:@"two"];
-    /*
-     1. setObject：forkey：中value是不能够为nil的，不然会报错。
-     setValue：forKey：中value能够为nil，但是当value为nil的时候，会自动调用removeObject：forKey方法
-     2. setValue：forKey：中key的参数只能够是NSString类型，而setObject：forKey：的可以是任何类型
-     3. valueForKey:  ObjectForKey:
-     */
-//    [dict setValue:str forKey:@"setValue"];
-//    [dict setObject:str forKey:@"setObject"];
-//    [dict valueForKey:<#(nonnull NSString *)#>]
-//    [dict objectForKey:<#(nonnull id)#>
+    
+    
+}
 
-    
+#pragma mark -  //继承分类方法测试
+- (void)inheritAndCategoryFunTest{
     
     PNParent * parent = [[PNParent alloc] init];
     [parent play];
     [parent work];
     [parent fly];
     
+}
+
+#pragma mark - 集合nil错误
+- (void)errorBecauseNil{
+    /*
+     1. setObject：forkey：中value不能够为nil。
+     setValue：forKey：中value可以为nil，但是当value为nil的时候，会自动调用removeObject：forKey方法
+     2. setValue：forKey：中key的参数只能够是NSString类型，而setObject：forKey：的可以是任何类型
+     3. valueForKey:  ObjectForKey:
+     */
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    NSString * nilStr = nil;
+    NSString * str = @"not nill string";
+    
+    //键值都不能为nil
+    //[dict setObject:str forKey:nilStr];
+    [dict setObject:nilStr forKey:str];
+    
+    //值可以为nil,键不能为nil
+    //[dict setValue:str forKey:nilStr];
+    [dict setValue:nilStr forKey:str];
+    
+    //key不能为nil
+    //[dict setObject:@"" forKey:str];
+    //[dict setValue:@"" forKey:str];
+    
+    //键可以不存在或为nil
+    [dict valueForKey:@"peng"];
+    [dict objectForKey:@"peng"];
+    [dict valueForKey:nilStr];
+    [dict objectForKey:nilStr];
+}
+- (void)runtimeAvoidCollectionError{
+    //运行时防止数组崩溃
+    NSString * str = nil;
     NSMutableArray * mArr = [NSMutableArray new];
     [mArr addObject:str]; // str = nil
-
+    
     [mArr addObject:@"obj0"];
     [mArr addObject:@"obj1"];
     [mArr addObject:@"obj2"];
     [mArr addObject:@"obj3"];
     [mArr addObject:@"obj4"];
-
+    
     [mArr removeObjectAtIndex:0];
     [mArr removeObjectAtIndex:666];
-
-    
     [mArr replaceObjectAtIndex:10 withObject:str];
 }
-
-
-
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - 集合nil错误
-- (void)errorBecauseNil{
-    
-}
-
 #pragma mark - 测试子类重写父类的setter方法遇到的问题:
 /*
  测试子类重写父类的setter方法遇到的问题:
@@ -99,7 +112,7 @@
  5. runtime获取类的实例变量和属性
  */
 - (void)testSubClassOverwriteSuperclassProperty{
-
+    
     PNGrandparent * gp = [PNGrandparent new];
     gp.lastname = @"John";
     gp.firstname = @"Tom";
@@ -122,12 +135,12 @@
     NSMutableSet *set1 = [NSMutableSet setWithArray:array1];
     NSMutableSet *set2 = [NSMutableSet setWithArray:array2];
     
-//    [set1 unionSet:set2];       //取并集后 set1中为1，2，3，5，6
-//    NSLog(@"%@", set1);
-//    [set1 intersectSet:set2];  //取交集后 set1中为1
-//    NSLog(@"%@", set1);
-//    [set1 minusSet:set2];      //取差集后 set1中为2，3，5，6
-//    NSLog(@"%@", set1);
+    //    [set1 unionSet:set2];       //取并集后 set1中为1，2，3，5，6
+    //    NSLog(@"%@", set1);
+    //    [set1 intersectSet:set2];  //取交集后 set1中为1
+    //    NSLog(@"%@", set1);
+    //    [set1 minusSet:set2];      //取差集后 set1中为2，3，5，6
+    //    NSLog(@"%@", set1);
     {//并集 差集之后为2,3
         NSMutableSet * temp = [NSMutableSet setWithArray:set1.allObjects];
         [set1 unionSet:set2];
@@ -135,9 +148,9 @@
         NSLog(@"%@", set1);//
     }
     {//并集交集之后为:1, 5, 6
-//        [set1 unionSet:set2];
-//        [set1 intersectSet:set2];
-//        NSLog(@"%@", set1);
+        //        [set1 unionSet:set2];
+        //        [set1 intersectSet:set2];
+        //        NSLog(@"%@", set1);
     }
     
     {
@@ -150,8 +163,8 @@
 #pragma mark - Load and Initialize
 - (void)loadAndInitialize{
     
-//    PNGrandparent * gp = [[PNGrandparent alloc] init];
-//    PNParent * parent = [[PNParent alloc] init];
+    //    PNGrandparent * gp = [[PNGrandparent alloc] init];
+    //    PNParent * parent = [[PNParent alloc] init];
     //    [parent work];
     
     //    PNSon * son = [PNSon new];

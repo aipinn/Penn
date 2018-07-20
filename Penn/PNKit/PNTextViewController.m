@@ -9,8 +9,7 @@
 #import "PNTextViewController.h"
 #import "PNFillTextView.h"
 
-#define kQQuestionText  @"晶体的对称性可由____点群表征，晶体的排列可分为____种布喇菲格子，其中六角密积结构____布喇菲格子____。"
-//#define kAnsQuestionText  @"晶体的对称性可由____点群表征，晶体的排列可分为不知道种布喇菲格子，其中六角密积结构8956sadjfhs撒大哥级布喇菲格子1234。"
+#define kQQuestionText  @"____晶体的对称性可由____点群表征，晶体的排列可分为____种布喇菲格子，其中六角密积结构____布喇菲格子____。"
 
 
 @interface PNTextViewController ()<PNFillViewDelegate>
@@ -33,30 +32,28 @@
 
 - (void)configUI{
     
-    PNFillTextView * textView = [[PNFillTextView alloc] initWithFrame:CGRectMake(10, 88, SCREEN_WIDTH-20, SCREEN_WIDTH)
-                                                                 text:kQQuestionText ansText:kQQuestionText];
+    PNFillTextView * textView = [[PNFillTextView alloc] init];
+    textView.frame = CGRectMake(0, 88, 300, 300);
+    textView.text = kQQuestionText;
     textView.delefate = self;
     textView.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:textView];
     self.textView = textView;
-//    textView.ansText = kAnsQuestionText;
+    [self.view addSubview:textView];
+
     
     
 }
 
-- (void)fillViewAccViewDidComplete:(NSString *)content tapText:(NSString *)tapText range:(NSRange)range Info:(NSDictionary *)info{
+- (void)fillViewAccViewDidComplete:(NSString *)content tapText:(NSString *)tapText range:(NSRange)range model:(PNFillModel*)model Info:(NSDictionary *)info{
     if ([content isEqualToString:@""]) {
         content = @"____";
     }
-    if ([self.textView.text isEqualToString:self.textView.ansText]) {
-        NSString * newText =  [self.textView.text stringByReplacingOccurrencesOfString:tapText withString:content options:0 range:range];
-        self.textView.ansText = newText;
-
-    }else{
-        NSString * newText =  [self.textView.ansText stringByReplacingOccurrencesOfString:tapText withString:content options:0 range:range];
-        self.textView.ansText = newText;
-    }
-    
+   
+    NSString * newText =  [self.textView.text stringByReplacingOccurrencesOfString:tapText withString:content options:0 range:range];
+    model.text = content;
+    [self.textView resetDataSource:model];
+    self.textView.text = newText;
+   
 }
 
 - (void)dealloc{

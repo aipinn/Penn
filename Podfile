@@ -12,5 +12,6 @@ pod 'pop'
 pod 'Masonry'
 pod 'Toast'
 pod 'FBRetainCycleDetector'
+pod 'MBProgressHUD'
 
 end
