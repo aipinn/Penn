@@ -17,6 +17,7 @@
 		3D17593E2101B3D40027C7DB /* PNMsgForward+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D17593D2101B3D40027C7DB /* PNMsgForward+PNAdd.m */; };
 		3D1759412101B71E0027C7DB /* PNDynamicMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1759402101B71E0027C7DB /* PNDynamicMethod.m */; };
 		3D1759442101B74F0027C7DB /* PNDynamicMethod+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1759432101B74F0027C7DB /* PNDynamicMethod+PNAdd.m */; };
+		3D3255122110484800E593F1 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D3255112110484800E593F1 /* content.json */; };
 		3D3E6C01210071D300C7573B /* PNRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E6BFF210071D300C7573B /* PNRuntimeController.m */; };
 		3D3E6C02210071D300C7573B /* PNRuntimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E6C00210071D300C7573B /* PNRuntimeController.xib */; };
 		3D40665820E48D8C00BA740C /* PNFillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40665720E48D8C00BA740C /* PNFillModel.m */; };
@@ -113,6 +114,7 @@
 		3D1759402101B71E0027C7DB /* PNDynamicMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNDynamicMethod.m; sourceTree = "<group>"; };
 		3D1759422101B74E0027C7DB /* PNDynamicMethod+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNDynamicMethod+PNAdd.h"; sourceTree = "<group>"; };
 		3D1759432101B74F0027C7DB /* PNDynamicMethod+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNDynamicMethod+PNAdd.m"; sourceTree = "<group>"; };
+		3D3255112110484800E593F1 /* content.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
 		3D3E6BFE210071D300C7573B /* PNRuntimeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNRuntimeController.h; sourceTree = "<group>"; };
 		3D3E6BFF210071D300C7573B /* PNRuntimeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNRuntimeController.m; sourceTree = "<group>"; };
 		3D3E6C00210071D300C7573B /* PNRuntimeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNRuntimeController.xib; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				D5B7C2511F611501001FA29C /* Info.plist */,
 				D5B7C2411F611501001FA29C /* main.m */,
 				D5BAD0311FAD87630098D8DF /* Penn.pch */,
+				3D3255112110484800E593F1 /* content.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -668,6 +671,7 @@
 				236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */,
 				D5AAC5D51FC915C200A9BD86 /* PICrazyButton.xib in Resources */,
 				D5B7C24B1F611501001FA29C /* Main.storyboard in Resources */,
+				3D3255122110484800E593F1 /* content.json in Resources */,
 				236BAA15209FEC81006BD6B9 /* PNEmptyButton.xib in Resources */,
 				D529F36F1FD296B8008C67F3 /* backRed@3x.png in Resources */,
 				D5BAD02C1FAD6F9E0098D8DF /* PNKitViewController.xib in Resources */,

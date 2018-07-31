@@ -12,8 +12,9 @@
 
 @interface PNCTFrameParser : NSObject
 
-+ (NSDictionary *)attributesWithConfig:(PNCTFrameParserConfig *)config;
++ (NSMutableDictionary *)attributesWithConfig:(PNCTFrameParserConfig *)config;
 + (PNCoreTextData *)parserContext:(NSString *)context config:(PNCTFrameParserConfig *)config;
 + (PNCoreTextData *)paraserAttributesContext:(NSAttributedString *)context config:(PNCTFrameParserConfig *)config;
++ (PNCoreTextData *)parserTemplateFile:(NSString *)path config:(PNCTFrameParserConfig *)config;
 
 @end

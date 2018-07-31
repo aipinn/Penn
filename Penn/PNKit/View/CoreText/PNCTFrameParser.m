@@ -10,7 +10,7 @@
 
 @implementation PNCTFrameParser
 
-+ (NSDictionary *)attributesWithConfig:(PNCTFrameParserConfig *)config {
++ (NSMutableDictionary *)attributesWithConfig:(PNCTFrameParserConfig *)config {
 
     CTFontRef fontRef = CTFontCreateWithName((CFStringRef)@"ArialMT", config.fontSize, NULL);
     CGFloat lineSpace = config.lineSpace;
@@ -26,7 +26,7 @@
     [dict setObject:(__bridge id)fontRef forKey:(id)kCTFontAttributeName];
     [dict setObject:(__bridge id)(styleRef) forKey:(id)kCTParagraphStyleAttributeName];
     [dict setObject:(id)config.textColor.CGColor forKey:(id)kCTForegroundColorAttributeName];
-
+//    [dict setObject:[UIFont systemFontOfSize:config.fontSize] forKey:(id)kCTFontAttributeName];
     CFRelease(styleRef);
     CFRelease(fontRef);
     return dict;
@@ -58,6 +58,11 @@
     return data;
 }
 
++ (PNCoreTextData *)parserTemplateFile:(NSString *)path config:(PNCTFrameParserConfig *)config{
+    NSAttributedString * content = [self loadTemplateFile:path config:config];
+    return [self paraserAttributesContext:content config:config];
+}
+
 + (CTFrameRef)createFrameWithFramesetter:(CTFramesetterRef)framesetter
                                   config:(PNCTFrameParserConfig *)config
                                   height:(CGFloat)height{
@@ -69,6 +74,63 @@
     return ctFrame;
 }
 
+/**
+ load template file from path
 
+ @param path file path
+ @param config content config
+ @return attributeString from template file
+ */
++ (NSAttributedString *)loadTemplateFile:(NSString *)path config:(PNCTFrameParserConfig *)config{
+    NSData * data = [NSData dataWithContentsOfFile:path];
+    NSMutableAttributedString * result = [[NSMutableAttributedString alloc] init];
+    if (data) {
+        NSArray * array = [NSJSONSerialization JSONObjectWithData:data
+                                                          options:NSJSONReadingMutableContainers
+                                                            error:nil];
+        if ([array isKindOfClass:[NSArray class]]) {
+            for (NSDictionary *dict in array) {
+                NSString * type = dict[@"type"];
+                if ([type isEqualToString:@"txt"]) {
+                    NSAttributedString * attrs = [self parserAttributesContentFromDictonry:dict
+                                                                                    config:config];
+                    [result appendAttributedString:attrs];
+                }
+            }
+        }
+    }
+    return result;
+}
+
++ (NSAttributedString *)parserAttributesContentFromDictonry:(NSDictionary *)dict
+                                                     config:(PNCTFrameParserConfig *)config{
+    NSMutableDictionary * attrs = [self attributesWithConfig:config];
+    UIColor * color = [self colorFromTemplate:dict[@"color"]];
+    if (color) {
+        [attrs setObject:(id)color.CGColor forKey:(id)kCTForegroundColorAttributeName];
+    }
+    
+    CGFloat fontSize = [dict[@"size"] floatValue];
+    if (fontSize > 0) {
+        CTFontRef fontRef = CTFontCreateWithName((CFStringRef)@"ArialMT", fontSize, NULL);
+        [attrs setObject:(__bridge id)fontRef forKey:(id)kCTFontNameAttribute];
+        CFRelease(fontRef);
+    }
+    NSString *content = dict[@"content"];
+    
+    return [[NSAttributedString alloc] initWithString:content attributes:attrs];
+}
+
++ (UIColor *)colorFromTemplate:(NSString *)name{
+    if ([name isEqualToString:@"blue"]) {
+        return [UIColor blueColor];
+    } else if ([name isEqualToString:@"red"]) {
+        return [UIColor redColor];
+    } else if ([name isEqualToString:@"black"]) {
+        return [UIColor blackColor];
+    } else {
+        return nil;
+    }
+}
 
 @end
