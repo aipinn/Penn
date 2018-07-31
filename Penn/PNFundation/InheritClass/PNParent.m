@@ -18,9 +18,12 @@
 //     NSString * _firstname;
 }
 
+@property (nonatomic, strong) NSArray * parentArr;
+
 @end
 
 @implementation PNParent
+
 //@case2 手动合成成员变量
 //@synthesize firstname = _firstname;
 

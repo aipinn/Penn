@@ -9,7 +9,9 @@
 #import "PNSon.h"
 
 @implementation PNSon
-
+{
+    NSArray * _arrSon;
+}
 - (instancetype)init
 {
     self = [super init];

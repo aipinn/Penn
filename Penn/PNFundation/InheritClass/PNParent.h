@@ -11,6 +11,7 @@
 @interface PNParent : PNGrandparent
 
 //@property (nonatomic, copy) NSString * firstname;
+@property (nonatomic, strong) NSString * proParent;
 
 
 - (void)fly;

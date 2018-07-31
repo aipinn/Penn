@@ -10,4 +10,7 @@
 
 @interface PNSon : PNParent
 
+@property (nonatomic, strong) NSString * proSon;
+
+
 @end

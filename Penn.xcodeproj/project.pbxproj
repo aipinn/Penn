@@ -20,6 +20,13 @@
 		3D3E6C01210071D300C7573B /* PNRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E6BFF210071D300C7573B /* PNRuntimeController.m */; };
 		3D3E6C02210071D300C7573B /* PNRuntimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E6C00210071D300C7573B /* PNRuntimeController.xib */; };
 		3D40665820E48D8C00BA740C /* PNFillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40665720E48D8C00BA740C /* PNFillModel.m */; };
+		3D4E27572105CE0D0013152D /* PNAutoDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E27562105CE0D0013152D /* PNAutoDictionary.m */; };
+		3D4ED2F1210B3B2E00A5D060 /* PNCTDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ED2F0210B3B2E00A5D060 /* PNCTDisplayView.m */; };
+		3D4ED2FB210B3DCF00A5D060 /* PNCoreTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ED2F9210B3DCF00A5D060 /* PNCoreTextViewController.m */; };
+		3D4ED2FC210B3DCF00A5D060 /* PNCoreTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D4ED2FA210B3DCF00A5D060 /* PNCoreTextViewController.xib */; };
+		3D75D9A4210EFA400069D46D /* PNCoreTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A3210EFA400069D46D /* PNCoreTextData.m */; };
+		3D75D9A7210EFA940069D46D /* PNCTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A6210EFA940069D46D /* PNCTFrameParserConfig.m */; };
+		3D75D9AA210EFAC70069D46D /* PNCTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */; };
 		3DFB089420E2133700DC22BC /* PNFillTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB089320E2133700DC22BC /* PNFillTextView.m */; };
 		3DFB089720E2139C00DC22BC /* PNTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB089620E2139C00DC22BC /* PNTextViewController.m */; };
 		AFA3269A0284ADD10DACE575 /* Pods_Penn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E2548721EB82E0044BD24E /* Pods_Penn.framework */; };
@@ -111,6 +118,19 @@
 		3D3E6C00210071D300C7573B /* PNRuntimeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNRuntimeController.xib; sourceTree = "<group>"; };
 		3D40665620E48D8C00BA740C /* PNFillModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNFillModel.h; sourceTree = "<group>"; };
 		3D40665720E48D8C00BA740C /* PNFillModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNFillModel.m; sourceTree = "<group>"; };
+		3D4E27552105CE0D0013152D /* PNAutoDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNAutoDictionary.h; sourceTree = "<group>"; };
+		3D4E27562105CE0D0013152D /* PNAutoDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNAutoDictionary.m; sourceTree = "<group>"; };
+		3D4ED2EF210B3B2E00A5D060 /* PNCTDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTDisplayView.h; sourceTree = "<group>"; };
+		3D4ED2F0210B3B2E00A5D060 /* PNCTDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTDisplayView.m; sourceTree = "<group>"; };
+		3D4ED2F8210B3DCF00A5D060 /* PNCoreTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCoreTextViewController.h; sourceTree = "<group>"; };
+		3D4ED2F9210B3DCF00A5D060 /* PNCoreTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCoreTextViewController.m; sourceTree = "<group>"; };
+		3D4ED2FA210B3DCF00A5D060 /* PNCoreTextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNCoreTextViewController.xib; sourceTree = "<group>"; };
+		3D75D9A2210EFA400069D46D /* PNCoreTextData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCoreTextData.h; sourceTree = "<group>"; };
+		3D75D9A3210EFA400069D46D /* PNCoreTextData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCoreTextData.m; sourceTree = "<group>"; };
+		3D75D9A5210EFA940069D46D /* PNCTFrameParserConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTFrameParserConfig.h; sourceTree = "<group>"; };
+		3D75D9A6210EFA940069D46D /* PNCTFrameParserConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTFrameParserConfig.m; sourceTree = "<group>"; };
+		3D75D9A8210EFAC70069D46D /* PNCTFrameParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTFrameParser.h; sourceTree = "<group>"; };
+		3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTFrameParser.m; sourceTree = "<group>"; };
 		3DFB089220E2133700DC22BC /* PNFillTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNFillTextView.h; sourceTree = "<group>"; };
 		3DFB089320E2133700DC22BC /* PNFillTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNFillTextView.m; sourceTree = "<group>"; };
 		3DFB089520E2139C00DC22BC /* PNTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNTextViewController.h; sourceTree = "<group>"; };
@@ -225,6 +245,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D4E27542105CDBA0013152D /* AutoDict */ = {
+			isa = PBXGroup;
+			children = (
+				3D4E27552105CE0D0013152D /* PNAutoDictionary.h */,
+				3D4E27562105CE0D0013152D /* PNAutoDictionary.m */,
+			);
+			path = AutoDict;
+			sourceTree = "<group>";
+		};
+		3D4ED2F2210B3B6B00A5D060 /* CoreText */ = {
+			isa = PBXGroup;
+			children = (
+				3D4ED2EF210B3B2E00A5D060 /* PNCTDisplayView.h */,
+				3D4ED2F0210B3B2E00A5D060 /* PNCTDisplayView.m */,
+				3D75D9A2210EFA400069D46D /* PNCoreTextData.h */,
+				3D75D9A3210EFA400069D46D /* PNCoreTextData.m */,
+				3D75D9A5210EFA940069D46D /* PNCTFrameParserConfig.h */,
+				3D75D9A6210EFA940069D46D /* PNCTFrameParserConfig.m */,
+				3D75D9A8210EFAC70069D46D /* PNCTFrameParser.h */,
+				3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */,
+			);
+			path = CoreText;
+			sourceTree = "<group>";
+		};
+		3D4ED2FD210B3DE000A5D060 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3DFB089520E2139C00DC22BC /* PNTextViewController.h */,
+				3DFB089620E2139C00DC22BC /* PNTextViewController.m */,
+				3D4ED2F8210B3DCF00A5D060 /* PNCoreTextViewController.h */,
+				3D4ED2F9210B3DCF00A5D060 /* PNCoreTextViewController.m */,
+				3D4ED2FA210B3DCF00A5D060 /* PNCoreTextViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		98EC7010CD840C1D9E9A39AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +311,7 @@
 		D594E31B1FB69A4A00255114 /* PNFundation */ = {
 			isa = PBXGroup;
 			children = (
+				3D4E27542105CDBA0013152D /* AutoDict */,
 				D594E3181FB69A3D00255114 /* PNFundationController.h */,
 				D594E3191FB69A3D00255114 /* PNFundationController.m */,
 				BC034F0B20A59304001117ED /* InheritClass */,
@@ -303,6 +360,7 @@
 				236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */,
 				3DFB089220E2133700DC22BC /* PNFillTextView.h */,
 				3DFB089320E2133700DC22BC /* PNFillTextView.m */,
+				3D4ED2F2210B3B6B00A5D060 /* CoreText */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -462,14 +520,13 @@
 		D5BAD0331FADA3D10098D8DF /* PNKit */ = {
 			isa = PBXGroup;
 			children = (
+				3D4ED2FD210B3DE000A5D060 /* Controller */,
 				D5AAC5761FC7F63E00A9BD86 /* View */,
 				D5BAD0281FAD6F9E0098D8DF /* PNKitViewController.h */,
 				D5BAD0291FAD6F9E0098D8DF /* PNKitViewController.m */,
 				D5BAD02A1FAD6F9E0098D8DF /* PNKitViewController.xib */,
 				BCC68F1820B2B8E000EE9334 /* PNTask.h */,
 				BCC68F1920B2B8E000EE9334 /* PNTask.m */,
-				3DFB089520E2139C00DC22BC /* PNTextViewController.h */,
-				3DFB089620E2139C00DC22BC /* PNTextViewController.m */,
 				3D40665620E48D8C00BA740C /* PNFillModel.h */,
 				3D40665720E48D8C00BA740C /* PNFillModel.m */,
 			);
@@ -598,6 +655,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4ED2FC210B3DCF00A5D060 /* PNCoreTextViewController.xib in Resources */,
 				D529F36B1FD296B8008C67F3 /* action-remove@3x.png in Resources */,
 				D5B7C2501F611501001FA29C /* LaunchScreen.storyboard in Resources */,
 				3D3E6C02210071D300C7573B /* PNRuntimeController.xib in Resources */,
@@ -701,13 +759,16 @@
 				BCC68F1A20B2B8E000EE9334 /* PNTask.m in Sources */,
 				3DFB089420E2133700DC22BC /* PNFillTextView.m in Sources */,
 				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
+				3D75D9A7210EFA940069D46D /* PNCTFrameParserConfig.m in Sources */,
 				D5AAC5851FC8112500A9BD86 /* PNSwiftViewController.swift in Sources */,
+				3D75D9AA210EFAC70069D46D /* PNCTFrameParser.m in Sources */,
 				3D40665820E48D8C00BA740C /* PNFillModel.m in Sources */,
 				BC05683E20A41382009FB674 /* PNSon.m in Sources */,
 				236BAA0E209FE9B5006BD6B9 /* PNViewButton.m in Sources */,
 				BCF77CD620B55A7E00BA34CD /* NSMutableArray+PNAddE.m in Sources */,
 				D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */,
 				D594E31A1FB69A3D00255114 /* PNFundationController.m in Sources */,
+				3D4E27572105CE0D0013152D /* PNAutoDictionary.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
 				BC3E3CED20AAC86600D0CED6 /* PNParent+PNAdd.m in Sources */,
@@ -719,9 +780,12 @@
 				236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
 				D5AAC57C1FC8029200A9BD86 /* BaseTabBarController.m in Sources */,
+				3D4ED2F1210B3B2E00A5D060 /* PNCTDisplayView.m in Sources */,
+				3D75D9A4210EFA400069D46D /* PNCoreTextData.m in Sources */,
 				D5AAC5751FC7F17D00A9BD86 /* PICrazyButton.swift in Sources */,
 				BCF77CCA20B510C500BA34CD /* UILabel+PNAdd.m in Sources */,
 				BCF77CD920B55A9C00BA34CD /* NSObject+PNAdd.m in Sources */,
+				3D4ED2FB210B3DCF00A5D060 /* PNCoreTextViewController.m in Sources */,
 				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
 				3D17593E2101B3D40027C7DB /* PNMsgForward+PNAdd.m in Sources */,
 				3D1759442101B74F0027C7DB /* PNDynamicMethod+PNAdd.m in Sources */,

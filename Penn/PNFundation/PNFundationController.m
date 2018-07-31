@@ -27,12 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   
-    
+
     
     UIButton * btn = [UIButton buttonImage:@"backRed" title:@"Runtime"];
-    NSString * name;
+    
     //object_setIvar(btn, (__bridge Ivar _Nonnull)(name), @"peng");
     btn.frame = CGRectMake(0, 100, 100, 60);
     [self.view addSubview:btn];
@@ -41,8 +39,10 @@
         [self.navigationController pushViewController:rt animated:YES];
         NSLog(@"");
     };
+     
+   
     
-    
+    [self testSubClassOverwriteSuperclassProperty];
     
 }
 

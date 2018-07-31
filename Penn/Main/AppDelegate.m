@@ -18,7 +18,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
     UIWindow * window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     BaseTabBarController * tabBar = [[BaseTabBarController alloc] init];
     window.rootViewController = tabBar;
@@ -26,7 +25,6 @@
     [window makeKeyAndVisible];
     self.window = window;
     
-
 
     return YES;
 }
