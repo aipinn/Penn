@@ -12,6 +12,8 @@
 #import <UIKit/UIKit.h>
 #import "PNCoreTextData.h"
 
+static NSString *const PNCTDisplayViewImageTapedNOtification = @"PNCTDisplayViewImageTapedNOtification";
+
 @interface PNCTDisplayView : UIView
 
 /**

@@ -12,6 +12,59 @@
 
 @implementation PNCTDisplayView
 
+- (instancetype)init
+{
+    return [self initWithFrame:CGRectZero];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setupEvents];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self setupEvents];
+    }
+    return self;
+}
+
+/**
+ 添加事件
+ */
+- (void)setupEvents{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(userTapGestureDetected:)];
+    [self addGestureRecognizer:tap];
+    self.userInteractionEnabled = YES;
+}
+
+- (void)userTapGestureDetected:(UITapGestureRecognizer *)tap{
+    CGPoint point = [tap locationInView:self];
+    for (PNCTImageData * imgData in self.data.imageArray) {
+        // 翻转坐标系.因为imageData中的坐标是CoreText中的坐标系
+        CGRect imageRect = imgData.imagePosition;
+        CGPoint imagePosition = imageRect.origin;
+        imagePosition.y = self.bounds.size.height - imageRect.origin.y - imageRect.size.height;
+        CGRect rect = CGRectMake(imagePosition.x, imagePosition.y, imageRect.size.width, imageRect.size.height);
+        // 检测点击的位置是否在rect之内
+        if(CGRectContainsPoint(rect, point)){
+            NSDictionary *userInfo = @{@"imageData": imgData};
+            //发送点击通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:PNCTDisplayViewImageTapedNOtification
+                                                                object:self
+                                                              userInfo:userInfo];
+            break;
+        }
+    }
+}
+
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
     if (!self.data) {
