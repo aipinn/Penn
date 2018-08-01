@@ -29,6 +29,9 @@
 /**
  图文混排时所有图片数组
  */
-@property (nonatomic, strong) NSArray * imageArray;
+@property (nonatomic, copy) NSArray * imageArray;
+
+@property (nonatomic, copy) NSArray * linkArray;
+
 
 @end

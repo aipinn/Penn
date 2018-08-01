@@ -13,8 +13,9 @@
 #import "PNCoreTextData.h"
 
 static NSString *const PNCTDisplayViewImageTapedNOtification = @"PNCTDisplayViewImageTapedNOtification";
+static NSString *const PNCTDisplayViewLinkTapedNotification = @"PNCTDisplayViewLinkTapedNotification";
 
-@interface PNCTDisplayView : UIView
+@interface PNCTDisplayView : UIView<UIKeyInput>
 
 /**
  绘制文本数据模型

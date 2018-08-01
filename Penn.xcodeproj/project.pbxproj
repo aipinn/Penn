@@ -21,6 +21,8 @@
 		3D3255152110653700E593F1 /* PNCTImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3255142110653700E593F1 /* PNCTImageData.m */; };
 		3D3255182110693900E593F1 /* coretext-image-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D3255162110693900E593F1 /* coretext-image-2.jpg */; };
 		3D3255192110693900E593F1 /* coretext-image-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D3255172110693900E593F1 /* coretext-image-1.jpg */; };
+		3D32551C21118C8400E593F1 /* PNCTLinkData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D32551B21118C8400E593F1 /* PNCTLinkData.m */; };
+		3D32551F21118E7D00E593F1 /* PNCTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D32551E21118E7D00E593F1 /* PNCTUtils.m */; };
 		3D3E6C01210071D300C7573B /* PNRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E6BFF210071D300C7573B /* PNRuntimeController.m */; };
 		3D3E6C02210071D300C7573B /* PNRuntimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E6C00210071D300C7573B /* PNRuntimeController.xib */; };
 		3D40665820E48D8C00BA740C /* PNFillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40665720E48D8C00BA740C /* PNFillModel.m */; };
@@ -122,6 +124,10 @@
 		3D3255142110653700E593F1 /* PNCTImageData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTImageData.m; sourceTree = "<group>"; };
 		3D3255162110693900E593F1 /* coretext-image-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "coretext-image-2.jpg"; sourceTree = "<group>"; };
 		3D3255172110693900E593F1 /* coretext-image-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "coretext-image-1.jpg"; sourceTree = "<group>"; };
+		3D32551A21118C8400E593F1 /* PNCTLinkData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTLinkData.h; sourceTree = "<group>"; };
+		3D32551B21118C8400E593F1 /* PNCTLinkData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTLinkData.m; sourceTree = "<group>"; };
+		3D32551D21118E7D00E593F1 /* PNCTUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTUtils.h; sourceTree = "<group>"; };
+		3D32551E21118E7D00E593F1 /* PNCTUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTUtils.m; sourceTree = "<group>"; };
 		3D3E6BFE210071D300C7573B /* PNRuntimeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNRuntimeController.h; sourceTree = "<group>"; };
 		3D3E6BFF210071D300C7573B /* PNRuntimeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNRuntimeController.m; sourceTree = "<group>"; };
 		3D3E6C00210071D300C7573B /* PNRuntimeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNRuntimeController.xib; sourceTree = "<group>"; };
@@ -276,6 +282,10 @@
 				3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */,
 				3D3255132110653700E593F1 /* PNCTImageData.h */,
 				3D3255142110653700E593F1 /* PNCTImageData.m */,
+				3D32551A21118C8400E593F1 /* PNCTLinkData.h */,
+				3D32551B21118C8400E593F1 /* PNCTLinkData.m */,
+				3D32551D21118E7D00E593F1 /* PNCTUtils.h */,
+				3D32551E21118E7D00E593F1 /* PNCTUtils.m */,
 			);
 			path = CoreText;
 			sourceTree = "<group>";
@@ -789,6 +799,7 @@
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
 				BC3E3CED20AAC86600D0CED6 /* PNParent+PNAdd.m in Sources */,
+				3D32551C21118C8400E593F1 /* PNCTLinkData.m in Sources */,
 				BC034F1420A59F05001117ED /* PNGrandparent+PNAdd.m in Sources */,
 				BC05683B20A41349009FB674 /* PNParent.m in Sources */,
 				BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */,
@@ -796,6 +807,7 @@
 				3D3E6C01210071D300C7573B /* PNRuntimeController.m in Sources */,
 				236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
+				3D32551F21118E7D00E593F1 /* PNCTUtils.m in Sources */,
 				D5AAC57C1FC8029200A9BD86 /* BaseTabBarController.m in Sources */,
 				3D4ED2F1210B3B2E00A5D060 /* PNCTDisplayView.m in Sources */,
 				3D75D9A4210EFA400069D46D /* PNCoreTextData.m in Sources */,

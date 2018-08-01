@@ -9,6 +9,7 @@
 #import "PNCTDisplayView.h"
 #import <CoreText/CoreText.h>
 #import "PNCTImageData.h"
+#import "PNCTUtils.h"
 
 @implementation PNCTDisplayView
 
@@ -63,6 +64,16 @@
             break;
         }
     }
+    
+    PNCTLinkData * linkData = [PNCTUtils touchLinkInView:self atPoint:point data:self.data];
+    if (linkData) {
+        NSDictionary *userInfo = @{ @"linkData": linkData };
+        //发送点击通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:PNCTDisplayViewLinkTapedNotification
+                                                            object:self
+                                                          userInfo:userInfo];
+        return;
+    }
 }
 
 - (void)drawRect:(CGRect)rect{
@@ -107,5 +118,22 @@
     
 }
 
-
+#pragma mark - 重写UIResponsder方法
+/*
+ This method returns NO by default. Subclasses must override this method and return YES to be able to become first responder.
+ */
+- (BOOL)canBecomeFirstResponder{
+    return YES;
+}
+/*
+ You can override this method in your custom responders to update your object's state or perform some action such as highlighting the selection. If you override this method, you must call super at some point in your implementation.
+ */
+- (BOOL)becomeFirstResponder{
+    [super becomeFirstResponder];
+    return YES;
+}
+#pragma mark - UIKeyInput 协议
+- (void)insertText:(NSString *)text{
+    NSLog(@"正在输入:%@", text);
+}
 @end

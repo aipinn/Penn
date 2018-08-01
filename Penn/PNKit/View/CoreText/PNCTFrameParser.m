@@ -8,6 +8,7 @@
 
 #import "PNCTFrameParser.h"
 #import "PNCTImageData.h"
+#import "PNCTLinkData.h"
 
 @implementation PNCTFrameParser
 
@@ -58,7 +59,9 @@ static CGFloat widthCallback(void *ref){
     
     CGFloat textHeight = CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRangeMake(0, 0), nil, CGSizeMake(config.width, CGFLOAT_MAX), nil).height;
     
-    CTFrameRef frame = [self createFrameWithFramesetter:framesetter config:config height:textHeight];
+    CTFrameRef frame = [self createFrameWithFramesetter:framesetter
+                                                 config:config
+                                                 height:textHeight];
     
     PNCoreTextData * data = [[PNCoreTextData alloc] init];
     data.ctFrame = frame;
@@ -72,9 +75,15 @@ static CGFloat widthCallback(void *ref){
 
 + (PNCoreTextData *)parserTemplateFile:(NSString *)path config:(PNCTFrameParserConfig *)config{
     NSMutableArray * imageArray = [NSMutableArray array];
-    NSAttributedString * content = [self loadTemplateFile:path config:config imageArray:imageArray];
-    PNCoreTextData *data = [self paraserAttributesContext:content config:config];
+    NSMutableArray * linkArray = [NSMutableArray array];
+    NSAttributedString * content = [self loadTemplateFile:path
+                                                   config:config
+                                               imageArray:imageArray
+                                                linkArray:linkArray];
+    PNCoreTextData *data = [self paraserAttributesContext:content
+                                                   config:config];
     data.imageArray = imageArray;
+    data.linkArray = linkArray;
     return data;
 }
 
@@ -118,7 +127,8 @@ static CGFloat widthCallback(void *ref){
  */
 + (NSAttributedString *)loadTemplateFile:(NSString *)path
                                   config:(PNCTFrameParserConfig *)config
-                              imageArray:(NSMutableArray *)imageArray {
+                              imageArray:(NSMutableArray *)imageArray
+                               linkArray:(NSMutableArray *)linkArray{
 
     NSData * data = [NSData dataWithContentsOfFile:path];
     NSMutableAttributedString * result = [[NSMutableAttributedString alloc] init];
@@ -143,6 +153,19 @@ static CGFloat widthCallback(void *ref){
                     NSAttributedString * attrs = [self parserImageDataFromDictonry:dict
                                                                             config:config];
                     [result appendAttributedString:attrs];
+                }else if ([type isEqualToString:@"link"]){
+                    NSUInteger startPos = result.length;
+                    NSAttributedString *as = [self parserAttributesContentFromDictonry:dict
+                                                                                config:config];
+                    [result appendAttributedString:as];
+                    // 创建 CoreTextLinkData
+                    NSUInteger length = result.length - startPos;
+                    NSRange linkRange = NSMakeRange(startPos, length);
+                    PNCTLinkData *linkData = [[PNCTLinkData alloc] init];
+                    linkData.title = dict[@"content"];
+                    linkData.url = dict[@"url"];
+                    linkData.range = linkRange;
+                    [linkArray addObject:linkData];
                 }
             }
         }

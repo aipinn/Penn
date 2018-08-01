@@ -28,5 +28,18 @@
  { "color" : "default",
  "content" : "不用手工管理CTLine和CTRun的创建过程。",
  "type" : "txt"
- }
+ },
+  { "color" : "default",
+  "content" : "这在这里尝试放一个参考链接：",
+  "type" : "txt"
+  },
+  { "color" : "blue",
+  "content" : "链接文字",
+  "url" : "https://github.com/aipinn",
+  "type" : "link"
+  },
+  { "color" : "default",
+  "content" : "尝试点击一下",
+  "type" : "txt"
+  }
  ]
