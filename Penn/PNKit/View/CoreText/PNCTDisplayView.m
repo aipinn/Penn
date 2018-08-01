@@ -8,6 +8,7 @@
 
 #import "PNCTDisplayView.h"
 #import <CoreText/CoreText.h>
+#import "PNCTImageData.h"
 
 @implementation PNCTDisplayView
 
@@ -40,6 +41,12 @@
 
     CTFrameDraw(self.data.ctFrame, context);
     
+    for (PNCTImageData *imgData in self.data.imageArray) {
+        UIImage *image = [UIImage imageNamed:imgData.name];
+        if (image) {
+            CGContextDrawImage(context, imgData.imagePosition, image.CGImage);
+        }
+    }
     //6.
 //    CFRelease(frame);
 //    CFRelease(path);

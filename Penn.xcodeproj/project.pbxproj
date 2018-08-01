@@ -18,6 +18,9 @@
 		3D1759412101B71E0027C7DB /* PNDynamicMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1759402101B71E0027C7DB /* PNDynamicMethod.m */; };
 		3D1759442101B74F0027C7DB /* PNDynamicMethod+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1759432101B74F0027C7DB /* PNDynamicMethod+PNAdd.m */; };
 		3D3255122110484800E593F1 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D3255112110484800E593F1 /* content.json */; };
+		3D3255152110653700E593F1 /* PNCTImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3255142110653700E593F1 /* PNCTImageData.m */; };
+		3D3255182110693900E593F1 /* coretext-image-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D3255162110693900E593F1 /* coretext-image-2.jpg */; };
+		3D3255192110693900E593F1 /* coretext-image-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D3255172110693900E593F1 /* coretext-image-1.jpg */; };
 		3D3E6C01210071D300C7573B /* PNRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E6BFF210071D300C7573B /* PNRuntimeController.m */; };
 		3D3E6C02210071D300C7573B /* PNRuntimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E6C00210071D300C7573B /* PNRuntimeController.xib */; };
 		3D40665820E48D8C00BA740C /* PNFillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40665720E48D8C00BA740C /* PNFillModel.m */; };
@@ -115,6 +118,10 @@
 		3D1759422101B74E0027C7DB /* PNDynamicMethod+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNDynamicMethod+PNAdd.h"; sourceTree = "<group>"; };
 		3D1759432101B74F0027C7DB /* PNDynamicMethod+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNDynamicMethod+PNAdd.m"; sourceTree = "<group>"; };
 		3D3255112110484800E593F1 /* content.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
+		3D3255132110653700E593F1 /* PNCTImageData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTImageData.h; sourceTree = "<group>"; };
+		3D3255142110653700E593F1 /* PNCTImageData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTImageData.m; sourceTree = "<group>"; };
+		3D3255162110693900E593F1 /* coretext-image-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "coretext-image-2.jpg"; sourceTree = "<group>"; };
+		3D3255172110693900E593F1 /* coretext-image-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "coretext-image-1.jpg"; sourceTree = "<group>"; };
 		3D3E6BFE210071D300C7573B /* PNRuntimeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNRuntimeController.h; sourceTree = "<group>"; };
 		3D3E6BFF210071D300C7573B /* PNRuntimeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNRuntimeController.m; sourceTree = "<group>"; };
 		3D3E6C00210071D300C7573B /* PNRuntimeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNRuntimeController.xib; sourceTree = "<group>"; };
@@ -267,6 +274,8 @@
 				3D75D9A6210EFA940069D46D /* PNCTFrameParserConfig.m */,
 				3D75D9A8210EFAC70069D46D /* PNCTFrameParser.h */,
 				3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */,
+				3D3255132110653700E593F1 /* PNCTImageData.h */,
+				3D3255142110653700E593F1 /* PNCTImageData.m */,
 			);
 			path = CoreText;
 			sourceTree = "<group>";
@@ -416,6 +425,8 @@
 		D5B7C2401F611501001FA29C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3D3255172110693900E593F1 /* coretext-image-1.jpg */,
+				3D3255162110693900E593F1 /* coretext-image-2.jpg */,
 				D5AAC55F1FC7EBD200A9BD86 /* NativeImg */,
 				D5B92B2C1FAFFE4100726C35 /* Penn-Bridging-Header.h */,
 				D5BAD0321FAD87AC0098D8DF /* Global.h */,
@@ -666,6 +677,7 @@
 				D5AAC55E1FC7EAD100A9BD86 /* PNCrazyButton.xib in Resources */,
 				D529F3701FD296B8008C67F3 /* bottomNav-forwardEngaged@3x.png in Resources */,
 				D5B7C24D1F611501001FA29C /* Assets.xcassets in Resources */,
+				3D3255182110693900E593F1 /* coretext-image-2.jpg in Resources */,
 				D529F36E1FD296B8008C67F3 /* btn_addPicture_BgImage@2x.png in Resources */,
 				D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */,
 				236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */,
@@ -676,6 +688,7 @@
 				D529F36F1FD296B8008C67F3 /* backRed@3x.png in Resources */,
 				D5BAD02C1FAD6F9E0098D8DF /* PNKitViewController.xib in Resources */,
 				D529F36A1FD296B8008C67F3 /* backRed@2x.png in Resources */,
+				3D3255192110693900E593F1 /* coretext-image-1.jpg in Resources */,
 				D529F36D1FD296B8008C67F3 /* action-remove@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -799,6 +812,7 @@
 				3D1709AD20F4ABD5009DA2AA /* MBProgressHUD+MP.m in Sources */,
 				D5AAC5DA1FC9449900A9BD86 /* PNFuncController.m in Sources */,
 				D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */,
+				3D3255152110653700E593F1 /* PNCTImageData.m in Sources */,
 				D5AAC58A1FC8130D00A9BD86 /* UIButton+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

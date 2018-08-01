@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PNCTImageData.h"
 
 @interface PNCoreTextData : NSObject
 
@@ -16,5 +17,6 @@
 
 @property (nonatomic, strong) NSAttributedString * context;
 
+@property (nonatomic, strong) NSArray * imageArray;
 
 @end

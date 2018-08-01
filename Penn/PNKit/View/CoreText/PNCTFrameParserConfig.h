@@ -15,5 +15,4 @@
 @property (nonatomic, assign) CGFloat lineSpace;
 @property (nonatomic, strong) UIColor * textColor;
 
-
 @end

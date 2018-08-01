@@ -48,11 +48,13 @@
     self.coreTextView.height = data.height;
     self.coreTextView.backgroundColor = [UIColor whiteColor];
     */
+    
+    
     NSString * path = [[NSBundle mainBundle] pathForResource:@"content" ofType:@"json"];
     PNCoreTextData * data = [PNCTFrameParser parserTemplateFile:path config:config];
     self.coreTextView.data = data;
     self.coreTextView.height = data.height;
- 
+     
 
 }
 

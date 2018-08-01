@@ -7,8 +7,20 @@
 //
 
 #import "PNCTFrameParser.h"
+#import "PNCTImageData.h"
 
 @implementation PNCTFrameParser
+
+static CGFloat ascentCallback(void *ref){
+    return [(NSNumber *)[(__bridge NSDictionary *)ref objectForKey:@"height"] floatValue];
+}
+static CGFloat descentCallback(void *ref){
+    return 0;
+}
+static CGFloat widthCallback(void *ref){
+    return [(NSNumber *)[(__bridge NSDictionary *)ref objectForKey:@"width"] floatValue];
+}
+
 
 + (NSMutableDictionary *)attributesWithConfig:(PNCTFrameParserConfig *)config {
 
@@ -59,8 +71,11 @@
 }
 
 + (PNCoreTextData *)parserTemplateFile:(NSString *)path config:(PNCTFrameParserConfig *)config{
-    NSAttributedString * content = [self loadTemplateFile:path config:config];
-    return [self paraserAttributesContext:content config:config];
+    NSMutableArray * imageArray = [NSMutableArray array];
+    NSAttributedString * content = [self loadTemplateFile:path config:config imageArray:imageArray];
+    PNCoreTextData *data = [self paraserAttributesContext:content config:config];
+    data.imageArray = imageArray;
+    return data;
 }
 
 + (CTFrameRef)createFrameWithFramesetter:(CTFramesetterRef)framesetter
@@ -74,6 +89,26 @@
     return ctFrame;
 }
 
++ (NSAttributedString *)parserImageDataFromDictonry:(NSDictionary *)dict
+                                         config:(PNCTFrameParserConfig *)config{
+    CTRunDelegateCallbacks callback;
+    memset(&callback, 0, sizeof(CTRunDelegateCallbacks));
+    callback.version = kCTRunDelegateVersion1;
+    callback.getAscent = ascentCallback;
+    callback.getDescent = descentCallback;
+    callback.getWidth = widthCallback;
+    CTRunDelegateRef delegate = CTRunDelegateCreate(&callback, (__bridge void *)(dict));
+    //使用0xFFFC作为空白占位符
+    unichar objectRepalcementChar = 0xFFFC;
+    NSString *content = [NSString stringWithCharacters:&objectRepalcementChar length:1];
+    NSMutableDictionary * attributes = [self attributesWithConfig:config];
+    NSMutableAttributedString * space = [[NSMutableAttributedString alloc] initWithString:content
+                                                                               attributes:attributes];
+    CFAttributedStringSetAttribute((CFMutableAttributedStringRef)space, CFRangeMake(0, 1), kCTRunDelegateAttributeName, delegate);
+    CFRelease(delegate);
+    return space;
+}
+
 /**
  load template file from path
 
@@ -81,7 +116,10 @@
  @param config content config
  @return attributeString from template file
  */
-+ (NSAttributedString *)loadTemplateFile:(NSString *)path config:(PNCTFrameParserConfig *)config{
++ (NSAttributedString *)loadTemplateFile:(NSString *)path
+                                  config:(PNCTFrameParserConfig *)config
+                              imageArray:(NSMutableArray *)imageArray {
+
     NSData * data = [NSData dataWithContentsOfFile:path];
     NSMutableAttributedString * result = [[NSMutableAttributedString alloc] init];
     if (data) {
@@ -94,6 +132,16 @@
                 if ([type isEqualToString:@"txt"]) {
                     NSAttributedString * attrs = [self parserAttributesContentFromDictonry:dict
                                                                                     config:config];
+                    [result appendAttributedString:attrs];
+                }else if ([type isEqualToString:@"img"]){
+                    PNCTImageData * imgData = [[PNCTImageData alloc] init];
+                    imgData.name = dict[@"name"];
+                    imgData.position = (int)[result length];
+                    //保存当前节点图片信息
+                    [imageArray addObject:imgData];
+                    // 创建空白占位符，并且设置它的CTRunDelegate信息
+                    NSAttributedString * attrs = [self parserImageDataFromDictonry:dict
+                                                                            config:config];
                     [result appendAttributedString:attrs];
                 }
             }
