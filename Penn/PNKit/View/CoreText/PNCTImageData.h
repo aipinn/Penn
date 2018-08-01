@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface PNCTImageData : NSObject
-
+/**
+ 本地图片名字
+ */
 @property (nonatomic, copy) NSString * name;
+/**
+ 图片在当前行的位置
+ */
 @property (nonatomic, assign) int position;
 
 /**

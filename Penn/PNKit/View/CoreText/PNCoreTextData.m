@@ -35,15 +35,14 @@
 
 
 /**
- 
  ---------------------------------------
  |在CTFrame内部，是由多个CTLine组成的,每个  \
  |CTLine代表一行,每个CTLine又是由多个CTRun \
  |来组成,每个CTRun代表一组风格一致的文本.我们 \
  |不用手工管理CTLine和CTRun的创建过程。     \
  --------------------------------------|
- 
  */
+//计算确定图片绘制位置
 - (void)fillImagePosition{
     if (self.imageArray.count == 0) {
         return;
