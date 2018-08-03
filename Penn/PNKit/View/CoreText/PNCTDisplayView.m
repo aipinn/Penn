@@ -11,7 +11,15 @@
 #import "PNCTImageData.h"
 #import "PNCTUtils.h"
 
+@interface PNCTDisplayView()
+
+@property (nonatomic, strong) NSArray * links;
+
+
+@end
+
 @implementation PNCTDisplayView
+@dynamic name;
 
 - (instancetype)init
 {
@@ -23,6 +31,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setupEvents];
+        [self setupInputView];
+    
     }
     return self;
 }
@@ -32,8 +42,29 @@
     self = [super initWithCoder:coder];
     if (self) {
         [self setupEvents];
+        [self setupInputView];
     }
     return self;
+}
+
+- (void)setupInputView{
+    
+    //创建辅助视图
+    UIView * inputAccessoryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+    inputAccessoryView.backgroundColor = [UIColor orangeColor];
+    self.inputAccessoryView = inputAccessoryView;
+    
+    // 键盘弹起通知
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillChangeFrame:)
+                                                 name:UIKeyboardWillChangeFrameNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
 }
 
 /**
@@ -136,4 +167,20 @@
 - (void)insertText:(NSString *)text{
     NSLog(@"正在输入:%@", text);
 }
+- (void)deleteBackward{
+    
+}
+
+@synthesize hasText;
+
+#pragma mark - KeyboardNotification actions
+
+- (void)keyboardWillChangeFrame:(NSNotification *)notify{
+    
+}
+
+- (void)keyboardWillShow:(NSNotification *)notify{
+    
+}
+
 @end

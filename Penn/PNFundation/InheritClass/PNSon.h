@@ -12,5 +12,8 @@
 
 @property (nonatomic, strong) NSString * proSon;
 
+@property (nonatomic, strong) NSArray * images;
+
+@property (nonatomic, strong) NSArray * sons;
 
 @end

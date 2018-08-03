@@ -10,10 +10,9 @@
 #import "PNGrandparent.h"
 #import "PNParent.h"
 #import "PNSon.h"
-#import "PNGrandparent+PNAdd.h"
 //#import "NSMutableArray+PNAddE.h"
 #import "PNRuntimeController.h"
-
+#import "PNClassClustersViewController.h"
 #import "NSObject+PNAdd.h"
 
 #import <sys/utsname.h>
@@ -29,7 +28,7 @@
     [super viewDidLoad];
 
     
-    UIButton * btn = [UIButton buttonImage:@"backRed" title:@"Runtime"];
+    UIButton * btn = [UIButton buttonImage:@"1" title:@"Runtime"];
     
     //object_setIvar(btn, (__bridge Ivar _Nonnull)(name), @"peng");
     btn.frame = CGRectMake(0, 100, 100, 60);
@@ -44,6 +43,12 @@
     
     [self testSubClassOverwriteSuperclassProperty];
     
+    
+    
+}
+- (IBAction)testClassClusters:(id)sender {
+    PNClassClustersViewController * clusters = [[PNClassClustersViewController alloc] init];
+    [self.navigationController pushViewController:clusters animated:YES];
 }
 
 #pragma mark -  //继承分类方法测试
@@ -114,12 +119,15 @@
 - (void)testSubClassOverwriteSuperclassProperty{
     
     PNGrandparent * gp = [PNGrandparent new];
-    gp.lastname = @"John";
-    gp.firstname = @"Tom";
+    gp.lastname = @"Smith";
+    gp.firstname = @"Jone";
     
     PNParent * p = [PNParent new];
+    [p fly];
     p.firstname = @"Jean";
     NSLog(@"ap:%@", gp.firstname);
+    p.sons = @[@"Tom",@"Jack"];
+
     
     PNSon * s = [PNSon new];
     s.firstname = @"Jack";

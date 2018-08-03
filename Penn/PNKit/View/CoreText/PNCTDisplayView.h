@@ -22,5 +22,14 @@ static NSString *const PNCTDisplayViewLinkTapedNotification = @"PNCTDisplayViewL
  */
 @property (nonatomic, strong) PNCoreTextData * data;
 
+/**
+ 只需要重新声明此属性,并设置值就会有辅助视图
+ */
+@property (nonatomic, strong) UIView * inputAccessoryView;
+
+@property (nonatomic, strong) NSArray * images;
+
+@property (nonatomic, copy) NSString * name;
+
 
 @end

@@ -23,6 +23,9 @@
 		3D3255192110693900E593F1 /* coretext-image-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D3255172110693900E593F1 /* coretext-image-1.jpg */; };
 		3D32551C21118C8400E593F1 /* PNCTLinkData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D32551B21118C8400E593F1 /* PNCTLinkData.m */; };
 		3D32551F21118E7D00E593F1 /* PNCTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D32551E21118E7D00E593F1 /* PNCTUtils.m */; };
+		3D325523211409E200E593F1 /* PNClassClustersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D325521211409E200E593F1 /* PNClassClustersViewController.m */; };
+		3D325524211409E200E593F1 /* PNClassClustersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D325522211409E200E593F1 /* PNClassClustersViewController.xib */; };
+		3D32552821140A9800E593F1 /* PNFundationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D32552721140A9800E593F1 /* PNFundationController.xib */; };
 		3D3E6C01210071D300C7573B /* PNRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E6BFF210071D300C7573B /* PNRuntimeController.m */; };
 		3D3E6C02210071D300C7573B /* PNRuntimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E6C00210071D300C7573B /* PNRuntimeController.xib */; };
 		3D40665820E48D8C00BA740C /* PNFillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40665720E48D8C00BA740C /* PNFillModel.m */; };
@@ -36,11 +39,9 @@
 		3DFB089420E2133700DC22BC /* PNFillTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB089320E2133700DC22BC /* PNFillTextView.m */; };
 		3DFB089720E2139C00DC22BC /* PNTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB089620E2139C00DC22BC /* PNTextViewController.m */; };
 		AFA3269A0284ADD10DACE575 /* Pods_Penn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E2548721EB82E0044BD24E /* Pods_Penn.framework */; };
-		BC034F1420A59F05001117ED /* PNGrandparent+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BC034F1320A59F05001117ED /* PNGrandparent+PNAdd.m */; };
 		BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683720A4132C009FB674 /* PNGrandparent.m */; };
 		BC05683B20A41349009FB674 /* PNParent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683A20A41349009FB674 /* PNParent.m */; };
 		BC05683E20A41382009FB674 /* PNSon.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683D20A41382009FB674 /* PNSon.m */; };
-		BC3E3CED20AAC86600D0CED6 /* PNParent+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3CEC20AAC86600D0CED6 /* PNParent+PNAdd.m */; };
 		BCC68F1A20B2B8E000EE9334 /* PNTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC68F1920B2B8E000EE9334 /* PNTask.m */; };
 		BCF77CC720B510B000BA34CD /* UIViewController+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF77CC620B510B000BA34CD /* UIViewController+PNAdd.m */; };
 		BCF77CCA20B510C500BA34CD /* UILabel+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF77CC920B510C500BA34CD /* UILabel+PNAdd.m */; };
@@ -128,6 +129,10 @@
 		3D32551B21118C8400E593F1 /* PNCTLinkData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTLinkData.m; sourceTree = "<group>"; };
 		3D32551D21118E7D00E593F1 /* PNCTUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTUtils.h; sourceTree = "<group>"; };
 		3D32551E21118E7D00E593F1 /* PNCTUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTUtils.m; sourceTree = "<group>"; };
+		3D325520211409E200E593F1 /* PNClassClustersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNClassClustersViewController.h; sourceTree = "<group>"; };
+		3D325521211409E200E593F1 /* PNClassClustersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNClassClustersViewController.m; sourceTree = "<group>"; };
+		3D325522211409E200E593F1 /* PNClassClustersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNClassClustersViewController.xib; sourceTree = "<group>"; };
+		3D32552721140A9800E593F1 /* PNFundationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNFundationController.xib; sourceTree = "<group>"; };
 		3D3E6BFE210071D300C7573B /* PNRuntimeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNRuntimeController.h; sourceTree = "<group>"; };
 		3D3E6BFF210071D300C7573B /* PNRuntimeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNRuntimeController.m; sourceTree = "<group>"; };
 		3D3E6C00210071D300C7573B /* PNRuntimeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNRuntimeController.xib; sourceTree = "<group>"; };
@@ -153,16 +158,12 @@
 		4A58AB53F3ACAE3BE3C87FB3 /* Pods-Penn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Penn/Pods-Penn.release.xcconfig"; sourceTree = "<group>"; };
 		64E2548721EB82E0044BD24E /* Pods_Penn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Penn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971DC9A86F7BC0CD644EE23A /* Pods-Penn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Penn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Penn/Pods-Penn.debug.xcconfig"; sourceTree = "<group>"; };
-		BC034F1220A59F05001117ED /* PNGrandparent+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNGrandparent+PNAdd.h"; sourceTree = "<group>"; };
-		BC034F1320A59F05001117ED /* PNGrandparent+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNGrandparent+PNAdd.m"; sourceTree = "<group>"; };
 		BC05683620A4132C009FB674 /* PNGrandparent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNGrandparent.h; sourceTree = "<group>"; };
 		BC05683720A4132C009FB674 /* PNGrandparent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNGrandparent.m; sourceTree = "<group>"; };
 		BC05683920A41349009FB674 /* PNParent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNParent.h; sourceTree = "<group>"; };
 		BC05683A20A41349009FB674 /* PNParent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNParent.m; sourceTree = "<group>"; };
 		BC05683C20A41382009FB674 /* PNSon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNSon.h; sourceTree = "<group>"; };
 		BC05683D20A41382009FB674 /* PNSon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNSon.m; sourceTree = "<group>"; };
-		BC3E3CEB20AAC86600D0CED6 /* PNParent+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNParent+PNAdd.h"; sourceTree = "<group>"; };
-		BC3E3CEC20AAC86600D0CED6 /* PNParent+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNParent+PNAdd.m"; sourceTree = "<group>"; };
 		BCC68F1820B2B8E000EE9334 /* PNTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNTask.h; sourceTree = "<group>"; };
 		BCC68F1920B2B8E000EE9334 /* PNTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNTask.m; sourceTree = "<group>"; };
 		BCF77CC520B510AF00BA34CD /* UIViewController+PNAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PNAdd.h"; sourceTree = "<group>"; };
@@ -321,10 +322,6 @@
 				BC05683A20A41349009FB674 /* PNParent.m */,
 				BC05683C20A41382009FB674 /* PNSon.h */,
 				BC05683D20A41382009FB674 /* PNSon.m */,
-				BC034F1220A59F05001117ED /* PNGrandparent+PNAdd.h */,
-				BC034F1320A59F05001117ED /* PNGrandparent+PNAdd.m */,
-				BC3E3CEB20AAC86600D0CED6 /* PNParent+PNAdd.h */,
-				BC3E3CEC20AAC86600D0CED6 /* PNParent+PNAdd.m */,
 			);
 			path = InheritClass;
 			sourceTree = "<group>";
@@ -335,6 +332,7 @@
 				3D4E27542105CDBA0013152D /* AutoDict */,
 				D594E3181FB69A3D00255114 /* PNFundationController.h */,
 				D594E3191FB69A3D00255114 /* PNFundationController.m */,
+				3D32552721140A9800E593F1 /* PNFundationController.xib */,
 				BC034F0B20A59304001117ED /* InheritClass */,
 				3D3E6BFE210071D300C7573B /* PNRuntimeController.h */,
 				3D3E6BFF210071D300C7573B /* PNRuntimeController.m */,
@@ -347,6 +345,9 @@
 				3D1759402101B71E0027C7DB /* PNDynamicMethod.m */,
 				3D1759422101B74E0027C7DB /* PNDynamicMethod+PNAdd.h */,
 				3D1759432101B74F0027C7DB /* PNDynamicMethod+PNAdd.m */,
+				3D325520211409E200E593F1 /* PNClassClustersViewController.h */,
+				3D325521211409E200E593F1 /* PNClassClustersViewController.m */,
+				3D325522211409E200E593F1 /* PNClassClustersViewController.xib */,
 			);
 			path = PNFundation;
 			sourceTree = "<group>";
@@ -689,10 +690,12 @@
 				D5B7C24D1F611501001FA29C /* Assets.xcassets in Resources */,
 				3D3255182110693900E593F1 /* coretext-image-2.jpg in Resources */,
 				D529F36E1FD296B8008C67F3 /* btn_addPicture_BgImage@2x.png in Resources */,
+				3D325524211409E200E593F1 /* PNClassClustersViewController.xib in Resources */,
 				D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */,
 				236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */,
 				D5AAC5D51FC915C200A9BD86 /* PICrazyButton.xib in Resources */,
 				D5B7C24B1F611501001FA29C /* Main.storyboard in Resources */,
+				3D32552821140A9800E593F1 /* PNFundationController.xib in Resources */,
 				3D3255122110484800E593F1 /* content.json in Resources */,
 				236BAA15209FEC81006BD6B9 /* PNEmptyButton.xib in Resources */,
 				D529F36F1FD296B8008C67F3 /* backRed@3x.png in Resources */,
@@ -798,12 +801,11 @@
 				3D4E27572105CE0D0013152D /* PNAutoDictionary.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
-				BC3E3CED20AAC86600D0CED6 /* PNParent+PNAdd.m in Sources */,
 				3D32551C21118C8400E593F1 /* PNCTLinkData.m in Sources */,
-				BC034F1420A59F05001117ED /* PNGrandparent+PNAdd.m in Sources */,
 				BC05683B20A41349009FB674 /* PNParent.m in Sources */,
 				BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */,
 				3DFB089720E2139C00DC22BC /* PNTextViewController.m in Sources */,
+				3D325523211409E200E593F1 /* PNClassClustersViewController.m in Sources */,
 				3D3E6C01210071D300C7573B /* PNRuntimeController.m in Sources */,
 				236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,

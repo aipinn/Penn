@@ -11,6 +11,8 @@
 //static const int kInterval = 10;
 //static NSMutableArray * kArr;
 @implementation PNGrandparent
+
+
 + (void)load{
     NSLog(@"load+%s", __FUNCTION__);
     NSLog(@"load-PNGrandparent:%@", [NSThread currentThread]);
@@ -46,6 +48,7 @@
     
 }
 
+
 //获取属性列表,不包含指定类(class_copyPropertyList(self.class,xxx)的父类的属性
 - (void)getAllPropertys{
  
@@ -70,4 +73,37 @@
     NSLog(@"%s", __FUNCTION__);
 }
 
+
+- (void)setHorses:(NSArray *)horses{
+    
+}
+@end
+//----------------
+//----------------
+@implementation PNGrandparent (PNAdd)
+//+ (void)load{
+//    NSLog(@"category+%s", __FUNCTION__);
+//}
+
++ (void)initialize
+{
+    if (self == [self class]) {
+        NSLog(@"category-initialize: %s", __FUNCTION__);
+    }
+}
+
+//Any methods that you declare in a category will be available to
+//all instances of the original class, as well as any subclasses of the original class.
+
+//- (void)play{
+//    NSLog(@"%s", __FUNCTION__);
+//}
+
+
+- (void)setSons:(NSArray *)sons{
+    
+}
+- (NSArray *)sons{
+    return @[];
+}
 @end

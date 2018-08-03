@@ -10,7 +10,7 @@
 #import "PNCTDisplayView.h"
 #import "PNCTFrameParser.h"
 #import "PNCTFrameParserConfig.h"
-
+#import "UIViewController+PNAdd.h"
 
 @interface PNCoreTextViewController ()
 @property (weak, nonatomic) IBOutlet PNCTDisplayView *coreTextView;
@@ -61,7 +61,8 @@
     textField.frame = CGRectMake(0, 600, 100, 50);
     [self.view addSubview:textField];
     textField.backgroundColor = [UIColor grayColor];
-
+    
+    NSLog(@"%@",[[YYClassInfo classInfoWithClass:self.coreTextView.class] ivarInfos]);
 
 }
 - (void)setupNotifications {
@@ -83,6 +84,7 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
 }
 
 - (void)dealloc{

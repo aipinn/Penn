@@ -13,7 +13,17 @@
 //@property (nonatomic, copy) NSString * firstname;
 @property (nonatomic, strong) NSString * proParent;
 
+@property (nonatomic, strong) NSArray * sons;
 
 - (void)fly;
+
+@end
+
+
+//----------------
+
+@interface PNParent (PNAdd)
+
+@property (nonatomic, strong) NSArray * images;
 
 @end
