@@ -14,9 +14,7 @@
 		3D1709AC20F4ABD5009DA2AA /* MBProgressHUD+LMJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1709A820F4ABD4009DA2AA /* MBProgressHUD+LMJ.m */; };
 		3D1709AD20F4ABD5009DA2AA /* MBProgressHUD+MP.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1709A920F4ABD4009DA2AA /* MBProgressHUD+MP.m */; };
 		3D17593B2101B3520027C7DB /* PNMsgForward.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D17593A2101B3520027C7DB /* PNMsgForward.m */; };
-		3D17593E2101B3D40027C7DB /* PNMsgForward+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D17593D2101B3D40027C7DB /* PNMsgForward+PNAdd.m */; };
 		3D1759412101B71E0027C7DB /* PNDynamicMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1759402101B71E0027C7DB /* PNDynamicMethod.m */; };
-		3D1759442101B74F0027C7DB /* PNDynamicMethod+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1759432101B74F0027C7DB /* PNDynamicMethod+PNAdd.m */; };
 		3D3255122110484800E593F1 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D3255112110484800E593F1 /* content.json */; };
 		3D3255152110653700E593F1 /* PNCTImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3255142110653700E593F1 /* PNCTImageData.m */; };
 		3D3255182110693900E593F1 /* coretext-image-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D3255162110693900E593F1 /* coretext-image-2.jpg */; };
@@ -36,6 +34,7 @@
 		3D75D9A4210EFA400069D46D /* PNCoreTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A3210EFA400069D46D /* PNCoreTextData.m */; };
 		3D75D9A7210EFA940069D46D /* PNCTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A6210EFA940069D46D /* PNCTFrameParserConfig.m */; };
 		3D75D9AA210EFAC70069D46D /* PNCTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */; };
+		3DDF126E211820D400AADF5C /* PNMemManController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF126D211820D400AADF5C /* PNMemManController.m */; };
 		3DFB089420E2133700DC22BC /* PNFillTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB089320E2133700DC22BC /* PNFillTextView.m */; };
 		3DFB089720E2139C00DC22BC /* PNTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB089620E2139C00DC22BC /* PNTextViewController.m */; };
 		AFA3269A0284ADD10DACE575 /* Pods_Penn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E2548721EB82E0044BD24E /* Pods_Penn.framework */; };
@@ -114,12 +113,8 @@
 		3D1709AB20F4ABD5009DA2AA /* MBProgressHUD+MP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MP.h"; sourceTree = "<group>"; };
 		3D1759392101B3520027C7DB /* PNMsgForward.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNMsgForward.h; sourceTree = "<group>"; };
 		3D17593A2101B3520027C7DB /* PNMsgForward.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNMsgForward.m; sourceTree = "<group>"; };
-		3D17593C2101B3D40027C7DB /* PNMsgForward+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNMsgForward+PNAdd.h"; sourceTree = "<group>"; };
-		3D17593D2101B3D40027C7DB /* PNMsgForward+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNMsgForward+PNAdd.m"; sourceTree = "<group>"; };
 		3D17593F2101B71E0027C7DB /* PNDynamicMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNDynamicMethod.h; sourceTree = "<group>"; };
 		3D1759402101B71E0027C7DB /* PNDynamicMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNDynamicMethod.m; sourceTree = "<group>"; };
-		3D1759422101B74E0027C7DB /* PNDynamicMethod+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PNDynamicMethod+PNAdd.h"; sourceTree = "<group>"; };
-		3D1759432101B74F0027C7DB /* PNDynamicMethod+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PNDynamicMethod+PNAdd.m"; sourceTree = "<group>"; };
 		3D3255112110484800E593F1 /* content.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
 		3D3255132110653700E593F1 /* PNCTImageData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTImageData.h; sourceTree = "<group>"; };
 		3D3255142110653700E593F1 /* PNCTImageData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTImageData.m; sourceTree = "<group>"; };
@@ -151,6 +146,8 @@
 		3D75D9A6210EFA940069D46D /* PNCTFrameParserConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTFrameParserConfig.m; sourceTree = "<group>"; };
 		3D75D9A8210EFAC70069D46D /* PNCTFrameParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTFrameParser.h; sourceTree = "<group>"; };
 		3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTFrameParser.m; sourceTree = "<group>"; };
+		3DDF126C211820D400AADF5C /* PNMemManController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNMemManController.h; sourceTree = "<group>"; };
+		3DDF126D211820D400AADF5C /* PNMemManController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNMemManController.m; sourceTree = "<group>"; };
 		3DFB089220E2133700DC22BC /* PNFillTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNFillTextView.h; sourceTree = "<group>"; };
 		3DFB089320E2133700DC22BC /* PNFillTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNFillTextView.m; sourceTree = "<group>"; };
 		3DFB089520E2139C00DC22BC /* PNTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNTextViewController.h; sourceTree = "<group>"; };
@@ -303,6 +300,21 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		3DDF126B21181EB500AADF5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D3E6BFE210071D300C7573B /* PNRuntimeController.h */,
+				3D3E6BFF210071D300C7573B /* PNRuntimeController.m */,
+				3D3E6C00210071D300C7573B /* PNRuntimeController.xib */,
+				3D325520211409E200E593F1 /* PNClassClustersViewController.h */,
+				3D325521211409E200E593F1 /* PNClassClustersViewController.m */,
+				3D325522211409E200E593F1 /* PNClassClustersViewController.xib */,
+				3DDF126C211820D400AADF5C /* PNMemManController.h */,
+				3DDF126D211820D400AADF5C /* PNMemManController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		98EC7010CD840C1D9E9A39AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,20 +346,11 @@
 				D594E3191FB69A3D00255114 /* PNFundationController.m */,
 				3D32552721140A9800E593F1 /* PNFundationController.xib */,
 				BC034F0B20A59304001117ED /* InheritClass */,
-				3D3E6BFE210071D300C7573B /* PNRuntimeController.h */,
-				3D3E6BFF210071D300C7573B /* PNRuntimeController.m */,
-				3D3E6C00210071D300C7573B /* PNRuntimeController.xib */,
+				3DDF126B21181EB500AADF5C /* Controller */,
 				3D1759392101B3520027C7DB /* PNMsgForward.h */,
 				3D17593A2101B3520027C7DB /* PNMsgForward.m */,
-				3D17593C2101B3D40027C7DB /* PNMsgForward+PNAdd.h */,
-				3D17593D2101B3D40027C7DB /* PNMsgForward+PNAdd.m */,
 				3D17593F2101B71E0027C7DB /* PNDynamicMethod.h */,
 				3D1759402101B71E0027C7DB /* PNDynamicMethod.m */,
-				3D1759422101B74E0027C7DB /* PNDynamicMethod+PNAdd.h */,
-				3D1759432101B74F0027C7DB /* PNDynamicMethod+PNAdd.m */,
-				3D325520211409E200E593F1 /* PNClassClustersViewController.h */,
-				3D325521211409E200E593F1 /* PNClassClustersViewController.m */,
-				3D325522211409E200E593F1 /* PNClassClustersViewController.xib */,
 			);
 			path = PNFundation;
 			sourceTree = "<group>";
@@ -818,11 +821,10 @@
 				BCF77CD920B55A9C00BA34CD /* NSObject+PNAdd.m in Sources */,
 				3D4ED2FB210B3DCF00A5D060 /* PNCoreTextViewController.m in Sources */,
 				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
-				3D17593E2101B3D40027C7DB /* PNMsgForward+PNAdd.m in Sources */,
-				3D1759442101B74F0027C7DB /* PNDynamicMethod+PNAdd.m in Sources */,
 				3D1759412101B71E0027C7DB /* PNDynamicMethod.m in Sources */,
 				D5B7C2421F611501001FA29C /* main.m in Sources */,
 				BCF77CC720B510B000BA34CD /* UIViewController+PNAdd.m in Sources */,
+				3DDF126E211820D400AADF5C /* PNMemManController.m in Sources */,
 				3D1709AD20F4ABD5009DA2AA /* MBProgressHUD+MP.m in Sources */,
 				D5AAC5DA1FC9449900A9BD86 /* PNFuncController.m in Sources */,
 				D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */,

@@ -78,6 +78,9 @@
     
     if(self.coreTextView.window && [self.coreTextView canBecomeFirstResponder]){
         BOOL ret =  [self.coreTextView becomeFirstResponder];
+        if (ret) {
+            [self.coreTextView reloadInputViews];
+        }
         NSLog(@"%d", ret);
     };
     

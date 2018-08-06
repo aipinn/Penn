@@ -14,7 +14,7 @@
 #import "PNRuntimeController.h"
 #import "PNClassClustersViewController.h"
 #import "NSObject+PNAdd.h"
-
+#import "PNMemManController.h"
 #import <sys/utsname.h>
 @interface PNFundationController ()
 
@@ -45,6 +45,12 @@
     
     
     
+}
+#pragma mark - Outlet Func
+
+- (IBAction)testMemMan:(id)sender {
+    PNMemManController * mm = [PNMemManController new];
+    [self.navigationController pushViewController:mm animated:YES];
 }
 - (IBAction)testClassClusters:(id)sender {
     PNClassClustersViewController * clusters = [[PNClassClustersViewController alloc] init];

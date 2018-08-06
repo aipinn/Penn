@@ -12,3 +12,15 @@
 
 
 @end
+
+//-----------------------------------------
+//------------Category--------------
+//-----------------------------------------
+@implementation PNMsgForward (PNAdd)
+
+- (void)doSomething{
+    NSLog(@"%s id doing something", __func__);
+}
+
+@end
+

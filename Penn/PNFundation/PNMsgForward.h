@@ -11,3 +11,11 @@
 @interface PNMsgForward : NSObject
 
 @end
+
+//--------------------------------------
+//------------Category------------------
+//--------------------------------------
+@interface PNMsgForward (PNAdd)
+
+
+@end

@@ -11,3 +11,10 @@
 @interface PNDynamicMethod : NSObject
 
 @end
+
+//-----------------------------------------
+//------------Category--------------
+//-----------------------------------------
+@interface PNDynamicMethod (PNAdd)
+
+@end

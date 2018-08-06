@@ -176,6 +176,8 @@
 #pragma mark - KeyboardNotification actions
 
 - (void)keyboardWillChangeFrame:(NSNotification *)notify{
+    CGRect keyboardFrame;
+    [[notify.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardFrame];
     
 }
 
