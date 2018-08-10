@@ -24,7 +24,8 @@
     window.backgroundColor = [UIColor whiteColor];
     [window makeKeyAndVisible];
     self.window = window;
-    
+    //打印日志
+    [self pnCatchCarshLog];
 
     return YES;
 }

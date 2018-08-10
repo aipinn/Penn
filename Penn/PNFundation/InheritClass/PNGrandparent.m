@@ -48,7 +48,6 @@
     
 }
 
-
 //获取属性列表,不包含指定类(class_copyPropertyList(self.class,xxx)的父类的属性
 - (void)getAllPropertys{
  

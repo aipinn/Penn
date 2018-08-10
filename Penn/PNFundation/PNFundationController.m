@@ -16,6 +16,8 @@
 #import "NSObject+PNAdd.h"
 #import "PNMemManController.h"
 #import <sys/utsname.h>
+
+#import "PNWaterModel.h"
 @interface PNFundationController ()
 
 @property (nonatomic, assign) BOOL ret;
@@ -28,6 +30,46 @@
     [super viewDidLoad];
 
     
+    NSMutableArray * arr = [NSMutableArray new];
+    arr = [self loadDataFromPath:@"tmp"];
+    
+    sleep(3);
+    
+    NSMutableArray *tmp = [NSMutableArray new];
+    tmp = [self loadDataFromPath:@"tmp1"];
+    
+    NSMutableArray *names = [NSMutableArray new];
+    for (PNWaterModel * model in arr) {
+        [names addObject:model.name];
+        
+    }
+    
+    for (PNWaterModel * model in tmp) {
+        if ([names containsObject:model.name]) {//已存在
+            for (NSInteger i = 0; i<arr.count; i++) {
+                if ([[arr[i] name] isEqualToString:model.name]) {
+                    [[arr[i] list] addObjectsFromArray:model.list];
+                }
+            }
+        }else{
+            [arr addObject:model];
+        }
+    }
+    NSLog(@"%@", arr);
+}
+
+- (NSMutableArray *)loadDataFromPath:(NSString *)fileName{
+    
+    NSString * path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"txt"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    NSError * error = nil;
+    NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    NSMutableArray * arr = [NSMutableArray new];
+    arr = [PNWaterModel mj_objectArrayWithKeyValuesArray:dict[@"data"]];
+    return arr;
+}
+
+- (void)testBase{
     UIButton * btn = [UIButton buttonImage:@"1" title:@"Runtime"];
     
     //object_setIvar(btn, (__bridge Ivar _Nonnull)(name), @"peng");
@@ -38,14 +80,13 @@
         [self.navigationController pushViewController:rt animated:YES];
         NSLog(@"");
     };
-     
-   
+    
+    
     
     [self testSubClassOverwriteSuperclassProperty];
     
-    
-    
 }
+
 #pragma mark - Outlet Func
 
 - (IBAction)testMemMan:(id)sender {
