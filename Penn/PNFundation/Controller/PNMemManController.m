@@ -39,7 +39,7 @@ uintptr_t _objc_rootRetainCount(id obj);
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self testAutoreleasingOtherSample];
-    
+
     
 
 }
@@ -262,7 +262,7 @@ uintptr_t _objc_rootRetainCount(id obj);
     id __weak obj2 = obj0;
     id __autoreleasing tmp = obj2;
     NSLog(@"class=%@", [tmp class]);
-    
+
     
     
     NSError *error = nil;

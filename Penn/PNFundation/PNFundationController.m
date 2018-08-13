@@ -26,15 +26,22 @@
 
 @implementation PNFundationController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+}
+
+
+- (void)testModel{
     
     NSMutableArray * arr = [NSMutableArray new];
     arr = [self loadDataFromPath:@"tmp"];
-    
     sleep(3);
-    
     NSMutableArray *tmp = [NSMutableArray new];
     tmp = [self loadDataFromPath:@"tmp1"];
     
@@ -43,7 +50,6 @@
         [names addObject:model.name];
         
     }
-    
     for (PNWaterModel * model in tmp) {
         if ([names containsObject:model.name]) {//已存在
             for (NSInteger i = 0; i<arr.count; i++) {
