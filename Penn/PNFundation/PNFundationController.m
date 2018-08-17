@@ -16,8 +16,9 @@
 #import "NSObject+PNAdd.h"
 #import "PNMemManController.h"
 #import <sys/utsname.h>
-
+#import "PNBlockViewController.h"
 #import "PNWaterModel.h"
+
 @interface PNFundationController ()
 
 @property (nonatomic, assign) BOOL ret;
@@ -95,6 +96,10 @@
 
 #pragma mark - Outlet Func
 
+- (IBAction)testBlock:(id)sender {
+    PNBlockViewController * block = [[PNBlockViewController alloc] init];
+    [self.navigationController pushViewController:block animated:YES];
+}
 - (IBAction)testMemMan:(id)sender {
     PNMemManController * mm = [PNMemManController new];
     [self.navigationController pushViewController:mm animated:YES];

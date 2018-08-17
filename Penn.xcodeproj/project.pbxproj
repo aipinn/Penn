@@ -34,6 +34,8 @@
 		3D75D9A4210EFA400069D46D /* PNCoreTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A3210EFA400069D46D /* PNCoreTextData.m */; };
 		3D75D9A7210EFA940069D46D /* PNCTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A6210EFA940069D46D /* PNCTFrameParserConfig.m */; };
 		3D75D9AA210EFAC70069D46D /* PNCTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */; };
+		3D817A3E2121644A00967D77 /* PNBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D817A3C2121644A00967D77 /* PNBlockViewController.m */; };
+		3D817A3F2121644A00967D77 /* PNBlockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D817A3D2121644A00967D77 /* PNBlockViewController.xib */; };
 		3DDF126E211820D400AADF5C /* PNMemManController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF126D211820D400AADF5C /* PNMemManController.m */; };
 		3DDF1271211C3FFF00AADF5C /* PNWaterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF1270211C3FFF00AADF5C /* PNWaterModel.m */; };
 		3DDF1274211C415D00AADF5C /* tmp.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF1273211C415C00AADF5C /* tmp.txt */; };
@@ -149,6 +151,9 @@
 		3D75D9A6210EFA940069D46D /* PNCTFrameParserConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTFrameParserConfig.m; sourceTree = "<group>"; };
 		3D75D9A8210EFAC70069D46D /* PNCTFrameParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTFrameParser.h; sourceTree = "<group>"; };
 		3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCTFrameParser.m; sourceTree = "<group>"; };
+		3D817A3B2121644A00967D77 /* PNBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNBlockViewController.h; sourceTree = "<group>"; };
+		3D817A3C2121644A00967D77 /* PNBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNBlockViewController.m; sourceTree = "<group>"; };
+		3D817A3D2121644A00967D77 /* PNBlockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNBlockViewController.xib; sourceTree = "<group>"; };
 		3DDF126C211820D400AADF5C /* PNMemManController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNMemManController.h; sourceTree = "<group>"; };
 		3DDF126D211820D400AADF5C /* PNMemManController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNMemManController.m; sourceTree = "<group>"; };
 		3DDF126F211C3FFF00AADF5C /* PNWaterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNWaterModel.h; sourceTree = "<group>"; };
@@ -318,6 +323,9 @@
 				3D325522211409E200E593F1 /* PNClassClustersViewController.xib */,
 				3DDF126C211820D400AADF5C /* PNMemManController.h */,
 				3DDF126D211820D400AADF5C /* PNMemManController.m */,
+				3D817A3B2121644A00967D77 /* PNBlockViewController.h */,
+				3D817A3C2121644A00967D77 /* PNBlockViewController.m */,
+				3D817A3D2121644A00967D77 /* PNBlockViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -702,6 +710,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D817A3F2121644A00967D77 /* PNBlockViewController.xib in Resources */,
 				3D4ED2FC210B3DCF00A5D060 /* PNCoreTextViewController.xib in Resources */,
 				D529F36B1FD296B8008C67F3 /* action-remove@3x.png in Resources */,
 				D5B7C2501F611501001FA29C /* LaunchScreen.storyboard in Resources */,
@@ -853,6 +862,7 @@
 				D5AAC5DA1FC9449900A9BD86 /* PNFuncController.m in Sources */,
 				D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */,
 				3D3255152110653700E593F1 /* PNCTImageData.m in Sources */,
+				3D817A3E2121644A00967D77 /* PNBlockViewController.m in Sources */,
 				D5AAC58A1FC8130D00A9BD86 /* UIButton+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
