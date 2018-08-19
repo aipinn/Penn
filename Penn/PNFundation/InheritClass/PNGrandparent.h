@@ -28,8 +28,21 @@
 
 @property (nonatomic, copy) NSString * firstname;
 @property (nonatomic, copy) NSString * lastname;
+@property (nonatomic, strong) NSArray * horses;
+
 
 - (void)work;
 - (void)play;
 
+
+
 @end
+
+//-------------
+//-------------
+@interface PNGrandparent (PNAdd)
+
+@property (nonatomic, strong) NSArray * sons;
+
+@end
+

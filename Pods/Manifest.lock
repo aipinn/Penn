@@ -16,6 +16,8 @@ PODS:
     - AFNetworking/NSURLSession
   - FBRetainCycleDetector (0.1.4)
   - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJExtension (3.0.15)
   - pop (1.0.10)
   - SDWebImage (4.1.2):
     - SDWebImage/Core (= 4.1.2)
@@ -29,16 +31,20 @@ DEPENDENCIES:
   - AFNetworking
   - FBRetainCycleDetector
   - Masonry
+  - MBProgressHUD
+  - MJExtension
   - pop
   - SDWebImage
   - Toast
   - YYKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - FBRetainCycleDetector
     - Masonry
+    - MBProgressHUD
+    - MJExtension
     - pop
     - SDWebImage
     - Toast
@@ -48,11 +54,13 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJExtension: 3f039575db1b135a20699ad298713b26acec1528
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c5d15a2b2b5e388b303fb56ac9f42c23d2ad729c
+PODFILE CHECKSUM: 07f8e29ebb113baf469330239465da0f1c340bf5
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

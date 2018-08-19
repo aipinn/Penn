@@ -10,10 +10,14 @@
 #import "PNGrandparent.h"
 #import "PNParent.h"
 #import "PNSon.h"
-#import "PNGrandparent+PNAdd.h"
 //#import "NSMutableArray+PNAddE.h"
-
+#import "PNRuntimeController.h"
+#import "PNClassClustersViewController.h"
 #import "NSObject+PNAdd.h"
+#import "PNMemManController.h"
+#import <sys/utsname.h>
+#import "PNBlockViewController.h"
+#import "PNWaterModel.h"
 
 @interface PNFundationController ()
 
@@ -23,72 +27,144 @@
 
 @implementation PNFundationController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    NSCache * cache = [[NSCache alloc] init];
-    /*Unlike an NSMutableDictionary object, a cache does not copy the key objects that are put into it.*/
-    [cache setObject:@"a" forKey:@"a"];
-    
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
-    NSString * str = nil;
-    NSString * value = @"value";
-    
-//    [dict setObject:@"123" forKey:@""];
-//    [dict setObject:str forKey:@"zero"];
-//    [dict setValue:@"" forKey:@"one"];
-//    [dict setValue:str forKey:@"two"];
-    /*
-     1. setObject：forkey：中value是不能够为nil的，不然会报错。
-     setValue：forKey：中value能够为nil，但是当value为nil的时候，会自动调用removeObject：forKey方法
-     2. setValue：forKey：中key的参数只能够是NSString类型，而setObject：forKey：的可以是任何类型
-     3. valueForKey:  ObjectForKey:
-     */
-//    [dict setValue:str forKey:@"setValue"];
-//    [dict setObject:str forKey:@"setObject"];
-//    [dict valueForKey:<#(nonnull NSString *)#>]
-//    [dict objectForKey:<#(nonnull id)#>
 
+}
+
+
+- (void)testModel{
     
+    NSMutableArray * arr = [NSMutableArray new];
+    arr = [self loadDataFromPath:@"tmp"];
+    sleep(3);
+    NSMutableArray *tmp = [NSMutableArray new];
+    tmp = [self loadDataFromPath:@"tmp1"];
+    
+    NSMutableArray *names = [NSMutableArray new];
+    for (PNWaterModel * model in arr) {
+        [names addObject:model.name];
+        
+    }
+    for (PNWaterModel * model in tmp) {
+        if ([names containsObject:model.name]) {//已存在
+            for (NSInteger i = 0; i<arr.count; i++) {
+                if ([[arr[i] name] isEqualToString:model.name]) {
+                    [[arr[i] list] addObjectsFromArray:model.list];
+                }
+            }
+        }else{
+            [arr addObject:model];
+        }
+    }
+    NSLog(@"%@", arr);
+}
+
+- (NSMutableArray *)loadDataFromPath:(NSString *)fileName{
+    
+    NSString * path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"txt"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    NSError * error = nil;
+    NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    NSMutableArray * arr = [NSMutableArray new];
+    arr = [PNWaterModel mj_objectArrayWithKeyValuesArray:dict[@"data"]];
+    return arr;
+}
+
+- (void)testBase{
+    UIButton * btn = [UIButton buttonImage:@"1" title:@"Runtime"];
+    
+    //object_setIvar(btn, (__bridge Ivar _Nonnull)(name), @"peng");
+    btn.frame = CGRectMake(0, 100, 100, 60);
+    [self.view addSubview:btn];
+    btn.callBack = ^{
+        PNRuntimeController * rt = [PNRuntimeController new];
+        [self.navigationController pushViewController:rt animated:YES];
+        NSLog(@"");
+    };
+    
+    
+    
+    [self testSubClassOverwriteSuperclassProperty];
+    
+}
+
+#pragma mark - Outlet Func
+
+- (IBAction)testBlock:(id)sender {
+    PNBlockViewController * block = [[PNBlockViewController alloc] init];
+    [self.navigationController pushViewController:block animated:YES];
+}
+- (IBAction)testMemMan:(id)sender {
+    PNMemManController * mm = [PNMemManController new];
+    [self.navigationController pushViewController:mm animated:YES];
+}
+- (IBAction)testClassClusters:(id)sender {
+    PNClassClustersViewController * clusters = [[PNClassClustersViewController alloc] init];
+    [self.navigationController pushViewController:clusters animated:YES];
+}
+
+#pragma mark -  //继承分类方法测试
+- (void)inheritAndCategoryFunTest{
     
     PNParent * parent = [[PNParent alloc] init];
     [parent play];
     [parent work];
     [parent fly];
     
+}
+
+#pragma mark - 集合nil错误
+- (void)errorBecauseNil{
+    /*
+     1. setObject：forkey：中value不能够为nil。
+     setValue：forKey：中value可以为nil，但是当value为nil的时候，会自动调用removeObject：forKey方法
+     2. setValue：forKey：中key的参数只能够是NSString类型，而setObject：forKey：的可以是任何类型
+     3. valueForKey:  ObjectForKey:
+     */
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    NSString * nilStr = nil;
+    NSString * str = @"not nill string";
+    
+    //键值都不能为nil
+    //[dict setObject:str forKey:nilStr];
+    [dict setObject:nilStr forKey:str];
+    
+    //值可以为nil,键不能为nil
+    //[dict setValue:str forKey:nilStr];
+    [dict setValue:nilStr forKey:str];
+    
+    //key不能为nil
+    //[dict setObject:@"" forKey:str];
+    //[dict setValue:@"" forKey:str];
+    
+    //键可以不存在或为nil
+    [dict valueForKey:@"peng"];
+    [dict objectForKey:@"peng"];
+    [dict valueForKey:nilStr];
+    [dict objectForKey:nilStr];
+}
+- (void)runtimeAvoidCollectionError{
+    //运行时防止数组崩溃
+    NSString * str = nil;
     NSMutableArray * mArr = [NSMutableArray new];
     [mArr addObject:str]; // str = nil
-
+    
     [mArr addObject:@"obj0"];
     [mArr addObject:@"obj1"];
     [mArr addObject:@"obj2"];
     [mArr addObject:@"obj3"];
     [mArr addObject:@"obj4"];
-
+    
     [mArr removeObjectAtIndex:0];
     [mArr removeObjectAtIndex:666];
-
-    
     [mArr replaceObjectAtIndex:10 withObject:str];
 }
-
-
-
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - 集合nil错误
-- (void)errorBecauseNil{
-    
-}
-
 #pragma mark - 测试子类重写父类的setter方法遇到的问题:
 /*
  测试子类重写父类的setter方法遇到的问题:
@@ -99,14 +175,17 @@
  5. runtime获取类的实例变量和属性
  */
 - (void)testSubClassOverwriteSuperclassProperty{
-
+    
     PNGrandparent * gp = [PNGrandparent new];
-    gp.lastname = @"John";
-    gp.firstname = @"Tom";
+    gp.lastname = @"Smith";
+    gp.firstname = @"Jone";
     
     PNParent * p = [PNParent new];
+    [p fly];
     p.firstname = @"Jean";
     NSLog(@"ap:%@", gp.firstname);
+    p.sons = @[@"Tom",@"Jack"];
+
     
     PNSon * s = [PNSon new];
     s.firstname = @"Jack";
@@ -122,12 +201,12 @@
     NSMutableSet *set1 = [NSMutableSet setWithArray:array1];
     NSMutableSet *set2 = [NSMutableSet setWithArray:array2];
     
-//    [set1 unionSet:set2];       //取并集后 set1中为1，2，3，5，6
-//    NSLog(@"%@", set1);
-//    [set1 intersectSet:set2];  //取交集后 set1中为1
-//    NSLog(@"%@", set1);
-//    [set1 minusSet:set2];      //取差集后 set1中为2，3，5，6
-//    NSLog(@"%@", set1);
+    //    [set1 unionSet:set2];       //取并集后 set1中为1，2，3，5，6
+    //    NSLog(@"%@", set1);
+    //    [set1 intersectSet:set2];  //取交集后 set1中为1
+    //    NSLog(@"%@", set1);
+    //    [set1 minusSet:set2];      //取差集后 set1中为2，3，5，6
+    //    NSLog(@"%@", set1);
     {//并集 差集之后为2,3
         NSMutableSet * temp = [NSMutableSet setWithArray:set1.allObjects];
         [set1 unionSet:set2];
@@ -135,9 +214,9 @@
         NSLog(@"%@", set1);//
     }
     {//并集交集之后为:1, 5, 6
-//        [set1 unionSet:set2];
-//        [set1 intersectSet:set2];
-//        NSLog(@"%@", set1);
+        //        [set1 unionSet:set2];
+        //        [set1 intersectSet:set2];
+        //        NSLog(@"%@", set1);
     }
     
     {
@@ -150,8 +229,8 @@
 #pragma mark - Load and Initialize
 - (void)loadAndInitialize{
     
-//    PNGrandparent * gp = [[PNGrandparent alloc] init];
-//    PNParent * parent = [[PNParent alloc] init];
+    //    PNGrandparent * gp = [[PNGrandparent alloc] init];
+    //    PNParent * parent = [[PNParent alloc] init];
     //    [parent work];
     
     //    PNSon * son = [PNSon new];

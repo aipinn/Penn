@@ -10,4 +10,6 @@
 
 @interface BaseModel : NSObject
 
+
+
 @end

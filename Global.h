@@ -55,20 +55,28 @@
 
 
 //自定义打印Log
+//A better version of NSLog
+//#define NSLog(format, ...) do { \
+//fprintf(stderr, "<%s : %d> %s\n", \
+//[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], \
+//__LINE__, __func__); \
+//(NSLog)((format), ##__VA_ARGS__); \
+//fprintf(stderr, "-------\n"); \
+//} while (0)
 
-#ifdef DEBUG
-
-#define MyLog(fmt, ...) NSLog((@"MyLog:\n FUNC: %s  |**| [Line %d] \n" fmt),__func__, __LINE__, ##__VA_ARGS__)
-
-#define MBLog(fmt, ...) NSLog((@"[Line %d] --> " fmt), __LINE__, ##__VA_ARGS__)
-
-#else
-
-#define MyLog(fmt, ...)
-
-#define MBLog(fmt, ...)
-
-#endif
+//#ifdef DEBUG
+//
+//#define MyLog(fmt, ...) NSLog((@"MyLog:\n FUNC: %s  |**| [Line %d] \n" fmt),__func__, __LINE__, ##__VA_ARGS__)
+//
+//#define MBLog(fmt, ...) NSLog((@"[Line %d] --> " fmt), __LINE__, ##__VA_ARGS__)
+//
+//#else
+//
+//#define MyLog(fmt, ...)
+//
+//#define MBLog(fmt, ...)
+//
+//#endif
 
 //单例化一个类
 #define SYNTHESIZE_SINGLETON_FOR_CLASS(classname) \

@@ -1,0 +1,45 @@
+ [{
+  "type" : "img",
+  "width" : 300,
+  "height" : 160,
+  "name" : "coretext-image-1.jpg"
+  },
+  { "color" : "blue",
+ "content" : "在CTFrame内部，是由多个CTLine组成的,每个",
+ "size" : 16,
+ "type" : "txt"
+ },
+ { "color" : "red",
+ "content" : "CTLine代表一行,每个CTLine又是由多个CTRun",
+ "size" : 22,
+ "type" : "txt"
+ },
+ { "color" : "black",
+ "content" : "来组成,每个CTRun代表一组风格一致的文本.我们",
+ "size" : 16,
+ "type" : "txt"
+ },
+  {
+  "type" : "img",
+  "width" : 50,
+  "height" : 32,
+  "name" : "coretext-image-2.jpg"
+  },
+ { "color" : "default",
+ "content" : "不用手工管理CTLine和CTRun的创建过程。",
+ "type" : "txt"
+ },
+  { "color" : "default",
+  "content" : "这在这里尝试放一个参考链接：",
+  "type" : "txt"
+  },
+  { "color" : "blue",
+  "content" : "链接文字",
+  "url" : "https://github.com/aipinn",
+  "type" : "link"
+  },
+  { "color" : "default",
+  "content" : "尝试点击一下",
+  "type" : "txt"
+  }
+ ]
