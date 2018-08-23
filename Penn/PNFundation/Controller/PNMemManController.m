@@ -298,9 +298,12 @@ uintptr_t _objc_rootRetainCount(id obj);
     NSLog(@"%@", e2);//Error Domain=NSNetServicesErrorDomain Code=403 "(null)" UserInfo={key=value}
 }
 //自定义示例
-- (void)performOperationWithError:(NSError * __autoreleasing *)error{
+//使用静态分析提示,使用NSError ** 需要返回一个非空对象,并且要对参数error进行判断
+- (id)performOperationWithError:(NSError * __autoreleasing *)error{
+    if (!error) return @"an nonnull object";
     NSError * e = [[NSError alloc] initWithDomain:NSNetServicesErrorDomain code:404 userInfo:@{@"key":@"value"}];
     *error = e;
+    return e;
 }
 - (void)performOperationWithComparison1Error:(NSError *)error{
     NSError * e = [[NSError alloc] initWithDomain:NSNetServicesErrorDomain code:403 userInfo:@{@"key":@"value"}];
@@ -311,9 +314,13 @@ uintptr_t _objc_rootRetainCount(id obj);
 //只有作为alloc/new/copy/mutableCopy方法返回而取得的对象时,能够自己生成并持有对象.其他情况均为"取得非自己生成并持有的对象".
 //为了在使用参数取得对象时,贯彻内存管理的思考方式,我们要将参数声明为附有__autoreleasing修饰符的对象指针类型.
 //另外,虽然可以非显式地指定__autoreleasing修饰符,但是在显式的指定__autoreleasing修饰符时,必须注意对象变量要为自动变量(局部变量,函数以及方法参数)
-- (void)performOperationWithComparison2Error:(NSError * __strong*)error{
-    NSError * e = [[NSError alloc] initWithDomain:NSNetServicesErrorDomain code:402 userInfo:@{@"key":@"value"}];
-    *error = e;
+- (id)performOperationWithComparison2Error:(NSError * __strong*)error{
+    if (error) {
+        NSError * e = [[NSError alloc] initWithDomain:NSNetServicesErrorDomain code:402 userInfo:@{@"key":@"value"}];
+        *error = e;
+        return e;
+    }
+    return @"an nonnull object";
 }
 
 - (void)test__Strong__Weak{

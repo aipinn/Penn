@@ -21,7 +21,7 @@ typedef void (^block)(void);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self gcdDispatchSync];
+    [self gcdDispatchSemaphore];
     
 }
 
@@ -511,6 +511,10 @@ dispatch_time_t getDispatchTimeByDate(NSDate *date){
      死锁:线程管理
      消耗内存:管理线程数量
     */
+    
+    /*
+     GCD是异步执行任务的技术之一. 一般将应用程序中的管理线程的代码在系统级实现.开发者只需要将想执行的任务追加到适当的Dispatch Queue中,GCD就能生成必要的线程并执行任务.因为线程管理是作为系统的一部分来实现的,因此可统一管理,执行任务,所以比之前的线程效率更高.
+     */
     
 }
 

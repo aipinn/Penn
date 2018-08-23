@@ -34,9 +34,9 @@
 @implementation PNFillTextView
 
 - (instancetype)initWithFrame:(CGRect)frame text:(NSString *)text{
-    if ([super initWithFrame:frame]) {
+    self = [super initWithFrame:frame];
+    if (self) {
         self.text = text;
-
     }
     return self;
 }

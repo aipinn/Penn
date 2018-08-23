@@ -21,7 +21,7 @@
 }
 
 - (void)dealloc{
-    if (!_ctFrame) {
+    if (_ctFrame) {
         CFRelease(_ctFrame);
         _ctFrame = nil;
     }

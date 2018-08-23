@@ -7,6 +7,7 @@
 //
 
 #import "PNProfileViewController.h"
+#import "PNDataStructureController.h"
 
 @interface PNProfileViewController ()
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+}
+- (IBAction)dataStructure:(id)sender {
+    PNDataStructureController * data = [[PNDataStructureController alloc] init];
+    [self.navigationController pushViewController:data animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

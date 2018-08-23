@@ -11,6 +11,9 @@
 		236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA0F209FEA4B006BD6B9 /* PNViewButton.xib */; };
 		236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */; };
 		236BAA15209FEC81006BD6B9 /* PNEmptyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */; };
+		3D0C2A5F212D558D0015D85C /* PNDataStructureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C2A5D212D558D0015D85C /* PNDataStructureController.m */; };
+		3D0C2A60212D558D0015D85C /* PNDataStructureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */; };
+		3D0C2A62212D55B30015D85C /* PNProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C2A61212D55B30015D85C /* PNProfileViewController.xib */; };
 		3D1709AC20F4ABD5009DA2AA /* MBProgressHUD+LMJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1709A820F4ABD4009DA2AA /* MBProgressHUD+LMJ.m */; };
 		3D1709AD20F4ABD5009DA2AA /* MBProgressHUD+MP.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1709A920F4ABD4009DA2AA /* MBProgressHUD+MP.m */; };
 		3D17593B2101B3520027C7DB /* PNMsgForward.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D17593A2101B3520027C7DB /* PNMsgForward.m */; };
@@ -114,6 +117,10 @@
 		236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNEmptyButton.m; sourceTree = "<group>"; };
 		236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNEmptyButton.xib; sourceTree = "<group>"; };
 		2AAB1F823A83E0823CAEB201 /* libPods-PennTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PennTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D0C2A5C212D558D0015D85C /* PNDataStructureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNDataStructureController.h; sourceTree = "<group>"; };
+		3D0C2A5D212D558D0015D85C /* PNDataStructureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNDataStructureController.m; sourceTree = "<group>"; };
+		3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNDataStructureController.xib; sourceTree = "<group>"; };
+		3D0C2A61212D55B30015D85C /* PNProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNProfileViewController.xib; sourceTree = "<group>"; };
 		3D1709A820F4ABD4009DA2AA /* MBProgressHUD+LMJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+LMJ.m"; sourceTree = "<group>"; };
 		3D1709A920F4ABD4009DA2AA /* MBProgressHUD+MP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MP.m"; sourceTree = "<group>"; };
 		3D1709AA20F4ABD5009DA2AA /* MBProgressHUD+LMJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+LMJ.h"; sourceTree = "<group>"; };
@@ -428,6 +435,10 @@
 			children = (
 				D5AAC57E1FC8030300A9BD86 /* PNProfileViewController.h */,
 				D5AAC57F1FC8030300A9BD86 /* PNProfileViewController.m */,
+				3D0C2A61212D55B30015D85C /* PNProfileViewController.xib */,
+				3D0C2A5C212D558D0015D85C /* PNDataStructureController.h */,
+				3D0C2A5D212D558D0015D85C /* PNDataStructureController.m */,
+				3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -730,6 +741,7 @@
 				D5B7C24D1F611501001FA29C /* Assets.xcassets in Resources */,
 				3D3255182110693900E593F1 /* coretext-image-2.jpg in Resources */,
 				D529F36E1FD296B8008C67F3 /* btn_addPicture_BgImage@2x.png in Resources */,
+				3D0C2A62212D55B30015D85C /* PNProfileViewController.xib in Resources */,
 				3D325524211409E200E593F1 /* PNClassClustersViewController.xib in Resources */,
 				D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */,
 				236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */,
@@ -745,6 +757,7 @@
 				D529F36A1FD296B8008C67F3 /* backRed@2x.png in Resources */,
 				3D3255192110693900E593F1 /* coretext-image-1.jpg in Resources */,
 				D529F36D1FD296B8008C67F3 /* action-remove@2x.png in Resources */,
+				3D0C2A60212D558D0015D85C /* PNDataStructureController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,6 +859,7 @@
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
 				3D32551C21118C8400E593F1 /* PNCTLinkData.m in Sources */,
+				3D0C2A5F212D558D0015D85C /* PNDataStructureController.m in Sources */,
 				BC05683B20A41349009FB674 /* PNParent.m in Sources */,
 				BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */,
 				3DFB089720E2139C00DC22BC /* PNTextViewController.m in Sources */,
