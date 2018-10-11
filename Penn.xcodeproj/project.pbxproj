@@ -31,6 +31,8 @@
 		3D4ED2F1210B3B2E00A5D060 /* PNCTDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ED2F0210B3B2E00A5D060 /* PNCTDisplayView.m */; };
 		3D4ED2FB210B3DCF00A5D060 /* PNCoreTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ED2F9210B3DCF00A5D060 /* PNCoreTextViewController.m */; };
 		3D4ED2FC210B3DCF00A5D060 /* PNCoreTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D4ED2FA210B3DCF00A5D060 /* PNCoreTextViewController.xib */; };
+		3D5F66CB212A55D200270BCD /* PNGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F66C9212A55D200270BCD /* PNGCDViewController.m */; };
+		3D5F66CC212A55D200270BCD /* PNGCDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D5F66CA212A55D200270BCD /* PNGCDViewController.xib */; };
 		3D75D9A4210EFA400069D46D /* PNCoreTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A3210EFA400069D46D /* PNCoreTextData.m */; };
 		3D75D9A7210EFA940069D46D /* PNCTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A6210EFA940069D46D /* PNCTFrameParserConfig.m */; };
 		3D75D9AA210EFAC70069D46D /* PNCTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */; };
@@ -148,6 +150,9 @@
 		3D4ED2F8210B3DCF00A5D060 /* PNCoreTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCoreTextViewController.h; sourceTree = "<group>"; };
 		3D4ED2F9210B3DCF00A5D060 /* PNCoreTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCoreTextViewController.m; sourceTree = "<group>"; };
 		3D4ED2FA210B3DCF00A5D060 /* PNCoreTextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNCoreTextViewController.xib; sourceTree = "<group>"; };
+		3D5F66C8212A55D200270BCD /* PNGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNGCDViewController.h; sourceTree = "<group>"; };
+		3D5F66C9212A55D200270BCD /* PNGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNGCDViewController.m; sourceTree = "<group>"; };
+		3D5F66CA212A55D200270BCD /* PNGCDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNGCDViewController.xib; sourceTree = "<group>"; };
 		3D75D9A2210EFA400069D46D /* PNCoreTextData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCoreTextData.h; sourceTree = "<group>"; };
 		3D75D9A3210EFA400069D46D /* PNCoreTextData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNCoreTextData.m; sourceTree = "<group>"; };
 		3D75D9A5210EFA940069D46D /* PNCTFrameParserConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNCTFrameParserConfig.h; sourceTree = "<group>"; };
@@ -335,6 +340,9 @@
 				3D817A3B2121644A00967D77 /* PNBlockViewController.h */,
 				3D817A3C2121644A00967D77 /* PNBlockViewController.m */,
 				3D817A3D2121644A00967D77 /* PNBlockViewController.xib */,
+				3D5F66C8212A55D200270BCD /* PNGCDViewController.h */,
+				3D5F66C9212A55D200270BCD /* PNGCDViewController.m */,
+				3D5F66CA212A55D200270BCD /* PNGCDViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -748,6 +756,7 @@
 				3D325524211409E200E593F1 /* PNClassClustersViewController.xib in Resources */,
 				D585341F1F63FE2F00F4C588 /* PNSocketController.xib in Resources */,
 				236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */,
+				3D5F66CC212A55D200270BCD /* PNGCDViewController.xib in Resources */,
 				3DDF1276211C469800AADF5C /* tmp1.txt in Resources */,
 				D5AAC5D51FC915C200A9BD86 /* PICrazyButton.xib in Resources */,
 				D5B7C24B1F611501001FA29C /* Main.storyboard in Resources */,
@@ -888,6 +897,7 @@
 				D5AAC5DA1FC9449900A9BD86 /* PNFuncController.m in Sources */,
 				D5AAC5831FC8039C00A9BD86 /* BaseNavigationController.m in Sources */,
 				3D3255152110653700E593F1 /* PNCTImageData.m in Sources */,
+				3D5F66CB212A55D200270BCD /* PNGCDViewController.m in Sources */,
 				3D817A3E2121644A00967D77 /* PNBlockViewController.m in Sources */,
 				D5AAC58A1FC8130D00A9BD86 /* UIButton+Addition.m in Sources */,
 			);

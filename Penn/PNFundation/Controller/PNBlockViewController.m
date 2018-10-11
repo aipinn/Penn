@@ -280,6 +280,12 @@ blk_t blk = ^(int count){return count;};
     //3. 使用外部捕获的变量
     int a = 8;
     NSLog(@"StackBlock:%@", ^(int count){return count * a;});// StackBlock:<__NSStackBlock__: 0x7ffee765a0e0>
+    //使用__weak修饰的变量单纯的指向Block,此变量为栈Block
+    __weak blk_t blk_weak = ^(int count){// Assigning block literal to a weak variable; object will be released after assignment
+        printf("%d\n", a);
+        return a;
+    };// <__NSStackBlock__: 0x7ffeeb28c0f8>
+    NSLog(@"%@", blk);
     //4. 局部变量
     void (^blk_lg)(void) = ^{};
     void (^blk_lg_v)(void) = ^{int b = a+1;};

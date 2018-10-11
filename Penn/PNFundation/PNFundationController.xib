@@ -44,6 +44,14 @@
                         <action selector="testBlock:" destination="-1" eventType="touchUpInside" id="Z1w-9x-pbb"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQo-V9-GMG">
+                    <rect key="frame" x="114" y="303" width="94" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="GCD"/>
+                    <connections>
+                        <action selector="testGCD:" destination="-1" eventType="touchUpInside" id="Mbx-lz-97E"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

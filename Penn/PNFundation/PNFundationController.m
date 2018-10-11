@@ -18,6 +18,7 @@
 #import <sys/utsname.h>
 #import "PNBlockViewController.h"
 #import "PNWaterModel.h"
+#import "PNGCDViewController.h"
 
 @interface PNFundationController ()
 
@@ -107,6 +108,10 @@
 - (IBAction)testClassClusters:(id)sender {
     PNClassClustersViewController * clusters = [[PNClassClustersViewController alloc] init];
     [self.navigationController pushViewController:clusters animated:YES];
+}
+- (IBAction)testGCD:(id)sender {
+    PNGCDViewController * gcd = [[PNGCDViewController alloc]init];
+    [self.navigationController pushViewController:gcd animated:YES];
 }
 
 #pragma mark -  //继承分类方法测试
