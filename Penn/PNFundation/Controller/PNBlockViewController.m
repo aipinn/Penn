@@ -83,53 +83,74 @@ void setButtonCallbacks(int max){
 #pragma clang diagnostic ignored "-Wunused-variable"
 - (void)blockSyntax{
 
-
-
     //-------------------------|
     // ^ 返回值类型 参数列表 表达式 |
     //-------------------------|
     
-    ^(int event){//省略方式
+    //1. 无返回值无参数
+    ^void(void){
         
     };
+    // 无返回值无参数省略方式
+    ^{
+        printf("省略参数和返回值");
+    };
+    
+    //2. 无返回值有参数
     ^void (int event){
         
     };
-    //带有返回值类型
+    //void可以省略
+    ^(int event){
+        
+    };
+    
+    //3.有返回值有参数
     ^int (int count){
       return count+1;
     };
     //返回值类型可以省略,当表达式中含有多个返回值时,所有返回值类型必须一致.
     ^(int count){
-        return count+1;
+        if(count){
+            return count;
+        }else{
+            return count+1;
+            //return @"string type"; // 错误类型
+        }
     };
-    //参数列表也可省略
-    ^{
-        printf("省略参数和返回值");
-    };
-    
+
 }
 
-#pragma mark - block类型变量
+#pragma mark - Block类型变量
 //C语言含数指针变量
 int funcAdd(int count){
     return count+1;
 }
-int (*funcAddptr)(int) = &func;
+int (*funcAddptr)(int) = &funcAdd;
 
+void (^block_global)(void);
+
+static void (^block_static_global)(void);
+//Block类型变量
 - (void)blockTypeVar{
 
     //声明一个block变量
     //仅仅是将声明函数指针类型变量的*变为^.
     //所以,block可以像C语言的变量一样使用,可以作为:
     /*
-     1. 自动变量
+     1. 自动变量(局部变量)
      2. 函数参数
      3. 静态变量
      4. 静态全局变量
      5. 全局变量
      */
     int (^block)(int);
+    
+    block_global = ^{};
+    
+    static int (^block_static)(int);
+    
+    block_static_global = ^{};
     
     //赋值
     int (^blk)(int) = ^(int count){
@@ -139,14 +160,20 @@ int (*funcAddptr)(int) = &func;
     block = blk;
     blk(0);
     block(1);
-    
+    [self callBack:^(int count) {
+        printf("%d", count);
+    }];
+
+}
+// Block作为参数
+- (void)callBack:(void (^)(int count))callBack{
+    callBack(1);
 }
 
-#pragma mark - Block 截获变量/值
+#pragma mark - Block 捕获变量/值
 static int static_global_val = 10;
 int global_val = 10;
 - (void)blockInterceptAndCaptureVar{
-//#pragma clang diagnostic push
 
     //1.可以修改指针指向的数据的值.
     id arr = [[NSMutableArray alloc] init];
@@ -156,7 +183,7 @@ int global_val = 10;
     };
     blk();
     NSLog(@"%@", arr);
-    //2.__block
+    //2.__block修饰的变量可以修改指针指向
     __block id array = [[NSMutableArray alloc] init];
     void (^block)(void) = ^{
         array = [NSMutableArray arrayWithObjects:@"123", nil];
@@ -179,7 +206,7 @@ int global_val = 10;
         block();
     }
     /*5
-     * C语言中的几种类型的变量可以在block中改变
+     * C语言中的几种类型的变量可以在block中改变, 因为它们存放的区域不在栈上
      * 1. 静态变量
      * 2. 静态全局变量
      * 3. 全局变量
@@ -213,8 +240,8 @@ int global_val = 10;
      
      //变量__block int val被转化后:
      struct __Block_byref_val_0 {
-     void *__isa;
-     __Block_byref_val_0 *__forwarding;
+     void *__isa; //说明这是一个对象
+     __Block_byref_val_0 *__forwarding; //指向当前结构体本身
      int __flags;
      int __size;
      int val;
@@ -293,7 +320,7 @@ blk_t blk = ^(int count){return count;};
     //2. 使用外部变量的Block为_NSConcreteStackBlock
     //3. 手动copy后,GlobalBlock仍为GlobalBlock,栈Block变为堆Block.
     //4. arc下,赋值过程因为默认是__strong修饰符,会发生拷贝(ARC变量默认是__strong修饰,在内部会进行objc_retainBlock操作,objc_retainBlock实际上就是_Block_copy);
-    //   则如果Block表达式(^{})为Stack被赋值的变量为Malloc, 表达式为Global被赋值的变量仍然为Global
+    // 则如果Block表达式(^{})为Stack被赋值的变量为Malloc, 表达式为Global被赋值的变量仍然为Global
 //===================================================
 }
 
