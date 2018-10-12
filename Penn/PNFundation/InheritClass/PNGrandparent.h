@@ -33,8 +33,8 @@
 
 - (void)work;
 - (void)play;
-
-
+- (id)initWithName:(NSString *)name;
++ (instancetype)pngrandparentWithName:(NSString *)name;
 
 @end
 

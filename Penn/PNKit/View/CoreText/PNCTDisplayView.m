@@ -108,7 +108,9 @@
 }
 
 - (void)drawRect:(CGRect)rect{
-    [super drawRect:rect];
+    //If you subclass UIView directly, your implementation of this method does not need to call super. However, if you are subclassing a different view class, you should call super at some point in your implementation.
+    //直接继承UIView不需要调用父类,如果继承UIView的子类需要调用父类.
+    //[super drawRect:rect];
     if (!self.data) {
         return;
     }

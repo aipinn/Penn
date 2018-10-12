@@ -53,9 +53,9 @@
 //
 //}
 //========================================//
-//+ (void)load{
-//    NSLog(@"load+%s", __FUNCTION__);
-//}
++ (void)load{
+    NSLog(@"load+%s", __FUNCTION__);
+}
 + (void)initialize
 {
     if (self == [self class]) {
@@ -105,15 +105,17 @@
 //---------------
 @implementation PNParent (PNAdd)
 
-//+ (void)load{
-//    NSLog(@"load+%s", __FUNCTION__);
-//}
-//+ (void)initialize
-//{
-//    if (self == [self class]) {
-//        NSLog(@"initialize: %s", __FUNCTION__);
-//    }
-//}
++ (void)load{
+    NSLog(@"load+%s", __FUNCTION__);
+}
++ (void)initialize
+{
+    if (self == [self class]) {
+
+        NSLog(@"initialize: %s", __FUNCTION__);
+    }
+}
+
 
 // 分类重写本类的父类的方法: 本类和父类的实现都不再调用, 没有警告.
 - (void)work{

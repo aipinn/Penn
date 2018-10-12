@@ -9,6 +9,8 @@
 #ifndef Global_h
 #define Global_h
 
+#import "API.h"
+
 //--------------自定义宏---------------------------------------
 
 #define DBFileName [NSString stringWithFormat:@"%@_gdt_rep.sqlite",[MYUserDefaults objectForKey:@"FUSER_ID"]]

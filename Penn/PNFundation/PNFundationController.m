@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self inheritAndCategoryFunTest];
     
 }
 
@@ -119,6 +119,10 @@
 - (void)inheritAndCategoryFunTest{
     
     PNParent * parent = [[PNParent alloc] init];
+//    PNParent * p = [[PNParent alloc] initWithName:@"peng"];
+//    PNParent *par = [PNParent pngrandparentWithName:@"allen"];
+//    [p play];
+//    [par play];
     [parent play];
     [parent work];
     [parent fly];

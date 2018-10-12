@@ -20,6 +20,7 @@
 
 @interface PNKitViewController ()
 
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 @end
 
@@ -30,16 +31,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+
     
-    //    [self tapToShowWindow];
-    //    [self testCustomCrazyBtn];
-    //    [self TestCustomButton];
-    //    [self testNewButton];
-//        [self testRuntimeAssociated];
-    //    [self testKvcUse];
-    
-    [self yyImage_sdImage];
-    
+    UIInterpolatingMotionEffect * ipme = [[UIInterpolatingMotionEffect alloc]init];
+
     
 }
 #pragma mark - CoreText-Test

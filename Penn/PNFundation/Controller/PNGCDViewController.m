@@ -21,7 +21,7 @@ typedef void (^block)(void);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self gcdDispatchSemaphore];
+    [self gcdDispatchBarrierAsync];
     
 }
 
@@ -319,6 +319,14 @@ dispatch_time_t getDispatchTimeByDate(NSDate *date){
  Dispatch Target Queue
  */
 - (void)gcdDispatchTargetQueue{
+    /*
+     GCD中队列是有层级的。事实上只有全局系统队列会被调度运行。可以使用dispatch_get_global_queue和优先级常量来访问这些(全局系统队列)队列.
+     这些队列都是并行的.GCD会根据可用线程尽可能从高优先级队列调用块.
+     系统会根据可用的核心数和负载按需创建或销毁线程.
+     开发人员自己创建队列时,队列会附加到某一全局队列(也就是目标队列).当块到达头部时,实际上会移动到目标队列的末尾,当到达全局队列(目标队列)的头部时就会执行.
+     用dispatch_set_target_queue可以改变目标队列.
+     */
+    
     //1. 变更优先级
     //dispatch_queue_create生成的queue都是默认的优先级,如果想更改优先级就需要dispatch_set_target_queue
     dispatch_queue_t myqueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL/*DISPATCH_QUEUE_CONCURRENT*/);
@@ -344,14 +352,14 @@ dispatch_time_t getDispatchTimeByDate(NSDate *date){
         NSLog(@"block1, %@", [NSThread currentThread]);
     });
     dispatch_async(queue_serial_2, ^{
-        sleep(2);
+//        sleep(2);
         NSLog(@"block2, %@", [NSThread currentThread]);
     });
     dispatch_async(queue_serial_3, ^{
         NSLog(@"block3, %@", [NSThread currentThread]);
     });
     dispatch_async(queue_serial_4, ^{
-        sleep(1);
+//        sleep(1);
         NSLog(@"block4, %@", [NSThread currentThread]);
     });
     dispatch_async(queue_serial_5, ^{
@@ -366,8 +374,27 @@ dispatch_time_t getDispatchTimeByDate(NSDate *date){
      Penn[5162:460809] block4, <NSThread: 0x60000007dcc0>{number = 3, name = (null)}
      Penn[5162:460809] block5, <NSThread: 0x60000007dcc0>{number = 3, name = (null)}
      */
-
     
+    dispatch_queue_t queue_1 = dispatch_queue_create("low", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue_2 = dispatch_queue_create("high", DISPATCH_QUEUE_SERIAL);
+    dispatch_set_target_queue(queue_1, queue_2);
+    dispatch_async(queue_1, ^{
+        NSLog(@"low block:%@", [NSThread currentThread]);
+        sleep(3);
+    });
+    
+    dispatch_suspend(queue_1);
+    dispatch_async(queue_2, ^{
+        NSLog(@"high block:%@", [NSThread currentThread]);
+        sleep(3);
+        dispatch_resume(queue_1);
+    });
+    
+    dispatch_async(queue_1, ^{
+        NSLog(@"low block-2:%@", [NSThread currentThread]);
+        sleep(3);
+    });
+
 }
 
 /**
@@ -379,8 +406,10 @@ dispatch_time_t getDispatchTimeByDate(NSDate *date){
      Concurrent Dispatch Queue:系统控制(XNU内核)
      */
     
+
+    
     /*
-     Dispatch Queue的创建方式有两种: dispatch_queue_create,
+     Dispatch Queue的创建方式有两种,dispatch_queue_create,
      Serial Dispatch Queue的生成个数注意事项:
      * concurrent可以执行多个任务,serial同时只能执行1个任务,但是queue的个数可以是任意多个.
      * 虽然一个serial中只能执行1个任务,但是可以将多个任务分别加入各个serial队列中,即可同时执行多个任务.
@@ -495,6 +524,7 @@ dispatch_time_t getDispatchTimeByDate(NSDate *date){
         });
         
     }
+
 }
 
 #pragma mark - 多线程

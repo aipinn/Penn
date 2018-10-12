@@ -23,7 +23,7 @@
         NSLog(@"initialize: %s", __FUNCTION__);
         NSLog(@"initialize-PNGrandparent:%@", [NSThread currentThread]);
         // doSomethingThatUseItsInternalData...
-//        kArr = [NSMutableArray new];
+        // kArr = [NSMutableArray new];
        
     }
 }
