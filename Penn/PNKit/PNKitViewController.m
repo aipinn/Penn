@@ -16,6 +16,7 @@
 #import "PNTask.h"
 #import "PNTextViewController.h"
 #import "PNCoreTextViewController.h"
+#import "PNCustomTransController.h"
 
 
 @interface PNKitViewController ()
@@ -32,10 +33,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
-    
-    UIInterpolatingMotionEffect * ipme = [[UIInterpolatingMotionEffect alloc]init];
-
-    
 }
 #pragma mark - CoreText-Test
 
@@ -62,6 +59,13 @@
 - (IBAction)testCoreText:(id)sender {
     PNCoreTextViewController * ctVC = [[PNCoreTextViewController alloc] init];
     [self.navigationController pushViewController:ctVC animated:YES];
+}
+- (IBAction)testCustomTransition:(id)sender {
+    PNCustomTransController *vc = [[PNCustomTransController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+- (IBAction)testInteractiveTransation:(id)sender {
 }
 
 
