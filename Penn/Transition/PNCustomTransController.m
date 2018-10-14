@@ -41,12 +41,31 @@
     UIView *containerView = transitionContext.containerView;
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIView *fromView = fromVC.view;
+    UIView *toView = toVC.view;
     
+    CGFloat translation = containerView.frame.size.width;
+    CGAffineTransform toTransform = CGAffineTransformIdentity;
+    CGAffineTransform fromTransform = CGAffineTransformIdentity;
+    translation = -translation;
+    fromTransform = CGAffineTransformMakeTranslation(translation, 0);
+    toTransform = CGAffineTransformMakeTranslation(-translation, 0);
+    
+    toView.transform = toTransform;
+    [UIView animateWithDuration:3 animations:^{
+        fromView.transform = fromTransform;
+        toView.transform = toTransform;
+    } completion:^(BOOL finished) {
+        fromView.transform = CGAffineTransformIdentity;
+        toView.transform = CGAffineTransformIdentity;
+        //保持最后的状态
+        [transitionContext completeTransition:YES];
+    }];
     
 }
 
 - (NSTimeInterval)transitionDuration:(nullable id<UIViewControllerContextTransitioning>)transitionContext {
-    return 1.0f;
+    return 3.0f;
 }
 //Optional 动画结束调用
 - (void)animationEnded:(BOOL)transitionCompleted{
@@ -58,7 +77,8 @@
 - (IBAction)nextController:(id)sender {
     PNToViewController *toVC = [PNToViewController new];
     toVC.transitioningDelegate = self;
-    [self.navigationController pushViewController:toVC animated:YES];
+//    [self.navigationController pushViewController:toVC animated:YES];
+    [self.navigationController presentViewController:toVC animated:YES completion:nil];
 }
 
 
