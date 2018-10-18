@@ -7,18 +7,43 @@
 //
 
 #import "PNMLZDetailController.h"
+#import "PNMLZListController.h"
 
 @interface PNMLZDetailController ()
+
+@property (nonatomic) SEL selector;
 
 @end
 
 @implementation PNMLZDetailController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
++ (void)load{
+
+    PNMLZDetailController *detailVc = [[PNMLZDetailController alloc]init];
+    [PNMLZListController registerWith:@"基本使用" handler:^UIViewController *{
+        detailVc.selector = @selector(ml_basicUse);
+        return detailVc;
+    }];
+    
+    [PNMLZListController registerWith:@"中文匹配" handler:^UIViewController *{
+        detailVc.selector = @selector(ml_chineseChar);
+        return detailVc;
+    }];
+    
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
 
+#pragma mark - Actions
 
+- (void)ml_basicUse{
+    
+}
+
+- (void)ml_chineseChar{
+    
+}
 @end

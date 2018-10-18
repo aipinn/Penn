@@ -7,9 +7,6 @@
 //
 
 #import "PNHomeViewController.h"
-#import "PNSocketController.h"
-#import "PNKitViewController.h"
-#import "PNFundationController.h"
 #import "Penn-Swift.h"
 
 static NSString * const reuseCellId = @"HomeCell";
@@ -33,15 +30,11 @@ static NSString * const reuseCellId = @"HomeCell";
     [self.dataSource addObjectsFromArray:@[
                                            @"PNKitViewController",
                                            @"PNSocketController",
-                                           @"PNFundationController"
+                                           @"PNFundationController",
+                                           @"PNMLZListController",
+                                           @"PNCoreTextViewController",
                                            ]];
 
-    UIButton * button = [[UIButton alloc]init];
-    button.frame = CGRectMake(0, 88, 300, 500);
-    [button setTitle:@"title" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [self.view addSubview:button];
-    
 }
 
 

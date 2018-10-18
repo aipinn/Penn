@@ -34,40 +34,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
 }
-#pragma mark - CoreText-Test
-
-- (void)yyImage_sdImage{
-    
-    UIImageView * imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 300, 100, 100)];
-    imageV.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:imageV];
-    UIImage *ph = [UIImage imageNamed:@"coretext-image-1.jpg"];
-    NSString * url = @"https://cdn2.jianshu.io/assets/web/misc-phone-69b812fa6eb049ce4a32ec03ab30416c.png";
-//    url = @"http://erp.95081.com/img/brand_logo/2018/03/15/9d9a771d1cbb4fcbb55779c63dc508c9.jpg";
-    __weak typeof(imageV) weakImageV = imageV;
-//    imageV.layer.cornerRadius = 50;
-//    imageV.layer.masksToBounds = YES;
-    [imageV setImageWithURL:[NSURL URLWithString:url] placeholder:ph options:1 completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-        weakImageV.image = [image imageByRoundCornerRadius:MIN(image.size.width, image.size.height)/2];
-    }];
-    
-//    [imageV sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:ph completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-//        imageV.image = [image imageByRoundCornerRadius:50];//没有循环引用提示
-//    }];
-    
-}
-- (IBAction)testCoreText:(id)sender {
-    PNCoreTextViewController * ctVC = [[PNCoreTextViewController alloc] init];
-    [self.navigationController pushViewController:ctVC animated:YES];
-}
-- (IBAction)testCustomTransition:(id)sender {
-    PNCustomTransController *vc = [[PNCustomTransController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-    
-}
-- (IBAction)testInteractiveTransation:(id)sender {
-}
-
 
 #pragma mark - UIWindow
 

@@ -8,17 +8,59 @@
 
 #import "PNMLZListController.h"
 
+static NSMutableArray * titles;
+static NSMutableDictionary * titleWithHandlers;
+
 @interface PNMLZListController ()
+
 
 @end
 
 @implementation PNMLZListController
 
++ (void)load{
+    titles = [[NSMutableArray alloc] init];
+    titleWithHandlers = [[NSMutableDictionary alloc] init];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupUI];
     
 }
 
+#pragma mark - Register Methods
+
++ (void)registerWith:(NSString *)title handler:(ViewControllerHandler)handler{
+    if (!title) return;
+    [titles addObject:title];
+    titleWithHandlers[title] = handler;
+}
+
+#pragma mark - UITableViewDelegate/UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return titles.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.text = titles[indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   
+    UIViewController *vc = ((ViewControllerHandler)titleWithHandlers[titles[indexPath.row]])();
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - Private Methods
+
+- (void)setupUI{
+    [super setupUI];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+}
 
 @end

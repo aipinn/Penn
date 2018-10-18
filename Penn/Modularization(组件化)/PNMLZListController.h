@@ -10,7 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+//typedef int (^MLZCallBack)(void);
+typedef UIViewController *(^ViewControllerHandler)(void);
+
 @interface PNMLZListController : BaseViewController
+
++ (void)registerWith:(NSString *)title handler:(ViewControllerHandler)handler;
 
 @end
 
