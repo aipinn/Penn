@@ -1,16 +1,16 @@
 //
-//  PNToViewController.h
+//  PNTabBarDelegate.h
 //  Penn
 //
 //  Created by emoji on 2018/10/18.
 //  Copyright © 2018 PENN. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PNToViewController : BaseViewController
+@interface PNTabBarControllerDelegate : NSObject<UITabBarControllerDelegate>
 
 @end
 

@@ -10,26 +10,30 @@
 
 @interface PNToViewController ()
 
+@property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *edgePanGesture;
+
 @end
 
 @implementation PNToViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor cyanColor];
+    self.edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(handleEdgePanGesture:)];
+    self.edgePanGesture.edges = UIRectEdgeLeft;
+    [self.view addGestureRecognizer:self.edgePanGesture];
+    
 }
+
 - (IBAction)pop:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
+
+- (void)handleEdgePanGesture:(UIScreenEdgePanGestureRecognizer *)gesture{
+    
+}
 
 @end

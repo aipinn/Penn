@@ -7,13 +7,12 @@
 //
 
 #import "PNHomeViewController.h"
+#import "PNFromViewController.h"
 #import "Penn-Swift.h"
 
 static NSString * const reuseCellId = @"HomeCell";
 
 @interface PNHomeViewController ()
-
-
 
 
 
@@ -33,6 +32,8 @@ static NSString * const reuseCellId = @"HomeCell";
                                            @"PNFundationController",
                                            @"PNMLZListController",
                                            @"PNCoreTextViewController",
+                                           @"PNFromViewController",
+                                           
                                            ]];
 
 }

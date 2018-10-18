@@ -16,7 +16,7 @@
 #import "PNTask.h"
 #import "PNTextViewController.h"
 #import "PNCoreTextViewController.h"
-#import "PNCustomTransController.h"
+#import "PNFromViewController.h"
 
 
 @interface PNKitViewController ()

@@ -1,8 +1,8 @@
 //
-//  PNCustomTransController.h
+//  PNFromViewController.h
 //  Penn
 //
-//  Created by emoji on 2018/10/12.
+//  Created by emoji on 2018/10/18.
 //  Copyright © 2018 PENN. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PNCustomTransController : BaseViewController
+@interface PNFromViewController : BaseViewController
 
 @end
 

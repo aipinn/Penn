@@ -34,7 +34,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="26.399999999999999" y="51.724137931034484"/>
+            <point key="canvasLocation" x="-165" y="7"/>
         </view>
     </objects>
 </document>
