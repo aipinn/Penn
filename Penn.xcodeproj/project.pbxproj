@@ -45,6 +45,8 @@
 		3D75D9AA210EFAC70069D46D /* PNCTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */; };
 		3D817A3E2121644A00967D77 /* PNBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D817A3C2121644A00967D77 /* PNBlockViewController.m */; };
 		3D817A3F2121644A00967D77 /* PNBlockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D817A3D2121644A00967D77 /* PNBlockViewController.xib */; };
+		3DD989A621742DF800195541 /* PNNavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD989A521742DF800195541 /* PNNavigationDelegate.m */; };
+		3DD989A921743B6900195541 /* PNAnimatedTransitioningDelegete.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD989A821743B6900195541 /* PNAnimatedTransitioningDelegete.m */; };
 		3DDF126E211820D400AADF5C /* PNMemManController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF126D211820D400AADF5C /* PNMemManController.m */; };
 		3DDF1271211C3FFF00AADF5C /* PNWaterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF1270211C3FFF00AADF5C /* PNWaterModel.m */; };
 		3DDF1274211C415D00AADF5C /* tmp.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF1273211C415C00AADF5C /* tmp.txt */; };
@@ -180,6 +182,10 @@
 		3D817A3B2121644A00967D77 /* PNBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNBlockViewController.h; sourceTree = "<group>"; };
 		3D817A3C2121644A00967D77 /* PNBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNBlockViewController.m; sourceTree = "<group>"; };
 		3D817A3D2121644A00967D77 /* PNBlockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNBlockViewController.xib; sourceTree = "<group>"; };
+		3DD989A421742DF800195541 /* PNNavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNNavigationDelegate.h; sourceTree = "<group>"; };
+		3DD989A521742DF800195541 /* PNNavigationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNNavigationDelegate.m; sourceTree = "<group>"; };
+		3DD989A721743B6900195541 /* PNAnimatedTransitioningDelegete.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNAnimatedTransitioningDelegete.h; sourceTree = "<group>"; };
+		3DD989A821743B6900195541 /* PNAnimatedTransitioningDelegete.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNAnimatedTransitioningDelegete.m; sourceTree = "<group>"; };
 		3DDF126C211820D400AADF5C /* PNMemManController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNMemManController.h; sourceTree = "<group>"; };
 		3DDF126D211820D400AADF5C /* PNMemManController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNMemManController.m; sourceTree = "<group>"; };
 		3DDF126F211C3FFF00AADF5C /* PNWaterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNWaterModel.h; sourceTree = "<group>"; };
@@ -311,6 +317,10 @@
 				3D0FE40221709F25009AA08B /* PNToViewController.h */,
 				3D0FE40321709F25009AA08B /* PNToViewController.m */,
 				3D0FE40421709F25009AA08B /* PNToViewController.xib */,
+				3DD989A421742DF800195541 /* PNNavigationDelegate.h */,
+				3DD989A521742DF800195541 /* PNNavigationDelegate.m */,
+				3DD989A721743B6900195541 /* PNAnimatedTransitioningDelegete.h */,
+				3DD989A821743B6900195541 /* PNAnimatedTransitioningDelegete.m */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -897,6 +907,7 @@
 				BCD5FDC2216F9E4000EBF1E5 /* PNRouter.m in Sources */,
 				BCC68F1A20B2B8E000EE9334 /* PNTask.m in Sources */,
 				3DFB089420E2133700DC22BC /* PNFillTextView.m in Sources */,
+				3DD989A921743B6900195541 /* PNAnimatedTransitioningDelegete.m in Sources */,
 				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
 				3D75D9A7210EFA940069D46D /* PNCTFrameParserConfig.m in Sources */,
 				D5AAC5851FC8112500A9BD86 /* PNSwiftViewController.swift in Sources */,
@@ -907,6 +918,7 @@
 				236BAA0E209FE9B5006BD6B9 /* PNViewButton.m in Sources */,
 				BCF77CD620B55A7E00BA34CD /* NSMutableArray+PNAddE.m in Sources */,
 				D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */,
+				3DD989A621742DF800195541 /* PNNavigationDelegate.m in Sources */,
 				D594E31A1FB69A3D00255114 /* PNFundationController.m in Sources */,
 				3D4E27572105CE0D0013152D /* PNAutoDictionary.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
