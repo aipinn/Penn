@@ -22,4 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface PNThreeController : UIViewController
+
+@end
+
 NS_ASSUME_NONNULL_END

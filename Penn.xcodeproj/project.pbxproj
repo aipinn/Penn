@@ -55,6 +55,8 @@
 		3DF2F8DF217885CE00BDE143 /* PNTabBarControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2F8DE217885CE00BDE143 /* PNTabBarControllerDelegate.m */; };
 		3DF2F8E221788EF300BDE143 /* PNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2F8E121788EF300BDE143 /* PNTabBarController.m */; };
 		3DF2F8E52178918200BDE143 /* PNViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2F8E42178918200BDE143 /* PNViewControllers.m */; };
+		3DF2F8EB2179B43100BDE143 /* PNContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2F8EA2179B43100BDE143 /* PNContainerViewController.m */; };
+		3DF2F8EE2179C31400BDE143 /* PNChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2F8ED2179C31400BDE143 /* PNChildViewController.m */; };
 		3DFB089420E2133700DC22BC /* PNFillTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB089320E2133700DC22BC /* PNFillTextView.m */; };
 		3DFB089720E2139C00DC22BC /* PNTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB089620E2139C00DC22BC /* PNTextViewController.m */; };
 		AFA3269A0284ADD10DACE575 /* Pods_Penn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E2548721EB82E0044BD24E /* Pods_Penn.framework */; };
@@ -204,6 +206,10 @@
 		3DF2F8E121788EF300BDE143 /* PNTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNTabBarController.m; sourceTree = "<group>"; };
 		3DF2F8E32178918200BDE143 /* PNViewControllers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNViewControllers.h; sourceTree = "<group>"; };
 		3DF2F8E42178918200BDE143 /* PNViewControllers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNViewControllers.m; sourceTree = "<group>"; };
+		3DF2F8E92179B43100BDE143 /* PNContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNContainerViewController.h; sourceTree = "<group>"; };
+		3DF2F8EA2179B43100BDE143 /* PNContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNContainerViewController.m; sourceTree = "<group>"; };
+		3DF2F8EC2179C31400BDE143 /* PNChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNChildViewController.h; sourceTree = "<group>"; };
+		3DF2F8ED2179C31400BDE143 /* PNChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNChildViewController.m; sourceTree = "<group>"; };
 		3DFB089220E2133700DC22BC /* PNFillTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNFillTextView.h; sourceTree = "<group>"; };
 		3DFB089320E2133700DC22BC /* PNFillTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNFillTextView.m; sourceTree = "<group>"; };
 		3DFB089520E2139C00DC22BC /* PNTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNTextViewController.h; sourceTree = "<group>"; };
@@ -323,24 +329,8 @@
 		3D0FE3FC217079AF009AA08B /* Transition */ = {
 			isa = PBXGroup;
 			children = (
-				3DD989A721743B6900195541 /* PNAnimatedTransitioning.h */,
-				3DD989A821743B6900195541 /* PNAnimatedTransitioning.m */,
-				3DD989A421742DF800195541 /* PNNavigationDelegate.h */,
-				3DD989A521742DF800195541 /* PNNavigationDelegate.m */,
-				3DCAC8702178353E0096B75F /* PNTransitioningDelegate.h */,
-				3DCAC8712178353E0096B75F /* PNTransitioningDelegate.m */,
-				3DF2F8DD217885CE00BDE143 /* PNTabBarControllerDelegate.h */,
-				3DF2F8DE217885CE00BDE143 /* PNTabBarControllerDelegate.m */,
-				3DCAC87321787F1E0096B75F /* PNFromViewController.h */,
-				3DCAC87421787F1E0096B75F /* PNFromViewController.m */,
-				3DCAC87521787F1E0096B75F /* PNFromViewController.xib */,
-				3D3F97352178822F006114F7 /* PNToViewController.h */,
-				3D3F97362178822F006114F7 /* PNToViewController.m */,
-				3D3F97372178822F006114F7 /* PNToViewController.xib */,
-				3DF2F8E021788EF300BDE143 /* PNTabBarController.h */,
-				3DF2F8E121788EF300BDE143 /* PNTabBarController.m */,
-				3DF2F8E32178918200BDE143 /* PNViewControllers.h */,
-				3DF2F8E42178918200BDE143 /* PNViewControllers.m */,
+				3DF2F8E62179AE8800BDE143 /*  ContainerVC */,
+				3DF2F8E82179AED100BDE143 /* NaviTabModalVC */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -415,6 +405,42 @@
 				3DDF1270211C3FFF00AADF5C /* PNWaterModel.m */,
 			);
 			path = WaterDrop;
+			sourceTree = "<group>";
+		};
+		3DF2F8E62179AE8800BDE143 /*  ContainerVC */ = {
+			isa = PBXGroup;
+			children = (
+				3DF2F8E92179B43100BDE143 /* PNContainerViewController.h */,
+				3DF2F8EA2179B43100BDE143 /* PNContainerViewController.m */,
+				3DF2F8EC2179C31400BDE143 /* PNChildViewController.h */,
+				3DF2F8ED2179C31400BDE143 /* PNChildViewController.m */,
+			);
+			path = " ContainerVC";
+			sourceTree = "<group>";
+		};
+		3DF2F8E82179AED100BDE143 /* NaviTabModalVC */ = {
+			isa = PBXGroup;
+			children = (
+				3DD989A721743B6900195541 /* PNAnimatedTransitioning.h */,
+				3DD989A821743B6900195541 /* PNAnimatedTransitioning.m */,
+				3DD989A421742DF800195541 /* PNNavigationDelegate.h */,
+				3DD989A521742DF800195541 /* PNNavigationDelegate.m */,
+				3DCAC8702178353E0096B75F /* PNTransitioningDelegate.h */,
+				3DCAC8712178353E0096B75F /* PNTransitioningDelegate.m */,
+				3DF2F8DD217885CE00BDE143 /* PNTabBarControllerDelegate.h */,
+				3DF2F8DE217885CE00BDE143 /* PNTabBarControllerDelegate.m */,
+				3DCAC87321787F1E0096B75F /* PNFromViewController.h */,
+				3DCAC87421787F1E0096B75F /* PNFromViewController.m */,
+				3DCAC87521787F1E0096B75F /* PNFromViewController.xib */,
+				3D3F97352178822F006114F7 /* PNToViewController.h */,
+				3D3F97362178822F006114F7 /* PNToViewController.m */,
+				3D3F97372178822F006114F7 /* PNToViewController.xib */,
+				3DF2F8E021788EF300BDE143 /* PNTabBarController.h */,
+				3DF2F8E121788EF300BDE143 /* PNTabBarController.m */,
+				3DF2F8E32178918200BDE143 /* PNViewControllers.h */,
+				3DF2F8E42178918200BDE143 /* PNViewControllers.m */,
+			);
+			path = NaviTabModalVC;
 			sourceTree = "<group>";
 		};
 		98EC7010CD840C1D9E9A39AC /* Frameworks */ = {
@@ -918,6 +944,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF2F8EB2179B43100BDE143 /* PNContainerViewController.m in Sources */,
 				3D17593B2101B3520027C7DB /* PNMsgForward.m in Sources */,
 				D529F3731FD29B50008C67F3 /* BaseModel.m in Sources */,
 				3D1709AC20F4ABD5009DA2AA /* MBProgressHUD+LMJ.m in Sources */,
@@ -968,6 +995,7 @@
 				D585341E1F63FE2F00F4C588 /* PNSocketController.m in Sources */,
 				3D1759412101B71E0027C7DB /* PNDynamicMethod.m in Sources */,
 				3D3F97382178822F006114F7 /* PNToViewController.m in Sources */,
+				3DF2F8EE2179C31400BDE143 /* PNChildViewController.m in Sources */,
 				D5B7C2421F611501001FA29C /* main.m in Sources */,
 				BCF77CC720B510B000BA34CD /* UIViewController+PNAdd.m in Sources */,
 				3DDF126E211820D400AADF5C /* PNMemManController.m in Sources */,
