@@ -63,6 +63,7 @@
 		BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683720A4132C009FB674 /* PNGrandparent.m */; };
 		BC05683B20A41349009FB674 /* PNParent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683A20A41349009FB674 /* PNParent.m */; };
 		BC05683E20A41382009FB674 /* PNSon.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683D20A41382009FB674 /* PNSon.m */; };
+		BC63E013217C65000069BB58 /* PNContainerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC63E012217C65000069BB58 /* PNContainerDelegate.m */; };
 		BCC68F1A20B2B8E000EE9334 /* PNTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC68F1920B2B8E000EE9334 /* PNTask.m */; };
 		BCD5FDC2216F9E4000EBF1E5 /* PNRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5FDC1216F9E4000EBF1E5 /* PNRouter.m */; };
 		BCD5FDC5216F9F8400EBF1E5 /* PNMLZListController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5FDC4216F9F8400EBF1E5 /* PNMLZListController.m */; };
@@ -223,6 +224,8 @@
 		BC05683A20A41349009FB674 /* PNParent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNParent.m; sourceTree = "<group>"; };
 		BC05683C20A41382009FB674 /* PNSon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNSon.h; sourceTree = "<group>"; };
 		BC05683D20A41382009FB674 /* PNSon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNSon.m; sourceTree = "<group>"; };
+		BC63E011217C65000069BB58 /* PNContainerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNContainerDelegate.h; sourceTree = "<group>"; };
+		BC63E012217C65000069BB58 /* PNContainerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNContainerDelegate.m; sourceTree = "<group>"; };
 		BCC68F1820B2B8E000EE9334 /* PNTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNTask.h; sourceTree = "<group>"; };
 		BCC68F1920B2B8E000EE9334 /* PNTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNTask.m; sourceTree = "<group>"; };
 		BCD5FDC0216F9E4000EBF1E5 /* PNRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNRouter.h; sourceTree = "<group>"; };
@@ -414,6 +417,8 @@
 				3DF2F8EA2179B43100BDE143 /* PNContainerViewController.m */,
 				3DF2F8EC2179C31400BDE143 /* PNChildViewController.h */,
 				3DF2F8ED2179C31400BDE143 /* PNChildViewController.m */,
+				BC63E011217C65000069BB58 /* PNContainerDelegate.h */,
+				BC63E012217C65000069BB58 /* PNContainerDelegate.m */,
 			);
 			path = " ContainerVC";
 			sourceTree = "<group>";
@@ -1000,6 +1005,7 @@
 				BCF77CC720B510B000BA34CD /* UIViewController+PNAdd.m in Sources */,
 				3DDF126E211820D400AADF5C /* PNMemManController.m in Sources */,
 				3D1709AD20F4ABD5009DA2AA /* MBProgressHUD+MP.m in Sources */,
+				BC63E013217C65000069BB58 /* PNContainerDelegate.m in Sources */,
 				3DDF1271211C3FFF00AADF5C /* PNWaterModel.m in Sources */,
 				3DF2F8E221788EF300BDE143 /* PNTabBarController.m in Sources */,
 				D5AAC5DA1FC9449900A9BD86 /* PNFuncController.m in Sources */,

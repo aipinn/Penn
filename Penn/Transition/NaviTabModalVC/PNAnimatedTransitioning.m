@@ -56,7 +56,12 @@
             fromViewTransform = CGAffineTransformMakeTranslation(translation, 0);
             toViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
             break;
+        case PNTransitionOperationTypeContainerLeft:
             
+            break;
+        case PNTransitionOperationTypeContainerRight:
+            
+            break;
         default:
             break;
     }
@@ -73,20 +78,35 @@
     
     
     toView.transform = toViewTransform;
-    [UIView animateWithDuration:[self transitionDuration:transitionContext]  animations:^{
-        fromView.transform = fromViewTransform;
-        toView.transform = CGAffineTransformIdentity;
-    } completion:^(BOOL finished) {
-        fromView.transform = CGAffineTransformIdentity;
-        toView.transform = CGAffineTransformIdentity;
-        //保持最后的状态
-        [transitionContext completeTransition:YES];
-    }];
+    if (self.operationType == PNTransitionOperationTypeContainerRight || self.operationType == PNTransitionOperationTypeContainerLeft) {
+        toVC.view.alpha = 0;
+        [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+            fromVC.view.transform = CGAffineTransformMakeScale(0.1, 0.1);
+            toVC.view.alpha = 1;
+        } completion:^(BOOL finished) {
+            fromVC.view.transform = CGAffineTransformIdentity;
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        }];
+    }else{
+        [UIView animateWithDuration:[self transitionDuration:transitionContext]  animations:^{
+            fromView.transform = fromViewTransform;
+            toView.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            fromView.transform = CGAffineTransformIdentity;
+            toView.transform = CGAffineTransformIdentity;
+            //保持最后的状态
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        }];
+    }
     
 }
 
 - (NSTimeInterval)transitionDuration:(nullable id<UIViewControllerContextTransitioning>)transitionContext {
     return 1;
+}
+
+- (void)animationEnded:(BOOL)transitionCompleted{
+    
 }
 
 @end

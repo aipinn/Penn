@@ -15,12 +15,15 @@
 #import "PNTabBarControllerDelegate.h"
 #import "PNContainerViewController.h"
 #import "PNChildViewController.h"
+#import "PNContainerDelegate.h"
 
 @interface PNFromViewController ()
 
 @property (nonatomic, strong) PNNavigationDelegate * navDelegate;
 @property (nonatomic, strong) PNTransitioningDelegate *transDelegate;
 @property (nonatomic, strong) PNTabBarControllerDelegate *tabDelegate;
+@property (nonatomic, strong) PNContainerDelegate *containerDelegate;
+
 
 @end
 
@@ -33,6 +36,7 @@
         self.navDelegate = [PNNavigationDelegate new];
         self.transDelegate = [PNTransitioningDelegate new];
         self.tabDelegate = [PNTabBarControllerDelegate new];
+        self.containerDelegate = [PNContainerDelegate new];
     }
     return self;
 }
@@ -63,7 +67,8 @@
 }
 - (IBAction)container:(id)sender {
     PNContainerViewController *containerViewController = [[PNContainerViewController alloc] initWithViewControllers:[self _configChildViewControllers]];
- 
+    //使用自定义代理实现转场
+//    containerViewController.delegate = self.containerDelegate;
     [self presentViewController:containerViewController animated:YES completion:nil];
 }
 

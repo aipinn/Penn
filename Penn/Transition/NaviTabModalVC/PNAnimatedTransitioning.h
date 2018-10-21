@@ -16,7 +16,9 @@ typedef NS_ENUM(NSInteger, PNTransitionOperationType) {
     PNTransitionOperationTypeLeft,//向左切换1-->2
     PNTransitionOperationTypeRight,//向右切换2-->1
     PNTransitionOperationTypePresent,
-    PNTransitionOperationTypeDismiss
+    PNTransitionOperationTypeDismiss,
+    PNTransitionOperationTypeContainerLeft,
+    PNTransitionOperationTypeContainerRight
 };
 @interface PNAnimatedTransitioning : NSObject<UIViewControllerAnimatedTransitioning>
 

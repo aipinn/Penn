@@ -20,11 +20,16 @@
     self.view.backgroundColor = self.themeColor;
     
     UIButton *btn = [[UIButton alloc]init];
-    btn.frame = CGRectMake(0, 200, 100, 50);
-    [btn setTitle:@"pop" forState:UIControlStateNormal];
+    btn.frame = CGRectMake(0, 200, 200, 50);
+    [btn setTitle:[NSString stringWithFormat:@"%@_dismiss",self.title] forState:UIControlStateNormal];
     btn.backgroundColor = [UIColor blackColor];
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(pop:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
 }
 
 - (void)pop:(id)sender{
