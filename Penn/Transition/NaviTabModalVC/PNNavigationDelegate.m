@@ -15,8 +15,8 @@
 {
     self = [super init];
     if (self) {
-        _interactive = NO;
-        _interactive = [[UIPercentDrivenInteractiveTransition alloc]init];
+        self.interactive = NO;
+        self.interactionTrans = [[UIPercentDrivenInteractiveTransition alloc]init];
     }
     return self;
 }
@@ -32,6 +32,6 @@
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController{
-    return _interactive ? _interactionController : nil;
+    return _interactive ? _interactionTrans : nil;
 }
 @end

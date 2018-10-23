@@ -21,20 +21,23 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ac-MJ-ncZ">
-                    <rect key="frame" x="16" y="132" width="112" height="43"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.99607843139999996" green="0.80392156859999997" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="CoreText-Test"/>
-                </button>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-yG-w9x">
                     <rect key="frame" x="198" y="152" width="150" height="2"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </progressView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ac-MJ-ncZ">
+                    <rect key="frame" x="16" y="191" width="295" height="43"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.99607843139999996" green="0.80392156859999997" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="NavigationSideSlide"/>
+                    <connections>
+                        <action selector="testSlideGestureAndBack:" destination="-1" eventType="touchUpInside" id="t3c-tR-B4d"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="-165" y="7"/>
+            <point key="canvasLocation" x="-165.59999999999999" y="6.746626686656672"/>
         </view>
     </objects>
 </document>

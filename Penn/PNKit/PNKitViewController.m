@@ -17,7 +17,7 @@
 #import "PNTextViewController.h"
 #import "PNCoreTextViewController.h"
 #import "PNFromViewController.h"
-
+#import "PNSlideBackViewController.h"
 
 @interface PNKitViewController ()
 
@@ -33,6 +33,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
+}
+
+- (IBAction)testSlideGestureAndBack:(id)sender {
+    PNSlideBackViewController *slideback = [PNSlideBackViewController new];
+    [self.navigationController pushViewController:slideback animated:YES];
+    
 }
 
 #pragma mark - UIWindow
