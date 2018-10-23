@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PNNavigationDelegate : NSObject<UINavigationControllerDelegate>
 
+@property (nonatomic, assign) BOOL interactive;
+@property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactionController;
+
 @end
 
 NS_ASSUME_NONNULL_END

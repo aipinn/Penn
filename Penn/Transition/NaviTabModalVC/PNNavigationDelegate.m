@@ -10,10 +10,6 @@
 #import "PNAnimatedTransitioning.h"
 
 @implementation PNNavigationDelegate
-{
-    BOOL _interactive;
-    UIPercentDrivenInteractiveTransition *_interactionController;
-}
 
 - (instancetype)init
 {
