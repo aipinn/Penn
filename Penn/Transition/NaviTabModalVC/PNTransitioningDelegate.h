@@ -12,6 +12,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PNTransitioningDelegate : NSObject<UIViewControllerTransitioningDelegate>
 
+@property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactionTrans;
+@property (nonatomic, assign) BOOL interactive;
+
+
+@end
+
+@interface PNPercentDrivenInteractiveTransition : UIPercentDrivenInteractiveTransition
+
+- (void)handleGesture:(UIGestureRecognizer *)gesture;
+- (instancetype)initWithViewController:(UIViewController *)VC;
+@property (nonatomic, strong) UIViewController *viewController;
+
 @end
 
 NS_ASSUME_NONNULL_END

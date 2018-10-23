@@ -11,6 +11,7 @@
 		236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA0F209FEA4B006BD6B9 /* PNViewButton.xib */; };
 		236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */; };
 		236BAA15209FEC81006BD6B9 /* PNEmptyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */; };
+		3D07D4E9217DCB5100AE9FA1 /* PNSlideBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D07D4E8217DCB5100AE9FA1 /* PNSlideBackViewController.m */; };
 		3D0C2A5F212D558D0015D85C /* PNDataStructureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C2A5D212D558D0015D85C /* PNDataStructureController.m */; };
 		3D0C2A60212D558D0015D85C /* PNDataStructureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */; };
 		3D0C2A62212D55B30015D85C /* PNProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C2A61212D55B30015D85C /* PNProfileViewController.xib */; };
@@ -133,6 +134,8 @@
 		236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNEmptyButton.m; sourceTree = "<group>"; };
 		236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNEmptyButton.xib; sourceTree = "<group>"; };
 		2AAB1F823A83E0823CAEB201 /* libPods-PennTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PennTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D07D4E7217DCB5100AE9FA1 /* PNSlideBackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNSlideBackViewController.h; sourceTree = "<group>"; };
+		3D07D4E8217DCB5100AE9FA1 /* PNSlideBackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNSlideBackViewController.m; sourceTree = "<group>"; };
 		3D0C2A5C212D558D0015D85C /* PNDataStructureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNDataStructureController.h; sourceTree = "<group>"; };
 		3D0C2A5D212D558D0015D85C /* PNDataStructureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNDataStructureController.m; sourceTree = "<group>"; };
 		3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNDataStructureController.xib; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 				3D4ED2F8210B3DCF00A5D060 /* PNCoreTextViewController.h */,
 				3D4ED2F9210B3DCF00A5D060 /* PNCoreTextViewController.m */,
 				3D4ED2FA210B3DCF00A5D060 /* PNCoreTextViewController.xib */,
+				3D07D4E7217DCB5100AE9FA1 /* PNSlideBackViewController.h */,
+				3D07D4E8217DCB5100AE9FA1 /* PNSlideBackViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -956,6 +961,7 @@
 				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
 				D5AAC5801FC8030300A9BD86 /* PNProfileViewController.m in Sources */,
 				D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */,
+				3D07D4E9217DCB5100AE9FA1 /* PNSlideBackViewController.m in Sources */,
 				BCD5FDC2216F9E4000EBF1E5 /* PNRouter.m in Sources */,
 				BCC68F1A20B2B8E000EE9334 /* PNTask.m in Sources */,
 				3DFB089420E2133700DC22BC /* PNFillTextView.m in Sources */,

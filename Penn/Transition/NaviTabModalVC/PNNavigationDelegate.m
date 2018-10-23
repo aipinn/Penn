@@ -10,17 +10,13 @@
 #import "PNAnimatedTransitioning.h"
 
 @implementation PNNavigationDelegate
-{
-    BOOL _interactive;
-    UIPercentDrivenInteractiveTransition *_interactionController;
-}
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _interactive = NO;
-        _interactive = [[UIPercentDrivenInteractiveTransition alloc]init];
+        self.interactive = NO;
+        self.interactionTrans = [[UIPercentDrivenInteractiveTransition alloc]init];
     }
     return self;
 }
@@ -36,6 +32,6 @@
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController{
-    return _interactive ? _interactionController : nil;
+    return _interactive ? _interactionTrans : nil;
 }
 @end
