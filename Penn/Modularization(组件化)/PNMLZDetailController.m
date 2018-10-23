@@ -8,6 +8,7 @@
 
 #import "PNMLZDetailController.h"
 #import "PNMLZListController.h"
+#import "PNRouter.h"
 
 @interface PNMLZDetailController ()
 
@@ -40,6 +41,9 @@
 #pragma mark - Actions
 
 - (void)ml_basicUse{
+    [PNRouter registerURLPattern:@"pinn://foo/evening" toHandler:^(NSDictionary * _Nonnull routerParameters) {
+        
+    }];
     
 }
 
