@@ -20,6 +20,8 @@ typedef void (^PNRoterHandler)(NSDictionary *routerParameters);
 
 + (void)registerURLPattern:(NSString *)URLPattern toHandler:(PNRoterHandler)handler;
 
++ (void)openURL:(NSString *)URL;
+
 @end
 
 NS_ASSUME_NONNULL_END

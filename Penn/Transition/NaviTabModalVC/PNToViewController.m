@@ -83,7 +83,7 @@
 }
 
 /**
- pan,向下滑dismiss
+ pan,向下滑expr (Class)NSClassFromString(@"IBARevealLoader") == nil ? (void     *)dlopen("/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/RevealServer.framework/RevealServer", 0x2) : ((void*)0)dismiss
  */
 - (void)handlePanGesture:(UIPanGestureRecognizer *)gesture{
     

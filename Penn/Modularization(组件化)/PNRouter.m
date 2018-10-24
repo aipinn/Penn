@@ -11,6 +11,9 @@
 
 static NSString *const PN_ROUTER_WILDCARD_CHARACTER = @"~";
 
+NSString *const PNRouterParameterURL = @"PNRouterParameterURL";
+NSString *const PNRouterParameterCompletion = @"PNRouterParameterCompletion";
+NSString *const PNRouterParameterUserInfo = @"PNRouterParameterUserInfo";
 
 static PNRouter * instance = nil;
 
@@ -82,5 +85,72 @@ static PNRouter * instance = nil;
         _routes = [[NSMutableDictionary alloc]init];
     }
     return _routes;
+}
+
+
+#pragma mark - Open URL
+
++ (void)openURL:(NSString *)URL{
+    [[self shareInstance] openURL:URL complete:nil];
+}
+
++ (void)openURL:(NSString *)URL complete:(void (^)(id result))complete{
+    [[self shareInstance] openURL:URL userInfo:nil complete:complete];
+}
+
++ (void)openURL:(NSString *)URL userInfo:(NSDictionary *)userIfo complete:(void (^)(id result))complete{
+    
+    NSCharacterSet *set = [NSCharacterSet URLPathAllowedCharacterSet];
+    URL = [URL stringByAddingPercentEncodingWithAllowedCharacters:set];
+    NSMutableDictionary *parameters = [[self shareInstance] extractParametersFromURL:URL matchExtractly:NO];
+    [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:NSString.class]) {
+            parameters[key] = [obj stringByRemovingPercentEncoding];
+        }
+    }];
+    if (parameters) {
+        PNRoterHandler handler = parameters[@"block"];
+        if (complete) {
+            parameters[PNRouterParameterCompletion] = complete;
+        }
+        if (userIfo) {
+            parameters[PNRouterParameterUserInfo] = userIfo;
+        }
+        if (handler) {
+            [parameters removeObjectForKey:@"block"];
+            handler(parameters);
+        }
+    }
+    
+}
+//提取参数
+- (NSMutableDictionary *)extractParametersFromURL:(NSString *)URL matchExtractly:(BOOL)exactly{
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    parameters[PNRouterParameterURL] = URL;
+    NSMutableDictionary *subRoutes = self.routes;
+    NSArray *pathComponents = [self pathComponentsFromURL:URL];
+    
+    BOOL found = NO;
+    
+    for (NSString *pathComponent in pathComponents) {
+        // 对 key 进行排序，这样可以把 ~ 放到最后
+        NSArray *subRoutesKeys = [subRoutes.allKeys sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+            return [obj1 compare:obj2];
+        }];
+        for (NSString *key in subRoutesKeys) {
+            if ([key isEqualToString:pathComponent] || [key isEqualToString:PN_ROUTER_WILDCARD_CHARACTER]) {
+                found = YES;
+                subRoutes = subRoutes[key];
+                NSString *newKey = [key substringFromIndex:1];
+                NSString *newPathComponent = pathComponent;
+                
+            }
+        }
+    }
+    
+    
+    return nil;
 }
 @end
