@@ -27,10 +27,8 @@
     return atVC;
 }
 
-//- (id<UIViewControllerInteractiveTransitioning>)tabBarController:(UITabBarController *)tabBarController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController{
-//    PNAnimatedTransitioning *atVC = [PNAnimatedTransitioning new];
-//    atVC.operationType = PNTransitionOperationTypeLeft;
-//    return atVC;
-//}
+- (id<UIViewControllerInteractiveTransitioning>)tabBarController:(UITabBarController *)tabBarController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController{
+    return _interactive ? _interactionTrans : nil;
+}
 
 @end
