@@ -58,6 +58,7 @@
 - (IBAction)presentViewController:(id)sender {
     PNToViewController *toVC = [PNToViewController new];
     toVC.transitioningDelegate = self.transDelegate;
+    toVC.modalPresentationStyle = UIModalPresentationCustom;
     [self presentViewController:toVC animated:YES completion:nil];
 }
 - (IBAction)tabBar:(id)sender {
