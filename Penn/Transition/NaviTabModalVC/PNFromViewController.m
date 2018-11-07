@@ -69,7 +69,7 @@
 - (IBAction)container:(id)sender {
     PNContainerViewController *containerViewController = [[PNContainerViewController alloc] initWithViewControllers:[self _configChildViewControllers]];
     //使用自定义代理实现转场
-//    containerViewController.delegate = self.containerDelegate;
+    containerViewController.delegate = self.containerDelegate;
     [self presentViewController:containerViewController animated:YES completion:nil];
 }
 

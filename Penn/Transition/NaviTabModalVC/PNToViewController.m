@@ -14,7 +14,6 @@
 
 @property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *edgePanGesture;
 @property (nonatomic, strong) PNNavigationDelegate *naviDelegate;
-@property (nonatomic, strong) PNPercentDrivenInteractiveTransition *interTrans;
 @property (nonatomic, strong) PNTransitioningDelegate *transDelegate;
 
 @end
@@ -83,7 +82,7 @@
 }
 
 /**
- pan,向下滑expr (Class)NSClassFromString(@"IBARevealLoader") == nil ? (void     *)dlopen("/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/RevealServer.framework/RevealServer", 0x2) : ((void*)0)dismiss
+ pan,向下滑
  */
 - (void)handlePanGesture:(UIPanGestureRecognizer *)gesture{
     
