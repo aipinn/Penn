@@ -13,7 +13,7 @@
 #import "PNTransitioningDelegate.h"
 #import "PNTabBarController.h"
 #import "PNTabBarControllerDelegate.h"
-#import "PNContainerViewController.h"
+#import "PNUpTabViewController.h"
 #import "PNChildViewController.h"
 #import "PNContainerDelegate.h"
 
@@ -67,7 +67,7 @@
     [self presentViewController:tabVC animated:YES completion:nil];
 }
 - (IBAction)container:(id)sender {
-    PNContainerViewController *containerViewController = [[PNContainerViewController alloc] initWithViewControllers:[self _configChildViewControllers]];
+    PNUpTabViewController *containerViewController = [[PNUpTabViewController alloc] initWithViewControllers:[self _configChildViewControllers]];
     //使用自定义代理实现转场
     containerViewController.delegate = self.containerDelegate;
     [self presentViewController:containerViewController animated:YES completion:nil];

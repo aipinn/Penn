@@ -7,6 +7,8 @@
 //
 
 #import "PNContainerViewController.h"
+#import "PNContainerTransitionContext.h"
+#import "PNPercentDrivenInteractiveTransition.h"
 
 static CGFloat const kButtonSlotWidth = 64;
 static CGFloat const kButtonSlotHeight = 44;
@@ -15,29 +17,26 @@ static CGFloat const kButtonSlotHeight = 44;
 @interface PNPrivateAnimatedTransitioning : NSObject<UIViewControllerAnimatedTransitioning>
 
 @end
-//=============为转场动画代理提供上下文参数=============
-@interface PNPrivateTransitionContext : NSObject<UIViewControllerContextTransitioning>
 
-@property (nonatomic, assign, getter = isAnimated) BOOL animated;
-
-@property (nonatomic, assign, getter = isInteractive) BOOL interactive;
-
-@property (nonatomic, copy) void (^ completedBlock)(BOOL didComplete);
-
-- (instancetype)initWithFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController goingRight:(BOOL)isRight;
-
-@end
 //=============自定义容器控制器=================
 @interface PNContainerViewController ()
 
 @property (nonatomic, copy, readwrite) NSArray *viewControllers;
 @property (nonatomic, strong) UIView *privateContainerView;
 @property (nonatomic, strong) UIView *privateButtonsView;
+@property (nonatomic, strong) PNContainerTransitionContext * transitionCtx;
+
+@property (nonatomic, assign) BOOL shouldReserve;
+@property (nonatomic, assign) NSInteger priorSelectedIdx;
 
 @end
 
 #pragma mark - 转场控制器实现
 @implementation PNContainerViewController
+{
+    id<UIViewControllerAnimatedTransitioning> _animator;
+    id<UIViewControllerInteractiveTransitioning>_interactiveTrans;
+}
 
 - (instancetype)initWithViewControllers:(NSArray *)viewControllers
 {
@@ -45,10 +44,13 @@ static CGFloat const kButtonSlotHeight = 44;
     self = [super init];
     if (self) {
         self.viewControllers = [viewControllers copy];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(interactionEnd:) name:PNContainerTransitionContextInteractionDidEndNotification object:nil];
     }
     return self;
 }
-
+- (void)interactionEnd:(NSNotification *)notify{
+    self.transitionCtx = nil;
+}
 /**
  You can override this method in order to create your views manually. If you choose to do so, assign the root view of your view hierarchy to the view property. The views you create should be unique instances and should not be shared with any other view controller object. Your custom implementation of this method should not call super.
  If you want to perform any additional initialization of your views, do so in the viewDidLoad method.
@@ -56,7 +58,7 @@ static CGFloat const kButtonSlotHeight = 44;
 - (void)loadView
 {
     UIView *rootView = [[UIView alloc]init];
-    rootView.backgroundColor = [UIColor blackColor];
+    rootView.backgroundColor = [UIColor redColor];
     rootView.opaque = YES;
 
     self.privateContainerView = [[UIView alloc]init];
@@ -102,6 +104,15 @@ static CGFloat const kButtonSlotHeight = 44;
     [self _updateButtonSelection];
 }
 
+- (void)setSelectedIndex:(NSUInteger)selectedIndex{
+    _selectedIndex = selectedIndex;
+    self.selectedViewController = self.viewControllers[selectedIndex];
+    
+}
+- (void)restoreSelectedIndex{
+    self.shouldReserve = YES;
+    _selectedIndex = _priorSelectedIdx;
+}
 - (void)_addChildViewControllerButtons
 {
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *childViewController, NSUInteger idx, BOOL *_Nonnull stop) {
@@ -146,38 +157,60 @@ static CGFloat const kButtonSlotHeight = 44;
     //切换控制器,添加动画
     NSUInteger fromIdx = [self.viewControllers indexOfObject:fromViewController];
     NSUInteger toIdx = [self.viewControllers indexOfObject:toViewController];
-
-    id<UIViewControllerAnimatedTransitioning>animator = nil;
-
+    _selectedIndex = toIdx;
+    
     if ([self.delegate respondsToSelector:
          @selector(containerController:animationControllerForTransitionFromViewController:toViewController:)]) {
-        animator = [self.delegate containerController:self animationControllerForTransitionFromViewController:fromViewController toViewController:toViewController];
+        _animator = [self.delegate containerController:self animationControllerForTransitionFromViewController:fromViewController toViewController:toViewController];
     }
+    
     if ([self.delegate respondsToSelector:
          @selector(containerController:interactionControllerForAnimationController:)]) {
-        [self.delegate containerController:self interactionControllerForAnimationController:animator];
+        _interactiveTrans = [self.delegate containerController:self interactionControllerForAnimationController:_animator];
     }
 
-    animator = animator ? : [[PNPrivateAnimatedTransitioning alloc]init];
-
-    PNPrivateTransitionContext *transitionCtx = [[PNPrivateTransitionContext alloc]
-                                                 initWithFromViewController:fromViewController
-                                                           toViewController:toViewController
-                                                                 goingRight:fromIdx < toIdx];
-    transitionCtx.animated = YES;
-    transitionCtx.interactive = NO;
-    transitionCtx.completedBlock = ^(BOOL didComplete) {
-        [fromViewController.view removeFromSuperview];
-        [fromViewController removeFromParentViewController];
-        [toViewController didMoveToParentViewController:self];
-        if ([animator respondsToSelector:@selector(animationEnded:)]) {
-            [animator animationEnded:didComplete];
+    if (_interactiveTrans) {//jiaohu
+        
+        PNContainerTransitionContext *transitionCtx = [[PNContainerTransitionContext alloc]
+                                                       initWithContainerVC:self
+                                                        fromViewController:fromViewController
+                                                          toViewController:toViewController
+                                                                goingRight:fromIdx < toIdx];
+        self.transitionCtx = transitionCtx;
+        
+        if (self.delegate) {
+            _priorSelectedIdx = fromIdx;
+            [transitionCtx startInteractiveTransitionWith:self.delegate];
+        }else{
+            [transitionCtx startNonInteractiveTransitionWith:self.delegate];
         }
-        self.privateButtonsView.userInteractionEnabled = YES;
-    };
-    self.privateButtonsView.userInteractionEnabled = NO;
-    [animator animateTransition:transitionCtx];
-    [self.privateContainerView addSubview:toView];
+
+    } else {
+    
+        PNPrivateAnimatedTransitioning *animator = [[PNPrivateAnimatedTransitioning alloc]init];
+
+        PNContainerTransitionContext *transitionCtx = [[PNContainerTransitionContext alloc]
+                                                       initWithContainerVC:self
+                                                       fromViewController:fromViewController
+                                                         toViewController:toViewController
+                                                               goingRight:fromIdx < toIdx];
+        self.transitionCtx = transitionCtx;
+
+        transitionCtx.animated = YES;
+        transitionCtx.interactive = NO;
+        transitionCtx.completedBlock = ^(BOOL didComplete) {
+            [fromViewController.view removeFromSuperview];
+            [fromViewController removeFromParentViewController];
+            [toViewController didMoveToParentViewController:self];
+            if ([animator respondsToSelector:@selector(animationEnded:)]) {
+                [animator animationEnded:didComplete];
+            }
+            self.privateButtonsView.userInteractionEnabled = YES;
+        };
+        self.privateButtonsView.userInteractionEnabled = NO;
+        [animator animateTransition:transitionCtx];
+        [self.privateContainerView addSubview:toView];
+    }
 }
 
 - (void)_updateButtonSelection
@@ -192,114 +225,6 @@ static CGFloat const kButtonSlotHeight = 44;
     UIViewController *selectedViewController = self.viewControllers[sender.tag];
     self.selectedViewController = selectedViewController;
 }
-
-@end
-
-#pragma mark - 转场上下文实现
-@interface PNPrivateTransitionContext ()
-
-@property (nonatomic, assign) UIModalPresentationStyle presentationStyle;
-//
-@property (nonatomic, strong) NSDictionary *privateViewControllers;
-@property (nonatomic, strong) NSDictionary *privateViews;
-
-@property (nonatomic, strong) UIView *containerView;
-
-@property (nonatomic, assign) CGRect disappearingFromRect;
-
-@property (nonatomic, assign) CGRect disappearingToRect;
-
-@property (nonatomic, assign) CGRect appearingFromRect;
-
-@property (nonatomic, assign) CGRect appearingToRect;
-
-@end
-@implementation PNPrivateTransitionContext
-
-- (instancetype)initWithFromViewController:(UIViewController *)fromViewController
-                          toViewController:(UIViewController *)toViewController
-                                goingRight:(BOOL)isRight
-{
-    self = [super init];
-    if (self) {
-        self.presentationStyle = UIModalPresentationCustom;
-        self.containerView = fromViewController.view.superview;
-        self.privateViewControllers = @{
-            UITransitionContextFromViewControllerKey: fromViewController,
-            UITransitionContextToViewControllerKey: toViewController
-        };
-        self.privateViews = @{
-            UITransitionContextFromViewKey: fromViewController.view,
-            UITransitionContextToViewKey: toViewController.view
-        };
-        CGRect bounds = self.containerView.bounds;
-        CGFloat width = bounds.size.width;
-        CGFloat travelDistance = isRight ? -width : width;
-        self.disappearingFromRect = self.appearingToRect = bounds;
-        self.disappearingToRect = CGRectOffset(bounds, travelDistance, 0);
-        self.appearingFromRect = CGRectOffset(bounds, -travelDistance, 0);
-    }
-    return self;
-}
-
-- (CGRect)initialFrameForViewController:(UIViewController *)vc
-{
-    if (vc == [self viewControllerForKey:UITransitionContextFromViewControllerKey]) {
-        return self.disappearingFromRect;
-    } else {
-        return self.appearingFromRect;
-    }
-}
-
-- (CGRect)finalFrameForViewController:(UIViewController *)vc
-{
-    if (vc == [self viewControllerForKey:UITransitionContextFromViewControllerKey]) {
-        return self.disappearingToRect;
-    } else {
-        return self.appearingToRect;
-    }
-}
-
-- (UIViewController *)viewControllerForKey:(UITransitionContextViewControllerKey)key
-{
-    return self.privateViewControllers[key];
-}
-
-- (void)completeTransition:(BOOL)didComplete
-{
-    if (self.completedBlock) {
-        self.completedBlock(didComplete);
-    }
-}
-
-- (BOOL)transitionWasCancelled
-{
-    return NO;
-}
-
-//暂时还不确定初始化h中self.privateViews是否正确的赋值
-- (nullable __kindof UIView *)viewForKey:(nonnull UITransitionContextViewKey)key
-{
-    return self.privateViews[key];
-}
-
-- (void)updateInteractiveTransition:(CGFloat)percentComplete
-{
-}
-
-- (void)pauseInteractiveTransition
-{
-}
-
-- (void)finishInteractiveTransition
-{
-}
-
-- (void)cancelInteractiveTransition
-{
-}
-
-@synthesize targetTransform;
 
 @end
 

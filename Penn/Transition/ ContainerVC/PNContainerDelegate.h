@@ -18,9 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) PNPercentDrivenInteractiveTransition * interactionTrans;
 
-@property (nonatomic, strong) UIPercentDrivenInteractiveTransition * interactionTransOld;
-
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PNPercentDrivenInteractiveTransition : NSObject<UIViewControllerInteractiveTransitioning>
 
+@property(nonatomic, readonly) CGFloat completionSpeed;
+@property(nonatomic, readonly) UIViewAnimationCurve completionCurve;
+
+- (void)updateInteractiveTransition:(CGFloat)percentComplete;
+- (void)cancelInteractiveTransition;
+- (void)finishInteractiveTransition;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

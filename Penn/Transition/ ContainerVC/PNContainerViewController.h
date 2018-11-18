@@ -19,9 +19,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<PNContainerControllerDelegate>delegate;
 
-- (instancetype)initWithViewControllers:(NSArray *)viewControllers;
+@property (nonatomic, assign) NSUInteger selectedIndex;
 
+@property (nonatomic, assign) BOOL interactive;
+
+
+- (instancetype)initWithViewControllers:(NSArray *)viewControllers;
+- (void)restoreSelectedIndex;
 @end
+
 
 @protocol PNContainerControllerDelegate <NSObject>
 @optional
@@ -30,4 +36,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (id<UIViewControllerInteractiveTransitioning>)containerController:(PNContainerViewController *)containerViewController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController;
 
 @end
+
 NS_ASSUME_NONNULL_END

@@ -66,10 +66,14 @@
             toViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
             break;
         case PNTransitionOperationTypeContainerLeft:
-            
+            translation = containerView.frame.size.width;
+            fromViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
+            toViewTransform = CGAffineTransformMakeTranslation(translation, 0);
             break;
         case PNTransitionOperationTypeContainerRight:
-            
+            translation = containerView.frame.size.width;
+            fromViewTransform = CGAffineTransformMakeTranslation(translation, 0);
+            toViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
             break;
         default:
             break;
@@ -87,7 +91,7 @@
     
     
     toView.transform = toViewTransform;
-    if (self.operationType == PNTransitionOperationTypeContainerRight || self.operationType == PNTransitionOperationTypeContainerLeft) {
+    if (0&&(self.operationType == PNTransitionOperationTypeContainerRight || self.operationType == PNTransitionOperationTypeContainerLeft)) {
         toVC.view.alpha = 0;
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             fromVC.view.transform = CGAffineTransformMakeScale(0.1, 0.1);
@@ -104,7 +108,9 @@
             fromView.transform = CGAffineTransformIdentity;
             toView.transform = CGAffineTransformIdentity;
             //保持最后的状态
+
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+
         }];
     }
     
@@ -112,10 +118,6 @@
 
 - (NSTimeInterval)transitionDuration:(nullable id<UIViewControllerContextTransitioning>)transitionContext {
     return 0.8;
-}
-
-- (void)animationEnded:(BOOL)transitionCompleted{
-    
 }
 
 @end

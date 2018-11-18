@@ -18,7 +18,6 @@
     if (self) {
         _interactive = NO;
         _interactionTrans = [[PNPercentDrivenInteractiveTransition alloc]init];
-        _interactionTransOld = [[UIPercentDrivenInteractiveTransition alloc]init];
     }
     return self;
 }
@@ -33,7 +32,7 @@
 }
 
 - (nonnull id<UIViewControllerInteractiveTransitioning>)containerController:(nonnull PNContainerViewController *)containerViewController interactionControllerForAnimationController:(nonnull id<UIViewControllerAnimatedTransitioning>)animationController {
-    return _interactive ? _interactionTransOld : nil;
+    return _interactive ? _interactionTrans : nil;
 }
 
 @end
