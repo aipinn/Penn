@@ -7,8 +7,11 @@
 //
 
 #import "PNChildViewController.h"
+#import "PNContainerDelegate.h"
 
 @interface PNChildViewController ()
+
+@property (nonatomic, strong) PNContainerDelegate * containerDelegate;
 
 @end
 
@@ -25,10 +28,8 @@
     btn.backgroundColor = [UIColor blackColor];
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(pop:) forControlEvents:UIControlEventTouchUpInside];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+    
+  
     
 }
 

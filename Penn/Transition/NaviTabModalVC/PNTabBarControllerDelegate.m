@@ -11,6 +11,16 @@
 
 @implementation PNTabBarControllerDelegate
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.interactive = NO;
+        self.interactionTrans = [[UIPercentDrivenInteractiveTransition alloc]init];
+    }
+    return self;
+}
+
 - (id<UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController animationControllerForTransitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
     NSUInteger fromIdx = [tabBarController.viewControllers indexOfObject:fromVC];
     NSUInteger toIdx = [tabBarController.viewControllers indexOfObject:toVC];
@@ -27,10 +37,8 @@
     return atVC;
 }
 
-//- (id<UIViewControllerInteractiveTransitioning>)tabBarController:(UITabBarController *)tabBarController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController{
-//    PNAnimatedTransitioning *atVC = [PNAnimatedTransitioning new];
-//    atVC.operationType = PNTransitionOperationTypeLeft;
-//    return atVC;
-//}
+- (id<UIViewControllerInteractiveTransitioning>)tabBarController:(UITabBarController *)tabBarController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController{
+    return _interactive ? _interactionTrans : nil;
+}
 
 @end

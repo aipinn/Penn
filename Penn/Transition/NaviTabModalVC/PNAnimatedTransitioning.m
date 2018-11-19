@@ -20,6 +20,15 @@
     UIView *fromView = fromVC.view;
     UIView *toView = toVC.view;
     
+    /*
+     toVC.modalPresentationStyle = UIModalPresentationCustom;
+     默认的转场模式是全屏模式:UIModalPresentationFullScreen
+     在custom模式下模态转场通过viewForKey获取到的View为nil(present fromView=nil, dismiss toView=nil)
+     所以要通过vc.view获取view
+    */
+//    UIView *key_to_view = [transitionContext viewForKey:UITransitionContextToViewKey];
+//    UIView *key_from_view = [transitionContext viewForKey:UITransitionContextFromViewKey];
+
     
     CGAffineTransform toViewTransform = CGAffineTransformIdentity;
     CGAffineTransform fromViewTransform = CGAffineTransformIdentity;
@@ -57,10 +66,14 @@
             toViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
             break;
         case PNTransitionOperationTypeContainerLeft:
-            
+            translation = containerView.frame.size.width;
+            fromViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
+            toViewTransform = CGAffineTransformMakeTranslation(translation, 0);
             break;
         case PNTransitionOperationTypeContainerRight:
-            
+            translation = containerView.frame.size.width;
+            fromViewTransform = CGAffineTransformMakeTranslation(translation, 0);
+            toViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
             break;
         default:
             break;
@@ -78,7 +91,7 @@
     
     
     toView.transform = toViewTransform;
-    if (self.operationType == PNTransitionOperationTypeContainerRight || self.operationType == PNTransitionOperationTypeContainerLeft) {
+    if (0&&(self.operationType == PNTransitionOperationTypeContainerRight || self.operationType == PNTransitionOperationTypeContainerLeft)) {
         toVC.view.alpha = 0;
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             fromVC.view.transform = CGAffineTransformMakeScale(0.1, 0.1);
@@ -95,18 +108,16 @@
             fromView.transform = CGAffineTransformIdentity;
             toView.transform = CGAffineTransformIdentity;
             //保持最后的状态
+
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+
         }];
     }
     
 }
 
 - (NSTimeInterval)transitionDuration:(nullable id<UIViewControllerContextTransitioning>)transitionContext {
-    return 0.5;
-}
-
-- (void)animationEnded:(BOOL)transitionCompleted{
-    
+    return 0.8;
 }
 
 @end

@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PNTabBarControllerDelegate : NSObject<UITabBarControllerDelegate>
 
+/**
+ 是否可以交互
+ */
+@property (nonatomic, assign) BOOL interactive;
+
+@property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactionTrans;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

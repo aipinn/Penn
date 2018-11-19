@@ -64,8 +64,11 @@
 		BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683720A4132C009FB674 /* PNGrandparent.m */; };
 		BC05683B20A41349009FB674 /* PNParent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683A20A41349009FB674 /* PNParent.m */; };
 		BC05683E20A41382009FB674 /* PNSon.m in Sources */ = {isa = PBXBuildFile; fileRef = BC05683D20A41382009FB674 /* PNSon.m */; };
+		BC5AF360218F33C6008743E3 /* PNPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5AF35F218F33C6008743E3 /* PNPercentDrivenInteractiveTransition.m */; };
 		BC63E013217C65000069BB58 /* PNContainerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC63E012217C65000069BB58 /* PNContainerDelegate.m */; };
 		BCC68F1A20B2B8E000EE9334 /* PNTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC68F1920B2B8E000EE9334 /* PNTask.m */; };
+		BCD36667219825F900AF9D5F /* PNContainerTransitionContext.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD36666219825F900AF9D5F /* PNContainerTransitionContext.m */; };
+		BCD3666A21982A8900AF9D5F /* PNUpTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD3666921982A8900AF9D5F /* PNUpTabViewController.m */; };
 		BCD5FDC2216F9E4000EBF1E5 /* PNRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5FDC1216F9E4000EBF1E5 /* PNRouter.m */; };
 		BCD5FDC5216F9F8400EBF1E5 /* PNMLZListController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5FDC4216F9F8400EBF1E5 /* PNMLZListController.m */; };
 		BCD5FDC8216F9F9A00EBF1E5 /* PNMLZDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5FDC7216F9F9A00EBF1E5 /* PNMLZDetailController.m */; };
@@ -227,10 +230,16 @@
 		BC05683A20A41349009FB674 /* PNParent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNParent.m; sourceTree = "<group>"; };
 		BC05683C20A41382009FB674 /* PNSon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNSon.h; sourceTree = "<group>"; };
 		BC05683D20A41382009FB674 /* PNSon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNSon.m; sourceTree = "<group>"; };
+		BC5AF35E218F33C6008743E3 /* PNPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		BC5AF35F218F33C6008743E3 /* PNPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
 		BC63E011217C65000069BB58 /* PNContainerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNContainerDelegate.h; sourceTree = "<group>"; };
 		BC63E012217C65000069BB58 /* PNContainerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNContainerDelegate.m; sourceTree = "<group>"; };
 		BCC68F1820B2B8E000EE9334 /* PNTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNTask.h; sourceTree = "<group>"; };
 		BCC68F1920B2B8E000EE9334 /* PNTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNTask.m; sourceTree = "<group>"; };
+		BCD36665219825F900AF9D5F /* PNContainerTransitionContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNContainerTransitionContext.h; sourceTree = "<group>"; };
+		BCD36666219825F900AF9D5F /* PNContainerTransitionContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNContainerTransitionContext.m; sourceTree = "<group>"; };
+		BCD3666821982A8900AF9D5F /* PNUpTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNUpTabViewController.h; sourceTree = "<group>"; };
+		BCD3666921982A8900AF9D5F /* PNUpTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNUpTabViewController.m; sourceTree = "<group>"; };
 		BCD5FDC0216F9E4000EBF1E5 /* PNRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNRouter.h; sourceTree = "<group>"; };
 		BCD5FDC1216F9E4000EBF1E5 /* PNRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNRouter.m; sourceTree = "<group>"; };
 		BCD5FDC3216F9F8400EBF1E5 /* PNMLZListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNMLZListController.h; sourceTree = "<group>"; };
@@ -420,10 +429,16 @@
 			children = (
 				3DF2F8E92179B43100BDE143 /* PNContainerViewController.h */,
 				3DF2F8EA2179B43100BDE143 /* PNContainerViewController.m */,
-				3DF2F8EC2179C31400BDE143 /* PNChildViewController.h */,
-				3DF2F8ED2179C31400BDE143 /* PNChildViewController.m */,
 				BC63E011217C65000069BB58 /* PNContainerDelegate.h */,
 				BC63E012217C65000069BB58 /* PNContainerDelegate.m */,
+				BC5AF35E218F33C6008743E3 /* PNPercentDrivenInteractiveTransition.h */,
+				BC5AF35F218F33C6008743E3 /* PNPercentDrivenInteractiveTransition.m */,
+				BCD36665219825F900AF9D5F /* PNContainerTransitionContext.h */,
+				BCD36666219825F900AF9D5F /* PNContainerTransitionContext.m */,
+				BCD3666821982A8900AF9D5F /* PNUpTabViewController.h */,
+				BCD3666921982A8900AF9D5F /* PNUpTabViewController.m */,
+				3DF2F8EC2179C31400BDE143 /* PNChildViewController.h */,
+				3DF2F8ED2179C31400BDE143 /* PNChildViewController.m */,
 			);
 			path = " ContainerVC";
 			sourceTree = "<group>";
@@ -957,6 +972,7 @@
 				3DF2F8EB2179B43100BDE143 /* PNContainerViewController.m in Sources */,
 				3D17593B2101B3520027C7DB /* PNMsgForward.m in Sources */,
 				D529F3731FD29B50008C67F3 /* BaseModel.m in Sources */,
+				BCD36667219825F900AF9D5F /* PNContainerTransitionContext.m in Sources */,
 				3D1709AC20F4ABD5009DA2AA /* MBProgressHUD+LMJ.m in Sources */,
 				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
 				D5AAC5801FC8030300A9BD86 /* PNProfileViewController.m in Sources */,
@@ -974,6 +990,7 @@
 				3D40665820E48D8C00BA740C /* PNFillModel.m in Sources */,
 				BC05683E20A41382009FB674 /* PNSon.m in Sources */,
 				236BAA0E209FE9B5006BD6B9 /* PNViewButton.m in Sources */,
+				BC5AF360218F33C6008743E3 /* PNPercentDrivenInteractiveTransition.m in Sources */,
 				BCF77CD620B55A7E00BA34CD /* NSMutableArray+PNAddE.m in Sources */,
 				D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */,
 				3DD989A621742DF800195541 /* PNNavigationDelegate.m in Sources */,
@@ -985,6 +1002,7 @@
 				3D0C2A5F212D558D0015D85C /* PNDataStructureController.m in Sources */,
 				BC05683B20A41349009FB674 /* PNParent.m in Sources */,
 				BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */,
+				BCD3666A21982A8900AF9D5F /* PNUpTabViewController.m in Sources */,
 				3DFB089720E2139C00DC22BC /* PNTextViewController.m in Sources */,
 				3DCAC87621787F1E0096B75F /* PNFromViewController.m in Sources */,
 				BCD5FDC5216F9F8400EBF1E5 /* PNMLZListController.m in Sources */,

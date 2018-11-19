@@ -18,12 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface PNPercentDrivenInteractiveTransition : UIPercentDrivenInteractiveTransition
-
-- (void)handleGesture:(UIGestureRecognizer *)gesture;
-- (instancetype)initWithViewController:(UIViewController *)VC;
-@property (nonatomic, strong) UIViewController *viewController;
-
-@end
+//@interface PNPercentDrivenInteractiveTransition : UIPercentDrivenInteractiveTransition
+//
+//- (void)handleGesture:(UIGestureRecognizer *)gesture;
+//- (instancetype)initWithViewController:(UIViewController *)VC;
+//@property (nonatomic, strong) UIViewController *viewController;
+//
+//@end
 
 NS_ASSUME_NONNULL_END

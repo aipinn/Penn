@@ -33,16 +33,33 @@
 @implementation PNTwoController
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor purpleColor];
+    self.view.backgroundColor = [UIColor orangeColor];
+    UIButton *btn = [[UIButton alloc]init];
+    btn.frame = CGRectMake(100, 100, 100, 50);
+    [btn setTitle:@"pop"];
+    btn.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(pop:) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    
+}
+- (void)pop:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
 
 @implementation PNThreeController
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor cyanColor];
+    self.view.backgroundColor = [UIColor orangeColor];
+    UIButton *btn = [[UIButton alloc]init];
+    btn.frame = CGRectMake(100, 100, 100, 50);
+    [btn setTitle:@"pop"];
+    btn.backgroundColor = [UIColor redColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(pop:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+- (void)pop:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
