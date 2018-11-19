@@ -37,6 +37,10 @@
     [super viewDidLoad];
     
 }
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self performSelector:self.selector withObject:nil afterDelay:0];
+}
 
 #pragma mark - Actions
 
@@ -44,7 +48,7 @@
     [PNRouter registerURLPattern:@"pinn://foo/evening" toHandler:^(NSDictionary * _Nonnull routerParameters) {
         
     }];
-    
+    [PNRouter openURL:@"pinn://foo/"];
 }
 
 - (void)ml_chineseChar{

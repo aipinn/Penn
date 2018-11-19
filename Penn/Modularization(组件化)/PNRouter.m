@@ -10,6 +10,7 @@
 
 
 static NSString *const PN_ROUTER_WILDCARD_CHARACTER = @"~";
+static NSString *specialCharacters = @"/?&.";
 
 NSString *const PNRouterParameterURL = @"PNRouterParameterURL";
 NSString *const PNRouterParameterCompletion = @"PNRouterParameterCompletion";
@@ -91,17 +92,18 @@ static PNRouter * instance = nil;
 #pragma mark - Open URL
 
 + (void)openURL:(NSString *)URL{
-    [[self shareInstance] openURL:URL complete:nil];
+    [self openURL:URL completion:nil];
 }
 
-+ (void)openURL:(NSString *)URL complete:(void (^)(id result))complete{
-    [[self shareInstance] openURL:URL userInfo:nil complete:complete];
++ (void)openURL:(NSString *)URL completion:(void (^)(id result))complete{
+    [self openURL:URL userInfo:nil completion:complete];
 }
 
-+ (void)openURL:(NSString *)URL userInfo:(NSDictionary *)userIfo complete:(void (^)(id result))complete{
++ (void)openURL:(NSString *)URL userInfo:(NSDictionary *)userIfo completion:(void (^)(id result))complete{
     
-    NSCharacterSet *set = [NSCharacterSet URLPathAllowedCharacterSet];
+    NSCharacterSet *set = [NSCharacterSet URLFragmentAllowedCharacterSet];
     URL = [URL stringByAddingPercentEncodingWithAllowedCharacters:set];
+    //URL = [URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];//编码@"`#%^{}[]|\"<> ",14个字符包含空格
     NSMutableDictionary *parameters = [[self shareInstance] extractParametersFromURL:URL matchExtractly:NO];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:NSString.class]) {
@@ -143,14 +145,47 @@ static PNRouter * instance = nil;
             if ([key isEqualToString:pathComponent] || [key isEqualToString:PN_ROUTER_WILDCARD_CHARACTER]) {
                 found = YES;
                 subRoutes = subRoutes[key];
+                break;
+            }else if ([key hasPrefix:@":"]){
+                found = YES;
+                subRoutes = subRoutes[key];
                 NSString *newKey = [key substringFromIndex:1];
                 NSString *newPathComponent = pathComponent;
-                
+                // 再做一下特殊处理，比如 :id.html -> :id
+                if ([self.class checkIfContainsSpecialCharacter:key]) {
+                    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:specialCharacters];
+                    NSRange range = [key rangeOfCharacterFromSet:set];
+                    if (range.location != NSNotFound) {
+                        newKey = [newKey substringToIndex:range.location - 1];
+                        NSString *suffixToStrip = [key substringFromIndex:range.location];
+                        newPathComponent = [newPathComponent stringByReplacingOccurrencesOfString:suffixToStrip withString:@""];
+                    }
+                }
+                parameters[newKey] = newPathComponent;
+                break;
+            }else if(exactly){
+                found = NO;
             }
+        }
+        // 如果没有找到该 pathComponent 对应的 handler，则以上一层的 handler 作为 fallback
+        if (!found && !subRoutes[@"_"]) {
+            return nil;
         }
     }
     
-    
-    return nil;
+    // Extract Params From Query.
+    NSArray<NSURLQueryItem *> *queryItems = [[NSURLComponents alloc] initWithURL:[NSURL URLWithString:URL] resolvingAgainstBaseURL:NO].queryItems;
+    for (NSURLQueryItem *item in queryItems) {
+        parameters[item.name] = item.value;
+    }
+    if (subRoutes[@"_"]) {
+        parameters[@"block"] = [subRoutes[@"_"] copy];
+    }
+    return parameters;
+}
+
++ (BOOL)checkIfContainsSpecialCharacter:(NSString *)checkedString{
+    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:specialCharacters];
+    return [checkedString rangeOfCharacterFromSet:set].location != NSNotFound;
 }
 @end
