@@ -50,6 +50,7 @@ static CGFloat const kButtonSlotHeight = 44;
 }
 - (void)interactionEnd:(NSNotification *)notify{
     self.transitionCtx = nil;
+    _privateButtonsView.userInteractionEnabled = YES;
 }
 /**
  You can override this method in order to create your views manually. If you choose to do so, assign the root view of your view hierarchy to the view property. The views you create should be unique instances and should not be shared with any other view controller object. Your custom implementation of this method should not call super.
@@ -99,9 +100,8 @@ static CGFloat const kButtonSlotHeight = 44;
 - (void)setSelectedViewController:(UIViewController *)selectedViewController
 {
     NSCParameterAssert(selectedViewController);
-    [self _transitionToChildController:selectedViewController];
     _selectedViewController = selectedViewController;
-    [self _updateButtonSelection];
+    self.shouldReserve = NO;
 }
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex{
@@ -113,17 +113,52 @@ static CGFloat const kButtonSlotHeight = 44;
     self.shouldReserve = YES;
     _selectedIndex = _priorSelectedIdx;
 }
+
+- (void)setShouldReserve:(BOOL)shouldReserve{
+ 
+    if (_shouldReserve) {
+        _shouldReserve = false;
+    }else{
+        [self _transitionToChildController:_selectedViewController];
+    }
+    //_shouldReserve = shouldReserve;
+}
+/**
+ 更新按钮样式
+ */
+- (void)updateButtonViewAppearanceFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex percent:(CGFloat)percent{
+    UIButton *fromBtn = self.privateButtonsView.subviews[fromIndex];
+    UIButton *toBtn = self.privateButtonsView.subviews[toIndex];
+    
+    [fromBtn setTitleColor:[UIColor colorWithRed:1 green:percent blue:percent alpha:1] forState:UIControlStateNormal];
+    [toBtn setTitleColor:[UIColor colorWithRed:1 green:1-percent blue:1-percent alpha:1] forState:UIControlStateNormal];
+    fromBtn.selected = NO;
+    toBtn.selected = YES;
+}
+
+//- (void)_changeButtonViewAppearanceAtIndex:(NSUInteger)selectedIndex{
+//    [_privateButtonsView.subviews enumerateObjectsUsingBlock:^(__kindof UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        if (idx != selectedIndex) {
+//            [obj setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        }else{
+//            [obj setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//        }
+//    }];
+//}
+
 - (void)_addChildViewControllerButtons
 {
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *childViewController, NSUInteger idx, BOOL *_Nonnull stop) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        UIImage *icon = [childViewController.tabBarItem.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        [btn setImage:icon forState:UIControlStateNormal];
-        UIImage *selectedIcon = [childViewController.tabBarItem.selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        [btn setImage:selectedIcon forState:UIControlStateSelected];
+//        UIImage *icon = [childViewController.tabBarItem.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//        [btn setImage:icon forState:UIControlStateNormal];
+//        UIImage *selectedIcon = [childViewController.tabBarItem.selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//        [btn setImage:selectedIcon forState:UIControlStateSelected];
 
         [btn setTitle:childViewController.title forState:UIControlStateNormal];
-
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        
         btn.tag = idx;
         [btn addTarget:self action:@selector(_buttonTaped:) forControlEvents:UIControlEventTouchUpInside];
         [self.privateButtonsView addSubview:btn];
@@ -159,17 +194,21 @@ static CGFloat const kButtonSlotHeight = 44;
     NSUInteger toIdx = [self.viewControllers indexOfObject:toViewController];
     _selectedIndex = toIdx;
     
-    if ([self.delegate respondsToSelector:
-         @selector(containerController:animationControllerForTransitionFromViewController:toViewController:)]) {
-        _animator = [self.delegate containerController:self animationControllerForTransitionFromViewController:fromViewController toViewController:toViewController];
-    }
-    
-    if ([self.delegate respondsToSelector:
-         @selector(containerController:interactionControllerForAnimationController:)]) {
-        _interactiveTrans = [self.delegate containerController:self interactionControllerForAnimationController:_animator];
-    }
-
-    if (_interactiveTrans) {//jiaohu
+    _privateButtonsView.userInteractionEnabled = NO;
+    if (self.delegate) {//用户接管动画
+        
+        if ([self.delegate respondsToSelector:
+             @selector(containerController:animationControllerForTransitionFromViewController:toViewController:)]) {
+            _animator = [self.delegate containerController:self
+        animationControllerForTransitionFromViewController:fromViewController
+                                          toViewController:toViewController];
+        }
+        
+        if ([self.delegate respondsToSelector:
+             @selector(containerController:interactionControllerForAnimationController:)]) {
+            _interactiveTrans = [self.delegate containerController:self
+                       interactionControllerForAnimationController:_animator];
+        }
         
         PNContainerTransitionContext *transitionCtx = [[PNContainerTransitionContext alloc]
                                                        initWithContainerVC:self
@@ -178,17 +217,18 @@ static CGFloat const kButtonSlotHeight = 44;
                                                                 goingRight:fromIdx < toIdx];
         self.transitionCtx = transitionCtx;
         
-        if (self.delegate) {
+        if (_interactiveTrans) {//交互转场
             _priorSelectedIdx = fromIdx;
-            [transitionCtx startInteractiveTransitionWith:self.delegate];
-        }else{
-            [transitionCtx startNonInteractiveTransitionWith:self.delegate];
+            [transitionCtx startInteractiveTransitionWith:self.delegate animator:_animator];
+        }else{//非交互
+            [transitionCtx startNonInteractiveTransitionWith:self.delegate animator:_animator];
+            [self _updateButtonSelection];
         }
 
-    } else {
-    
+    } else {//默认动画实现
+        [self _updateButtonSelection];
         PNPrivateAnimatedTransitioning *animator = [[PNPrivateAnimatedTransitioning alloc]init];
-
+        _animator = animator;
         PNContainerTransitionContext *transitionCtx = [[PNContainerTransitionContext alloc]
                                                        initWithContainerVC:self
                                                        fromViewController:fromViewController
@@ -215,8 +255,16 @@ static CGFloat const kButtonSlotHeight = 44;
 
 - (void)_updateButtonSelection
 {
-    [self.privateButtonsView.subviews enumerateObjectsUsingBlock:^(UIButton *btn, NSUInteger idx, BOOL *_Nonnull stop) {
-        btn.selected = self.viewControllers[idx] == self.selectedViewController;
+    [self.privateButtonsView.subviews enumerateObjectsUsingBlock:^(UIButton *obj, NSUInteger idx, BOOL *_Nonnull stop) {
+//        btn.selected = self.viewControllers[idx] == self.selectedViewController;
+        if (idx != _selectedIndex) {
+            [obj setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            obj.selected = NO;
+        }else{
+            [obj setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            obj.selected = YES;
+        }
+        
     }];
 }
 

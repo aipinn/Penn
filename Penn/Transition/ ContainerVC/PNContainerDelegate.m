@@ -22,7 +22,9 @@
     return self;
 }
 
-- (nonnull id<UIViewControllerAnimatedTransitioning>)containerController:(nonnull PNContainerViewController *)containerViewController animationControllerForTransitionFromViewController:(nonnull UIViewController *)fromVC toViewController:(nonnull UIViewController *)toVC {
+- (nonnull id<UIViewControllerAnimatedTransitioning>)containerController:(nonnull PNContainerViewController *)containerViewController
+                      animationControllerForTransitionFromViewController:(nonnull UIViewController *)fromVC
+                                                        toViewController:(nonnull UIViewController *)toVC {
     PNAnimatedTransitioning *atd = [PNAnimatedTransitioning new];
     NSUInteger fromIdx = [containerViewController.viewControllers indexOfObject:fromVC];
     NSUInteger toIdx = [containerViewController.viewControllers indexOfObject:toVC];
@@ -31,7 +33,8 @@
     return atd;
 }
 
-- (nonnull id<UIViewControllerInteractiveTransitioning>)containerController:(nonnull PNContainerViewController *)containerViewController interactionControllerForAnimationController:(nonnull id<UIViewControllerAnimatedTransitioning>)animationController {
+- (nonnull id<UIViewControllerInteractiveTransitioning>)containerController:(nonnull PNContainerViewController *)containerViewController
+                                interactionControllerForAnimationController:(nonnull id<UIViewControllerAnimatedTransitioning>)animationController {
     return _interactive ? _interactionTrans : nil;
 }
 

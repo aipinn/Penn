@@ -38,7 +38,7 @@ NSNotificationName const PNContainerTransitionContextInteractionDidEndNotificati
 @implementation PNContainerTransitionContext
 {
     BOOL _isCancled;
-    NSInteger _fromIndx;
+    NSInteger _fromIdx;
     NSInteger _toIdx;
     CGFloat _transitionPercent;
     CFTimeInterval _transitionDuration;
@@ -72,6 +72,9 @@ NSNotificationName const PNContainerTransitionContextInteractionDidEndNotificati
         
         self.privateToVC = toViewController;
         self.privateFromVC = fromViewController;
+        
+        _fromIdx = [_privateContainerVC.viewControllers indexOfObject:_privateFromVC];
+        _toIdx = [_privateContainerVC.viewControllers indexOfObject:_privateToVC];
     }
     return self;
 }
@@ -106,13 +109,13 @@ NSNotificationName const PNContainerTransitionContextInteractionDidEndNotificati
         [_privateFromVC willMoveToParentViewController:nil];
         [_privateFromVC.view removeFromSuperview];
         [_privateFromVC removeFromParentViewController];
-    }else{
+    }else{//取消
         [_privateToVC didMoveToParentViewController:_privateContainerVC];
         [_privateToVC willMoveToParentViewController:nil];
         [_privateToVC.view removeFromSuperview];
         [_privateToVC removeFromParentViewController];
-        [self transitionEnd];
     }
+    [self transitionEnd];
 }
 
 - (void)transitionEnd{
@@ -137,6 +140,7 @@ NSNotificationName const PNContainerTransitionContextInteractionDidEndNotificati
 {
     _transitionPercent = percentComplete;
     self.containerView.layer.timeOffset = (CFTimeInterval)percentComplete * _transitionDuration;
+    [_privateContainerVC updateButtonViewAppearanceFromIndex:_fromIdx toIndex:_toIdx percent:percentComplete];
     
 }
 
@@ -155,6 +159,7 @@ NSNotificationName const PNContainerTransitionContextInteractionDidEndNotificati
     CFTimeInterval timeSincePause = [_containerView.layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
     _containerView.layer.beginTime = timeSincePause;
     
+    //定时器修改按钮的颜色等样式
     CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(finishChangeButtonAppear:)];
     [displayLink addToRunLoop:NSRunLoop.mainRunLoop forMode:NSDefaultRunLoopMode];
     
@@ -185,22 +190,34 @@ NSNotificationName const PNContainerTransitionContextInteractionDidEndNotificati
     if (timeOff > 0) {
         _containerView.layer.timeOffset = timeOff;
         _transitionPercent = (CGFloat)timeOff/_transitionDuration;
-        
-    }else{
+        [_privateContainerVC updateButtonViewAppearanceFromIndex:_fromIdx toIndex:_toIdx percent:_transitionPercent];
+    } else {
         [displayLink invalidate];
         _containerView.layer.timeOffset = 0;
         _containerView.layer.speed = 1;
-        
-        UIView *fakeFromView = [_privateFromVC.view snapshotViewAfterScreenUpdates:NO];
-        [_containerView addSubview:fakeFromView];
-        [self performSelector:@selector(removeFakeFromView:) withObject:fakeFromView afterDelay:1/60];
+        [_privateContainerVC updateButtonViewAppearanceFromIndex:_fromIdx toIndex:_toIdx percent:0];
+
+//        UIView *fakeFromView = [_privateFromVC.view snapshotViewAfterScreenUpdates:NO];
+//        [_containerView addSubview:fakeFromView];
+//        [self performSelector:@selector(removeFakeFromView:) withObject:fakeFromView afterDelay:1/60];
     }
     
 }
-- (void)removeFakeFromView:(UIView *)fakeView{
-    [fakeView removeFromSuperview];
-}
+
+//- (void)removeFakeFromView:(UIView *)fakeView{
+//    [fakeView removeFromSuperview];
+//}
+
 - (void)finishChangeButtonAppear:(CADisplayLink *)displayLink{
+    CFTimeInterval percentFrame = 1/(_transitionDuration * 60);
+    _transitionPercent += (CGFloat)percentFrame;
+    if (_transitionPercent < 1.0) {
+        [_privateContainerVC updateButtonViewAppearanceFromIndex:_fromIdx toIndex:_toIdx percent:_transitionPercent];
+
+    }else{
+        [_privateContainerVC updateButtonViewAppearanceFromIndex:_fromIdx toIndex:_toIdx percent:1];
+        [displayLink invalidate];
+    }
     
 }
 - (void)dosome{
@@ -219,20 +236,20 @@ NSNotificationName const PNContainerTransitionContextInteractionDidEndNotificati
     [_animator animateTransition:self];
 }
 
-- (void)startInteractiveTransitionWith:(id<PNContainerControllerDelegate>)delegate{
-    _animator = [delegate containerController:self.privateContainerVC
-animationControllerForTransitionFromViewController:self.privateFromVC
-                             toViewController:self.privateToVC];
+- (void)startInteractiveTransitionWith:(id<PNContainerControllerDelegate>)delegate animator:(nonnull id<UIViewControllerAnimatedTransitioning>)animator{
     
+    _animator = animator;
     _transitionDuration = [_animator transitionDuration:self];
-    
-    PNPercentDrivenInteractiveTransition *interactionTrans = (PNPercentDrivenInteractiveTransition *)[delegate containerController:self.privateContainerVC interactionControllerForAnimationController:_animator];
+    PNPercentDrivenInteractiveTransition *interactionTrans = (PNPercentDrivenInteractiveTransition *)[delegate
+                                                                                                      containerController:self.privateContainerVC
+                                                                                                      interactionControllerForAnimationController:_animator];
     [interactionTrans startInteractiveTransition:self];
     
 }
 
-- (void)startNonInteractiveTransitionWith:(id<PNContainerControllerDelegate>)delegate{
-    _animated = [delegate containerController:self.privateContainerVC animationControllerForTransitionFromViewController:self.privateFromVC toViewController:self.privateToVC];
+- (void)startNonInteractiveTransitionWith:(id<PNContainerControllerDelegate>)delegate animator:(nonnull id<UIViewControllerAnimatedTransitioning>)animator{
+    
+    _animator = animator;
     _transitionDuration = [_animator transitionDuration:self];
     _interactive = NO;
     _isCancled = NO;

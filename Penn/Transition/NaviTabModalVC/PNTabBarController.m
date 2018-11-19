@@ -73,7 +73,7 @@
             [self.tabDelegate.interactionTrans cancelInteractiveTransition];
             break;
         case UIGestureRecognizerStateEnded:
-            if (percent > 0.3 || ABS(velocity.x) > 200) {
+            if (percent > 0.3 || ABS(velocity.x) > 300) {
                 [self.tabDelegate.interactionTrans finishInteractiveTransition];
                 self.tabDelegate.interactionTrans.completionSpeed = 1;
             }else{

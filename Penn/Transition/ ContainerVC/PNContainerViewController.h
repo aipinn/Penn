@@ -21,19 +21,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSUInteger selectedIndex;
 
-@property (nonatomic, assign) BOOL interactive;
+//@property (nonatomic, assign) BOOL interactive;
 
 
 - (instancetype)initWithViewControllers:(NSArray *)viewControllers;
 - (void)restoreSelectedIndex;
+- (void)updateButtonViewAppearanceFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex percent:(CGFloat)percent;
 @end
 
 
 @protocol PNContainerControllerDelegate <NSObject>
-@optional
-- (id<UIViewControllerAnimatedTransitioning>)containerController:(PNContainerViewController *)containerViewController animationControllerForTransitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC;
 
-- (id<UIViewControllerInteractiveTransitioning>)containerController:(PNContainerViewController *)containerViewController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController;
+@optional
+
+- (id<UIViewControllerAnimatedTransitioning>)containerController:(PNContainerViewController *)containerViewController
+              animationControllerForTransitionFromViewController:(UIViewController *)fromVC
+                                                toViewController:(UIViewController *)toVC;
+
+- (id<UIViewControllerInteractiveTransitioning>)containerController:(PNContainerViewController *)containerViewController
+                        interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController;
 
 @end
 

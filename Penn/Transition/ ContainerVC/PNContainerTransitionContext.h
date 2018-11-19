@@ -28,8 +28,8 @@ UIKIT_EXTERN NSNotificationName const PNContainerTransitionContextInteractionDid
                          goingRight:(BOOL)isRight;
 
 - (void)activeInteractiveTransition;
-- (void)startInteractiveTransitionWith:(id<PNContainerControllerDelegate>)delegate;
-- (void)startNonInteractiveTransitionWith:(id<PNContainerControllerDelegate>)delegate;
+- (void)startInteractiveTransitionWith:(id<PNContainerControllerDelegate>)delegate animator:(id<UIViewControllerAnimatedTransitioning>)animator;
+- (void)startNonInteractiveTransitionWith:(id<PNContainerControllerDelegate>)delegate animator:(id<UIViewControllerAnimatedTransitioning>)animator;
 
 @end
 

@@ -53,10 +53,10 @@
             break;
         case UIGestureRecognizerStateEnded:
             self.containerDelegate.interactive = NO;
-            if (percent < 0.5) {
-                [self.containerDelegate.interactionTrans cancelInteractiveTransition];
-            }else{
+            if (percent >= 0.5 || ABS(velocity.x) > 300) {
                 [self.containerDelegate.interactionTrans finishInteractiveTransition];
+            }else{
+                [self.containerDelegate.interactionTrans cancelInteractiveTransition];
             }
             break;
             default:

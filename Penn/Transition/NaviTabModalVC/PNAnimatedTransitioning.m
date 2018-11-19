@@ -108,7 +108,6 @@
             fromView.transform = CGAffineTransformIdentity;
             toView.transform = CGAffineTransformIdentity;
             //保持最后的状态
-
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
 
         }];
