@@ -96,33 +96,29 @@ static CGFloat const kButtonSlotHeight = 44;
 
     self.selectedViewController = self.selectedViewController ? : self.viewControllers[0];
 }
-
+//点击
 - (void)setSelectedViewController:(UIViewController *)selectedViewController
 {
     NSCParameterAssert(selectedViewController);
     _selectedViewController = selectedViewController;
-    self.shouldReserve = NO;
+    [self _transitionToChildController:_selectedViewController];
 }
-
+//手势
 - (void)setSelectedIndex:(NSUInteger)selectedIndex{
     _selectedIndex = selectedIndex;
-    self.selectedViewController = self.viewControllers[selectedIndex];
-    
-}
-- (void)restoreSelectedIndex{
-    self.shouldReserve = YES;
-    _selectedIndex = _priorSelectedIdx;
-}
-
-- (void)setShouldReserve:(BOOL)shouldReserve{
- 
     if (_shouldReserve) {
         _shouldReserve = false;
     }else{
-        [self _transitionToChildController:_selectedViewController];
+        self.selectedViewController = self.viewControllers[selectedIndex];
     }
-    //_shouldReserve = shouldReserve;
+
 }
+
+- (void)restoreSelectedIndex{
+    self.shouldReserve = YES;
+    self.selectedIndex = _priorSelectedIdx;
+}
+
 /**
  更新按钮样式
  */
@@ -132,19 +128,8 @@ static CGFloat const kButtonSlotHeight = 44;
     
     [fromBtn setTitleColor:[UIColor colorWithRed:1 green:percent blue:percent alpha:1] forState:UIControlStateNormal];
     [toBtn setTitleColor:[UIColor colorWithRed:1 green:1-percent blue:1-percent alpha:1] forState:UIControlStateNormal];
-    fromBtn.selected = NO;
-    toBtn.selected = YES;
-}
 
-//- (void)_changeButtonViewAppearanceAtIndex:(NSUInteger)selectedIndex{
-//    [_privateButtonsView.subviews enumerateObjectsUsingBlock:^(__kindof UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        if (idx != selectedIndex) {
-//            [obj setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//        }else{
-//            [obj setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        }
-//    }];
-//}
+}
 
 - (void)_addChildViewControllerButtons
 {
@@ -187,6 +172,7 @@ static CGFloat const kButtonSlotHeight = 44;
     if (!fromViewController) {
         [self.privateContainerView addSubview:toView];
         [toViewController didMoveToParentViewController:self];
+        [self _updateButtonSelection];
         return;
     }
     //切换控制器,添加动画
@@ -256,13 +242,10 @@ static CGFloat const kButtonSlotHeight = 44;
 - (void)_updateButtonSelection
 {
     [self.privateButtonsView.subviews enumerateObjectsUsingBlock:^(UIButton *obj, NSUInteger idx, BOOL *_Nonnull stop) {
-//        btn.selected = self.viewControllers[idx] == self.selectedViewController;
         if (idx != _selectedIndex) {
             [obj setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            obj.selected = NO;
         }else{
             [obj setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-            obj.selected = YES;
         }
         
     }];

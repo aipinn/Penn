@@ -9,7 +9,6 @@
 #import "PNContainerTransitionContext.h"
 #import "PNPercentDrivenInteractiveTransition.h"
 
-NSNotificationName const PNContainerTransitionContextDidEndNotification = @"PNContainerTransitionContextDidEndNotification";
 NSNotificationName const PNContainerTransitionContextInteractionDidEndNotification = @"PNContainerTransitionContextInteractionDidEndNotification";
 
 @interface PNContainerTransitionContext ()
@@ -144,11 +143,6 @@ NSNotificationName const PNContainerTransitionContextInteractionDidEndNotificati
     
 }
 
-- (void)pauseInteractiveTransition
-{
-    
-}
-
 - (void)finishInteractiveTransition
 {
     _interactive = NO;
@@ -175,10 +169,13 @@ NSNotificationName const PNContainerTransitionContextInteractionDidEndNotificati
     _interactive = NO;
     CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(reverseCurrentAnimation:)];
     [displayLink addToRunLoop:NSRunLoop.mainRunLoop forMode:NSDefaultRunLoopMode];
-    
-//    [[NSNotificationCenter defaultCenter] postNotificationName:PNContainerTransitionContextInteractionDidEndNotification
-//                                                        object:self];
+
 }
+
+- (void)pauseInteractiveTransition {
+    
+}
+
 - (BOOL)transitionWasCancelled{
     return _isCancled;
 }

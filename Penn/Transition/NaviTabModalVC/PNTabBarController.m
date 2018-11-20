@@ -43,7 +43,9 @@
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)pan{
-    
+    if (self.transitioningDelegate == nil || self.viewControllers.count==1 || self.viewControllers == nil || ![self.tabDelegate isKindOfClass:PNTabBarControllerDelegate.class]) {
+        return;
+    }
     CGPoint point = [pan translationInView:self.view];
     CGFloat transX = point.x;
     CGFloat percent = ABS(transX)/self.view.frame.size.width;

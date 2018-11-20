@@ -65,20 +65,21 @@
             fromViewTransform = CGAffineTransformMakeTranslation(translation, 0);
             toViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
             break;
-        case PNTransitionOperationTypeContainerLeft:
-            translation = containerView.frame.size.width;
-            fromViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
-            toViewTransform = CGAffineTransformMakeTranslation(translation, 0);
-            break;
-        case PNTransitionOperationTypeContainerRight:
-            translation = containerView.frame.size.width;
-            fromViewTransform = CGAffineTransformMakeTranslation(translation, 0);
-            toViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
-            break;
         default:
             break;
     }
 
+    //自定义容器转场动画1:
+    if (self.operationType == PNTransitionOperationTypeContainerLeft) {
+        translation = containerView.frame.size.width;
+        fromViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
+        toViewTransform = CGAffineTransformMakeTranslation(translation, 0);
+    }else if (self.operationType == PNTransitionOperationTypeContainerRight){
+        translation = containerView.frame.size.width;
+        fromViewTransform = CGAffineTransformMakeTranslation(translation, 0);
+        toViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
+    }
+    
     switch (_operationType) {
         case PNTransitionOperationTypePresent:
             [containerView addSubview:toView];
@@ -88,35 +89,38 @@
         default:[containerView addSubview:toView];
             break;
     }
-    
-    
     toView.transform = toViewTransform;
-    if (0&&(self.operationType == PNTransitionOperationTypeContainerRight || self.operationType == PNTransitionOperationTypeContainerLeft)) {
-        toVC.view.alpha = 0;
-        [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-            fromVC.view.transform = CGAffineTransformMakeScale(0.1, 0.1);
-            toVC.view.alpha = 1;
-        } completion:^(BOOL finished) {
-            fromVC.view.transform = CGAffineTransformIdentity;
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        }];
-    }else{
-        [UIView animateWithDuration:[self transitionDuration:transitionContext]  animations:^{
-            fromView.transform = fromViewTransform;
-            toView.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            fromView.transform = CGAffineTransformIdentity;
-            toView.transform = CGAffineTransformIdentity;
-            //保持最后的状态
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+    
+    //自定义容器转场动画2:
+//    if (self.operationType == PNTransitionOperationTypeContainerRight || self.operationType == PNTransitionOperationTypeContainerLeft) {
+//        toVC.view.alpha = 0;
+//        [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+//            fromView.transform = CGAffineTransformMakeScale(0.1, 0.1);
+//            toView.alpha = 1;
+//        } completion:^(BOOL finished) {
+//            fromVC.view.transform = CGAffineTransformIdentity;
+//            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+//        }];
+//        return;
+//    }
 
-        }];
-    }
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext]  animations:^{
+        fromView.transform = fromViewTransform;
+        toView.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+        fromView.transform = CGAffineTransformIdentity;
+        toView.transform = CGAffineTransformIdentity;
+        //保持最后的状态
+        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+
+    }];
+   
     
 }
 
 - (NSTimeInterval)transitionDuration:(nullable id<UIViewControllerContextTransitioning>)transitionContext {
-    return 0.8;
+    return 0.5;
 }
 
 @end

@@ -28,9 +28,11 @@
 }
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)gesture{
-
-    CGPoint velocity = [gesture velocityInView:self.view];
+    if (self.delegate == nil || self.viewControllers.count==1 || self.viewControllers == nil || ![self.delegate isKindOfClass:PNContainerDelegate.class]) {
+        return;
+    }
     
+    CGPoint velocity = [gesture velocityInView:self.view];
     CGPoint point = [gesture translationInView:self.view];
     CGFloat percent = ABS(point.x) / self.view.frame.size.width;
     self.containerDelegate = (PNContainerDelegate *)self.delegate;

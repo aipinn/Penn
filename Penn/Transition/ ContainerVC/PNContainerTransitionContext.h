@@ -11,7 +11,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-//UIKIT_EXTERN NSNotificationName const PNContainerTransitionContextDidEndNotification;
 UIKIT_EXTERN NSNotificationName const PNContainerTransitionContextInteractionDidEndNotification;
 
 @interface PNContainerTransitionContext : NSObject<UIViewControllerContextTransitioning>
