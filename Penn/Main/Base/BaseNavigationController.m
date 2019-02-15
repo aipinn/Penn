@@ -45,8 +45,8 @@
         
         UINavigationBar * bar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[UIViewController class]]];
         //Note: These properties must both be set if you want to customize the back indicator image.
-        bar.backIndicatorImage = [UIImage imageNamed:@"record"];
-        bar.backIndicatorTransitionMaskImage = [UIImage imageNamed:@"record"];
+        bar.backIndicatorImage = [[UIImage imageNamed:@"record"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        bar.backIndicatorTransitionMaskImage = [[UIImage imageNamed:@"record"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         //设置特定颜色
         //        bar.tintColor = [UIColor purpleColor];
     }
@@ -71,11 +71,17 @@
 //        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backRed"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
 
     }
-    
-
-    
-    
+ 
 }
+
+#pragma mark - 屏幕旋转
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//    return self.visibleViewController.supportedInterfaceOrientations ?: super.supportedInterfaceOrientations;
+//}
+//- (BOOL)shouldAutorotate{
+//    return YES;
+//}
+
 #pragma mark - Action
 - (void)back{
     [self popViewControllerAnimated:YES];

@@ -36,12 +36,33 @@ static NSString * const reuseCellId = @"HomeCell";
                                            
                                            ]];
 
+    
+}
+//必须返回YES
+- (BOOL)shouldAutorotate{
+    return YES;
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
 
+- (void)setInterfaceOrientation:(UIInterfaceOrientation)orientation{
+    
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector  = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        // 从2开始是因为前两个参数已经被selector和target占用
+        [invocation setArgument:&orientation atIndex:2];
+        [invocation invoke];
+    }
+}
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self setInterfaceOrientation:UIInterfaceOrientationPortrait];
 
 }
 

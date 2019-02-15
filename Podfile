@@ -14,5 +14,6 @@ pod 'Toast'
 pod 'FBRetainCycleDetector'
 pod 'MBProgressHUD'
 pod 'MJExtension'
+pod 'DSAlert-OC'
 
 end

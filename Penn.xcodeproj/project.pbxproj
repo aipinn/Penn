@@ -15,6 +15,9 @@
 		3D0C2A5F212D558D0015D85C /* PNDataStructureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C2A5D212D558D0015D85C /* PNDataStructureController.m */; };
 		3D0C2A60212D558D0015D85C /* PNDataStructureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */; };
 		3D0C2A62212D55B30015D85C /* PNProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C2A61212D55B30015D85C /* PNProfileViewController.xib */; };
+		3D15B23421F56D28002BA785 /* NSString+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15B23221F56D27002BA785 /* NSString+PNAdd.m */; };
+		3D15B23721F56D3F002BA785 /* UIView+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15B23521F56D3F002BA785 /* UIView+PNAdd.m */; };
+		3D15B23A21F571CD002BA785 /* UITextView+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15B23921F571CD002BA785 /* UITextView+PNAdd.m */; };
 		3D1709AC20F4ABD5009DA2AA /* MBProgressHUD+LMJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1709A820F4ABD4009DA2AA /* MBProgressHUD+LMJ.m */; };
 		3D1709AD20F4ABD5009DA2AA /* MBProgressHUD+MP.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1709A920F4ABD4009DA2AA /* MBProgressHUD+MP.m */; };
 		3D17593B2101B3520027C7DB /* PNMsgForward.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D17593A2101B3520027C7DB /* PNMsgForward.m */; };
@@ -44,6 +47,8 @@
 		3D75D9AA210EFAC70069D46D /* PNCTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75D9A9210EFAC70069D46D /* PNCTFrameParser.m */; };
 		3D817A3E2121644A00967D77 /* PNBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D817A3C2121644A00967D77 /* PNBlockViewController.m */; };
 		3D817A3F2121644A00967D77 /* PNBlockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D817A3D2121644A00967D77 /* PNBlockViewController.xib */; };
+		3DC6339721B90F5A00B066C9 /* UINavigationController+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC6339621B90F5A00B066C9 /* UINavigationController+Add.m */; };
+		3DC6339A21B90FAB00B066C9 /* UIView+Corner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC6339921B90FAB00B066C9 /* UIView+Corner.m */; };
 		3DCAC8722178353F0096B75F /* PNTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAC8712178353E0096B75F /* PNTransitioningDelegate.m */; };
 		3DCAC87621787F1E0096B75F /* PNFromViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAC87421787F1E0096B75F /* PNFromViewController.m */; };
 		3DCAC87721787F1E0096B75F /* PNFromViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DCAC87521787F1E0096B75F /* PNFromViewController.xib */; };
@@ -143,6 +148,12 @@
 		3D0C2A5D212D558D0015D85C /* PNDataStructureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNDataStructureController.m; sourceTree = "<group>"; };
 		3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNDataStructureController.xib; sourceTree = "<group>"; };
 		3D0C2A61212D55B30015D85C /* PNProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNProfileViewController.xib; sourceTree = "<group>"; };
+		3D15B23221F56D27002BA785 /* NSString+PNAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PNAdd.m"; sourceTree = "<group>"; };
+		3D15B23321F56D28002BA785 /* NSString+PNAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PNAdd.h"; sourceTree = "<group>"; };
+		3D15B23521F56D3F002BA785 /* UIView+PNAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PNAdd.m"; sourceTree = "<group>"; };
+		3D15B23621F56D3F002BA785 /* UIView+PNAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PNAdd.h"; sourceTree = "<group>"; };
+		3D15B23821F571CD002BA785 /* UITextView+PNAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+PNAdd.h"; sourceTree = "<group>"; };
+		3D15B23921F571CD002BA785 /* UITextView+PNAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+PNAdd.m"; sourceTree = "<group>"; };
 		3D1709A820F4ABD4009DA2AA /* MBProgressHUD+LMJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+LMJ.m"; sourceTree = "<group>"; };
 		3D1709A920F4ABD4009DA2AA /* MBProgressHUD+MP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MP.m"; sourceTree = "<group>"; };
 		3D1709AA20F4ABD5009DA2AA /* MBProgressHUD+LMJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+LMJ.h"; sourceTree = "<group>"; };
@@ -192,6 +203,10 @@
 		3D817A3B2121644A00967D77 /* PNBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNBlockViewController.h; sourceTree = "<group>"; };
 		3D817A3C2121644A00967D77 /* PNBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNBlockViewController.m; sourceTree = "<group>"; };
 		3D817A3D2121644A00967D77 /* PNBlockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNBlockViewController.xib; sourceTree = "<group>"; };
+		3DC6339521B90F5A00B066C9 /* UINavigationController+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Add.h"; sourceTree = "<group>"; };
+		3DC6339621B90F5A00B066C9 /* UINavigationController+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Add.m"; sourceTree = "<group>"; };
+		3DC6339821B90FAB00B066C9 /* UIView+Corner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Corner.h"; sourceTree = "<group>"; };
+		3DC6339921B90FAB00B066C9 /* UIView+Corner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Corner.m"; sourceTree = "<group>"; };
 		3DCAC8702178353E0096B75F /* PNTransitioningDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNTransitioningDelegate.h; sourceTree = "<group>"; };
 		3DCAC8712178353E0096B75F /* PNTransitioningDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNTransitioningDelegate.m; sourceTree = "<group>"; };
 		3DCAC87321787F1E0096B75F /* PNFromViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNFromViewController.h; sourceTree = "<group>"; };
@@ -671,6 +686,14 @@
 		D5BAD0261FAD66510098D8DF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3D15B23621F56D3F002BA785 /* UIView+PNAdd.h */,
+				3D15B23521F56D3F002BA785 /* UIView+PNAdd.m */,
+				3D15B23321F56D28002BA785 /* NSString+PNAdd.h */,
+				3D15B23221F56D27002BA785 /* NSString+PNAdd.m */,
+				3DC6339821B90FAB00B066C9 /* UIView+Corner.h */,
+				3DC6339921B90FAB00B066C9 /* UIView+Corner.m */,
+				3DC6339521B90F5A00B066C9 /* UINavigationController+Add.h */,
+				3DC6339621B90F5A00B066C9 /* UINavigationController+Add.m */,
 				3D1709AA20F4ABD5009DA2AA /* MBProgressHUD+LMJ.h */,
 				3D1709A820F4ABD4009DA2AA /* MBProgressHUD+LMJ.m */,
 				3D1709AB20F4ABD5009DA2AA /* MBProgressHUD+MP.h */,
@@ -687,6 +710,8 @@
 				BCF77CC920B510C500BA34CD /* UILabel+PNAdd.m */,
 				BCF77CD720B55A9C00BA34CD /* NSObject+PNAdd.h */,
 				BCF77CD820B55A9C00BA34CD /* NSObject+PNAdd.m */,
+				3D15B23821F571CD002BA785 /* UITextView+PNAdd.h */,
+				3D15B23921F571CD002BA785 /* UITextView+PNAdd.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -918,6 +943,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Penn/Pods-Penn-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/DSAlert-OC/DSAlert_OC.framework",
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
@@ -930,6 +956,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DSAlert_OC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
@@ -970,6 +997,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DF2F8EB2179B43100BDE143 /* PNContainerViewController.m in Sources */,
+				3D15B23A21F571CD002BA785 /* UITextView+PNAdd.m in Sources */,
 				3D17593B2101B3520027C7DB /* PNMsgForward.m in Sources */,
 				D529F3731FD29B50008C67F3 /* BaseModel.m in Sources */,
 				BCD36667219825F900AF9D5F /* PNContainerTransitionContext.m in Sources */,
@@ -998,6 +1026,8 @@
 				3D4E27572105CE0D0013152D /* PNAutoDictionary.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
+				3D15B23421F56D28002BA785 /* NSString+PNAdd.m in Sources */,
+				3DC6339721B90F5A00B066C9 /* UINavigationController+Add.m in Sources */,
 				3D32551C21118C8400E593F1 /* PNCTLinkData.m in Sources */,
 				3D0C2A5F212D558D0015D85C /* PNDataStructureController.m in Sources */,
 				BC05683B20A41349009FB674 /* PNParent.m in Sources */,
@@ -1012,12 +1042,14 @@
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,
 				3D32551F21118E7D00E593F1 /* PNCTUtils.m in Sources */,
 				D5AAC57C1FC8029200A9BD86 /* BaseTabBarController.m in Sources */,
+				3D15B23721F56D3F002BA785 /* UIView+PNAdd.m in Sources */,
 				3D4ED2F1210B3B2E00A5D060 /* PNCTDisplayView.m in Sources */,
 				BCD5FDC8216F9F9A00EBF1E5 /* PNMLZDetailController.m in Sources */,
 				3D75D9A4210EFA400069D46D /* PNCoreTextData.m in Sources */,
 				D5AAC5751FC7F17D00A9BD86 /* PICrazyButton.swift in Sources */,
 				3DCAC8722178353F0096B75F /* PNTransitioningDelegate.m in Sources */,
 				3DF2F8DF217885CE00BDE143 /* PNTabBarControllerDelegate.m in Sources */,
+				3DC6339A21B90FAB00B066C9 /* UIView+Corner.m in Sources */,
 				BCF77CCA20B510C500BA34CD /* UILabel+PNAdd.m in Sources */,
 				BCF77CD920B55A9C00BA34CD /* NSObject+PNAdd.m in Sources */,
 				3D4ED2FB210B3DCF00A5D060 /* PNCoreTextViewController.m in Sources */,

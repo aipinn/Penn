@@ -30,6 +30,9 @@
     return YES;
 }
 
+//- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+//    return UIInterfaceOrientationMaskAll;
+//}
 
 #pragma mark - app 日志上传
 

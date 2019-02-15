@@ -33,6 +33,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
+    
 }
 
 - (IBAction)testSlideGestureAndBack:(id)sender {

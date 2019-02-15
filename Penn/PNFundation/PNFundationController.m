@@ -37,8 +37,41 @@
     [super viewDidLoad];
     [self inheritAndCategoryFunTest];
     
+//    NSString *str = @"hello world !";
+//
+//    for (NSUInteger i = str.length; i > 0; i--) {
+//        //1. 子字符串
+//        NSString *sub = [str substringWithRange:NSMakeRange(i-1, 1)];
+//        NSLog(@"%@", sub);
+//
+//        //2. UniChar
+//        UniChar ch = [str characterAtIndex:i-1];
+//        NSLog(@"%@", [NSString stringWithCharacters:&ch length:1]);
+//    }
+    
+    //C语言
+    ReversedStr("hello world !");
+
 }
 
+void ReversedStr(char *str) {
+    int len = strlen(str);
+    //1. 倒序遍历
+//    for (int i = 0; i<= len; i++) {
+//        char c = str[len-i-1];
+//        printf("%c", c);
+//    }
+    
+    //2. 前后交换
+    char tmp;
+    for (int i = 0; i < len/2; i++) {
+        tmp = str[i];
+        str[i] = str[len-i-1];
+        str[len-i-1] = tmp;
+    }
+    printf("%s", str);
+    
+}
 
 - (void)testModel{
     

@@ -41,6 +41,18 @@
     [super viewDidAppear:animated];
     [self performSelector:self.selector withObject:nil afterDelay:0];
 }
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    //消失后:
+    /*
+     (lldb) po self.navigationController
+     nil
+     */
+}
 
 #pragma mark - Actions
 

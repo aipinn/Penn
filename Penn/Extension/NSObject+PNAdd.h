@@ -32,3 +32,7 @@
 @interface NSMutableArray (PNAdd)
 
 @end
+
+@interface NSMutableDictionary (PNAdd)
+
+@end

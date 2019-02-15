@@ -29,9 +29,24 @@
 #define APPKeyWindow ([UIApplication sharedApplication].keyWindow)
 //--常用方法--
 
+//弱引用
+#ifndef PNWeakObj
+#define PNWeakObj(obj) autoreleasepool{} __weak typeof(obj) weak##obj = obj
+#endif
+//距当前时间seconds秒的时间戳, seconds为负数返回当前时间之前
+#define KTimestamp(seconds) \
+({\
+NSDate *date = [NSDate dateWithTimeIntervalSinceNow:seconds];\
+NSTimeInterval interval = [date timeIntervalSince1970];\
+NSString *timeString = [NSString stringWithFormat:@"%0.f", interval];\
+(timeString);\
+})
+//常用字体
+#define kFontSemiboldSize(fontSize) [UIFont fontWithName:@"PingFangSC-Semibold" size:fontSize]
+#define kFontMediumSize(fontSize) [UIFont fontWithName:@"PingFangSC-Medium" size:fontSize]
+#define kFontRegularSize(fontSize) [UIFont fontWithName:@"PingFangSC-Regular" size:fontSize]
 //获取图片资源
 #define GetImage(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]]
-
 
 //设备宽和高
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)

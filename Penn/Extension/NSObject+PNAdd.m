@@ -88,7 +88,24 @@
     [self pn_insertObject:anObject atIndex:index];
 }
 
+@end
 
+@implementation NSMutableDictionary (PNAdd)
 
++ (void)load{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class class = NSClassFromString(@"__NSDictionaryM");
+        [class pn_swizzleInstanceMethod:@selector(setObject:forKey:) newMethod:@selector(pn_setObject:forKey:)];
+
+    });
+}
+
+- (void)pn_setObject:(id)anObject forKey:(id<NSCopying>)aKey{
+    if (anObject == nil) {
+        return;
+    }
+    [self pn_setObject:anObject forKey:aKey];
+}
 
 @end

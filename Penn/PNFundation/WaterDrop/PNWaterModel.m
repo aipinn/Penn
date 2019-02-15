@@ -10,6 +10,10 @@
 
 @implementation PNWaterModel
 
++ (NSDictionary *)mj_objectClassInArray{
+    return @{@"list":@"DropModel"};
+}
+
 @end
 
 @implementation DropModel
