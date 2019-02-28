@@ -8,8 +8,9 @@
 
 #import "PNProfileViewController.h"
 #import "PNDataStructureController.h"
+#import "PNImgViewCell.h"
 
-@interface PNProfileViewController ()
+@interface PNProfileViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self setupUI];
 }
 - (IBAction)dataStructure:(id)sender {
     PNDataStructureController * data = [[PNDataStructureController alloc] init];
@@ -30,14 +31,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (void)setupUI {
+    [super setupUI];
+    [self.tableView registerClass:[PNImgViewCell class] forCellReuseIdentifier:@"cell"];
+    self.tableView.rowHeight = 160;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PNImgViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.num = 3;
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20000;
+}
+
 
 @end

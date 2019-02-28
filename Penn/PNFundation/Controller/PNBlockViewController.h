@@ -13,11 +13,12 @@
 @end
 
 typedef void (^Ok_block)(void);
+
 @interface OkBlock : NSObject
 
 @property (nonatomic, copy) Ok_block block;
-
 @property (nonatomic, copy) NSArray * array;
 
 - (void)exeBlock;
+
 @end

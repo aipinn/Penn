@@ -11,10 +11,14 @@
 		236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA0F209FEA4B006BD6B9 /* PNViewButton.xib */; };
 		236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */; };
 		236BAA15209FEC81006BD6B9 /* PNEmptyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */; };
+		3D01E9AB221CF178002AB423 /* PNThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01E9AA221CF178002AB423 /* PNThreadViewController.m */; };
+		3D01E9AE221D07D0002AB423 /* PNOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01E9AD221D07D0002AB423 /* PNOperationController.m */; };
+		3D01E9B1221D3FCB002AB423 /* PNRunLoopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01E9B0221D3FCB002AB423 /* PNRunLoopController.m */; };
 		3D07D4E9217DCB5100AE9FA1 /* PNSlideBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D07D4E8217DCB5100AE9FA1 /* PNSlideBackViewController.m */; };
 		3D0C2A5F212D558D0015D85C /* PNDataStructureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C2A5D212D558D0015D85C /* PNDataStructureController.m */; };
 		3D0C2A60212D558D0015D85C /* PNDataStructureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */; };
 		3D0C2A62212D55B30015D85C /* PNProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C2A61212D55B30015D85C /* PNProfileViewController.xib */; };
+		3D0D39FF22241C8B0007057E /* PNImgViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D39FE22241C8B0007057E /* PNImgViewCell.m */; };
 		3D15B23421F56D28002BA785 /* NSString+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15B23221F56D27002BA785 /* NSString+PNAdd.m */; };
 		3D15B23721F56D3F002BA785 /* UIView+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15B23521F56D3F002BA785 /* UIView+PNAdd.m */; };
 		3D15B23A21F571CD002BA785 /* UITextView+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15B23921F571CD002BA785 /* UITextView+PNAdd.m */; };
@@ -142,12 +146,20 @@
 		236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNEmptyButton.m; sourceTree = "<group>"; };
 		236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNEmptyButton.xib; sourceTree = "<group>"; };
 		2AAB1F823A83E0823CAEB201 /* libPods-PennTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PennTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D01E9A9221CF178002AB423 /* PNThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNThreadViewController.h; sourceTree = "<group>"; };
+		3D01E9AA221CF178002AB423 /* PNThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNThreadViewController.m; sourceTree = "<group>"; };
+		3D01E9AC221D07D0002AB423 /* PNOperationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNOperationController.h; sourceTree = "<group>"; };
+		3D01E9AD221D07D0002AB423 /* PNOperationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNOperationController.m; sourceTree = "<group>"; };
+		3D01E9AF221D3FCB002AB423 /* PNRunLoopController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNRunLoopController.h; sourceTree = "<group>"; };
+		3D01E9B0221D3FCB002AB423 /* PNRunLoopController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNRunLoopController.m; sourceTree = "<group>"; };
 		3D07D4E7217DCB5100AE9FA1 /* PNSlideBackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNSlideBackViewController.h; sourceTree = "<group>"; };
 		3D07D4E8217DCB5100AE9FA1 /* PNSlideBackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNSlideBackViewController.m; sourceTree = "<group>"; };
 		3D0C2A5C212D558D0015D85C /* PNDataStructureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNDataStructureController.h; sourceTree = "<group>"; };
 		3D0C2A5D212D558D0015D85C /* PNDataStructureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNDataStructureController.m; sourceTree = "<group>"; };
 		3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNDataStructureController.xib; sourceTree = "<group>"; };
 		3D0C2A61212D55B30015D85C /* PNProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNProfileViewController.xib; sourceTree = "<group>"; };
+		3D0D39FD22241C8B0007057E /* PNImgViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNImgViewCell.h; sourceTree = "<group>"; };
+		3D0D39FE22241C8B0007057E /* PNImgViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNImgViewCell.m; sourceTree = "<group>"; };
 		3D15B23221F56D27002BA785 /* NSString+PNAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PNAdd.m"; sourceTree = "<group>"; };
 		3D15B23321F56D28002BA785 /* NSString+PNAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PNAdd.h"; sourceTree = "<group>"; };
 		3D15B23521F56D3F002BA785 /* UIView+PNAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PNAdd.m"; sourceTree = "<group>"; };
@@ -426,6 +438,12 @@
 				3D5F66C8212A55D200270BCD /* PNGCDViewController.h */,
 				3D5F66C9212A55D200270BCD /* PNGCDViewController.m */,
 				3D5F66CA212A55D200270BCD /* PNGCDViewController.xib */,
+				3D01E9A9221CF178002AB423 /* PNThreadViewController.h */,
+				3D01E9AA221CF178002AB423 /* PNThreadViewController.m */,
+				3D01E9AC221D07D0002AB423 /* PNOperationController.h */,
+				3D01E9AD221D07D0002AB423 /* PNOperationController.m */,
+				3D01E9AF221D3FCB002AB423 /* PNRunLoopController.h */,
+				3D01E9B0221D3FCB002AB423 /* PNRunLoopController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -581,6 +599,8 @@
 				3D0C2A5C212D558D0015D85C /* PNDataStructureController.h */,
 				3D0C2A5D212D558D0015D85C /* PNDataStructureController.m */,
 				3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */,
+				3D0D39FD22241C8B0007057E /* PNImgViewCell.h */,
+				3D0D39FE22241C8B0007057E /* PNImgViewCell.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -945,6 +965,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/DSAlert-OC/DSAlert_OC.framework",
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -958,6 +979,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DSAlert_OC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -1005,10 +1027,12 @@
 				D58534221F63FF6800F4C588 /* PNHomeViewController.m in Sources */,
 				D5AAC5801FC8030300A9BD86 /* PNProfileViewController.m in Sources */,
 				D5BAD02F1FAD704E0098D8DF /* BaseViewController.m in Sources */,
+				3D01E9AE221D07D0002AB423 /* PNOperationController.m in Sources */,
 				3D07D4E9217DCB5100AE9FA1 /* PNSlideBackViewController.m in Sources */,
 				BCD5FDC2216F9E4000EBF1E5 /* PNRouter.m in Sources */,
 				BCC68F1A20B2B8E000EE9334 /* PNTask.m in Sources */,
 				3DFB089420E2133700DC22BC /* PNFillTextView.m in Sources */,
+				3D0D39FF22241C8B0007057E /* PNImgViewCell.m in Sources */,
 				3DD989A921743B6900195541 /* PNAnimatedTransitioning.m in Sources */,
 				D5BAD01B1FAD63980098D8DF /* PNButton.m in Sources */,
 				3D75D9A7210EFA940069D46D /* PNCTFrameParserConfig.m in Sources */,
@@ -1023,9 +1047,11 @@
 				D5BAD02B1FAD6F9E0098D8DF /* PNKitViewController.m in Sources */,
 				3DD989A621742DF800195541 /* PNNavigationDelegate.m in Sources */,
 				D594E31A1FB69A3D00255114 /* PNFundationController.m in Sources */,
+				3D01E9AB221CF178002AB423 /* PNThreadViewController.m in Sources */,
 				3D4E27572105CE0D0013152D /* PNAutoDictionary.m in Sources */,
 				D5B7C2481F611501001FA29C /* ViewController.m in Sources */,
 				D5AAC55A1FC7EAA700A9BD86 /* PNCrazyButton.m in Sources */,
+				3D01E9B1221D3FCB002AB423 /* PNRunLoopController.m in Sources */,
 				3D15B23421F56D28002BA785 /* NSString+PNAdd.m in Sources */,
 				3DC6339721B90F5A00B066C9 /* UINavigationController+Add.m in Sources */,
 				3D32551C21118C8400E593F1 /* PNCTLinkData.m in Sources */,

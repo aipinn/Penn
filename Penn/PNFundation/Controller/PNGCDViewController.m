@@ -30,7 +30,87 @@ typedef void (^block)(void);
     
 }
 
-
+- (void)concurrentAndSerial {
+    /*
+     
+                  同步派发                        异步派发
+     串行队列    当前线程串行执行，阻塞当前线程    新建单个线程串行执行，不阻塞当前线程
+     并发队列    当前线程并发执行，阻塞当前线程    新建多个线程并发执行，不阻塞当前线程
+     主队列      主线程串行执行，阻塞当前线程     主线程串行执行，不阻塞当前线程
+     
+     */
+    dispatch_queue_t my_queue1 = dispatch_queue_create("my_queue", DISPATCH_QUEUE_CONCURRENT);
+    for (int i = 0; i < 3; i++) {
+        dispatch_sync(my_queue1, ^{
+            NSLog(@"task1-%d-%@", i, [NSThread currentThread]);
+        });
+    }
+    NSLog(@"task1-%@", [NSThread currentThread]);
+    
+    // DISPATCH_QUEUE_CONCURRENT dispatch_async
+    // task1-<NSThread: 0x6000016be8c0>{number = 1, name = main}
+    // task1-0-<NSThread: 0x600001673900>{number = 4, name = (null)}
+    // task1-1-<NSThread: 0x600001626e40>{number = 5, name = (null)}
+    // task1-2-<NSThread: 0x600001679c40>{number = 6, name = (null)}
+    
+    //DISPATCH_QUEUE_CONCURRENT dispatch_sync
+    //task1-0-<NSThread: 0x600001a1db80>{number = 1, name = main}
+    //task1-1-<NSThread: 0x600001a1db80>{number = 1, name = main}
+    //task1-2-<NSThread: 0x600001a1db80>{number = 1, name = main}
+    //task1-<NSThread: 0x600001a1db80>{number = 1, name = main}
+    //
+    
+    /*
+     派发同步任务,阻塞当前线程(次数为main线程),同步任务会一个挨一个执行,当前线程一直只有一个任务
+     这个测试就是许多其他文章认为并发队列在同步派发时是串行执行的依据。这是一个明显的错误，之所以能够看起来串行执行，是因为派发任务的代码都在同一个线程运行，
+     当第一个任务同步派发的时候阻塞了当前线程，所以第二个任务并没有立即派发，而是等第一个任务执行完才开始派发，就是说并发队列里任何时候都只有一个任务，那怎么会体现出并发性呢？
+     */
+    
+    // task 2
+    dispatch_queue_t my_queue2 = dispatch_queue_create("my_queue", DISPATCH_QUEUE_SERIAL);
+    //创建子线程
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        //在子线程(并发队列)派发同步任务1
+        dispatch_sync(my_queue2, ^{ // block 1
+            sleep(2);
+            NSLog(@"1-%@", [NSThread currentThread]);
+        });
+    });
+    sleep(0.5);
+    //在主线程(并发队列)中派发同步任务2
+    dispatch_sync(my_queue2, ^{ // block 2
+        dispatch_async(my_queue2, ^{ // block 3
+            NSLog(@"2-%@", [NSThread currentThread]);
+        });
+        sleep(1);
+        NSLog(@"3-%@", [NSThread currentThread]);
+    });
+    
+    //主线程被阻塞4-输出比block2晚
+    NSLog(@"4-%@", [NSThread currentThread]);
+    
+    /*
+     
+     实验结果与假设一致。block1、block2 两个任务被分别同步派发到并行队列，他们在不同线程执行，并且后派发的任务先完成，体现了并发队列的并发性。
+     //sleep打开
+     2-<NSThread: 0x60000308b980>{number = 4, name = (null)}
+     3-<NSThread: 0x600003022380>{number = 1, name = main}
+     4-<NSThread: 0x600003022380>{number = 1, name = main}
+     1-<NSThread: 0x6000030f8b80>{number = 5, name = (null)}
+     */
+    
+    //下边将 task 2 中的 concurrent 改为 serial 执行结果如下所示。
+    /*
+     //在住线程和global线程中并发添加任务的顺序存在不确定性.
+     在主线程中是顺序执行先执行3在执行4,1和2是异步的顺序不确定
+     
+     3-<NSThread: 0x600002702400>{number = 1, name = main}
+     4-<NSThread: 0x600002702400>{number = 1, name = main}
+     2-<NSThread: 0x6000027d3800>{number = 4, name = (null)}
+     1-<NSThread: 0x6000027ca880>{number = 5, name = (null)}
+     
+     */
+}
 
 #pragma mark - GCD的实现
 

@@ -20,42 +20,111 @@
 #import "PNWaterModel.h"
 #import "PNGCDViewController.h"
 
+typedef void(^NBlock)(void);
+
 @interface PNFundationController ()
+@property (nonatomic, copy) NSString *foo;
 
 @property (nonatomic, assign) BOOL ret;
+
+@property (nonatomic, copy) NSString *_obj;
+
+@property (nonatomic, strong) NSTimer *timer;
+//单例
+@property (nonatomic, class, readonly) UIView *shareView;
+
+@property (nonatomic, copy) NBlock block;
 
 @end
 
 @implementation PNFundationController
+{
+    NSString * __obj;//_obj不行,成员变量已经存在,自动合成就不再生成__obj
+}
+@synthesize foo;
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
+
+}
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+
+
+}
++ (UIView *)shareView {
+    return [UIView new];
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    //[self inheritAndCategoryFunTest];
+    [self operation];
+
+    //字符串存在静态区,不会被ARC释放
+    id o1 = @"aipinn";
+    //只是指向,不存在拥有关系,当o1释放后,o2也指向nil
+    __weak id o2 = o1;
+    
+    id o3 = [NSObject new];
+    //编译器警告:Assigning retained object to weak variable; object will be released after assignment
+    //[NSObject new]是临时创建的对象,没有人愿意引用它立马就会释放
+    __weak id o4 = [NSObject new];
+    {
+        id o5 = [NSObject new];
+    }
+    //在最近的一次的runLoop结束pop时被释放
+    __autoreleasing id o6 = [NSObject new];
+    //__unsafe_unretained 
+    __unsafe_unretained id o7 = self;
+    
+    //self.view是懒加载过程, 如果没有其他方法在调用就黑屏,如果有人调用就会递归调用最后崩溃.
+    //self.view = nil;
+    
+    //UITableView
+    /*
+     number row
+     height
+     cell
+     */
+    
     
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self inheritAndCategoryFunTest];
+- (void)operation {
+    __weak typeof(self) weakself = self;
+    self.block = ^{
+        NSLog(@"%@", @[weakself]);
+    };
     
-//    NSString *str = @"hello world !";
-//
-//    for (NSUInteger i = str.length; i > 0; i--) {
-//        //1. 子字符串
-//        NSString *sub = [str substringWithRange:NSMakeRange(i-1, 1)];
-//        NSLog(@"%@", sub);
-//
-//        //2. UniChar
-//        UniChar ch = [str characterAtIndex:i-1];
-//        NSLog(@"%@", [NSString stringWithCharacters:&ch length:1]);
-//    }
-    
-    //C语言
-    ReversedStr("hello world !");
+}
+- (void)operation1 {
+    __weak typeof(self) weakself = self;
+    self.block = ^{
+        __typeof(weakself)strongSelf = weakself;
+        //只是发消息没啥,但是下面操作就不行了
+        NSLog(@"%@", @[strongSelf]);
+    };
+}
 
+- (void)operation2 {
+    __weak typeof(self) weakself = self;
+    self.block = ^{
+        __typeof(weakself)strongSelf = weakself;
+        //简单判断
+        if (strongSelf) {
+            NSLog(@"%@", @[strongSelf]);
+        }
+    };
+}
+
+- (void)doSome:(NSString *)str {
+    
 }
 
 void ReversedStr(char *str) {
-    int len = strlen(str);
+    unsigned long len = strlen(str);
     //1. 倒序遍历
 //    for (int i = 0; i<= len; i++) {
 //        char c = str[len-i-1];

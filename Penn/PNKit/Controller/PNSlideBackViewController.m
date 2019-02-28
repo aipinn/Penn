@@ -38,6 +38,9 @@
     aView.backgroundColor = [UIColor orangeColor];
     self.aView = aView;
     [self.scrollView addSubview:aView];
+    
+    
+    
 }
 
 /**
