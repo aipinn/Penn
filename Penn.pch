@@ -23,7 +23,8 @@
 #import <FBRetainCycleDetector/FBRetainCycleDetector.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MJExtension/MJExtension.h>
-#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "Penn-Swift.h"
+//#import "UINavigationController+FDFullscreenPopGesture.h"
 
 #endif
 #endif /* Penn_pch */

@@ -112,8 +112,9 @@ static NSString * const reuseCellId = @"HomeCell";
     BaseViewController * vc = [[NSClassFromString(clsName) alloc] init];
     
     [self.navigationController pushViewController:vc animated:YES];
-    
+
 }
+
 #pragma mark - Action
 
 - (void)nextSwift{

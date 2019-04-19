@@ -21,7 +21,19 @@ typedef void (^block)(void);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self gcdDispatchBarrierAsync];
+    dispatch_queue_t queueA = dispatch_queue_create("ququeA", NULL);
+    dispatch_queue_t queueB = dispatch_queue_create("queueB", NULL);
+    dispatch_sync(queueA, ^{
+        dispatch_sync(queueB, ^{
+//            dispatch_sync(queueA, ^{
+//                NSLog(@"in_A");//在此一定会造成死锁,
+//            });
+            NSLog(@"B");
+        });
+        NSLog(@"A");
+    });
+    
+    //[self gcdDispatchSemaphore];
     
 }
 
@@ -196,9 +208,9 @@ typedef void (^block)(void);
     //保证可访问数组的线程同时只能有一个
     //-------
     dispatch_semaphore_t dsema = dispatch_semaphore_create(1);
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) {
         /*
-        //如此添加发生内存错误的概率极高
+        //如此添加当数量比较大时发生内存错误的概率极高
         dispatch_async(queue, ^{
             [arr addObject:@(i)];
         });
@@ -217,10 +229,34 @@ typedef void (^block)(void);
             
             long ret_signal = dispatch_semaphore_signal(dsema);// 计数值加1
             NSLog(@"ret_signal:%ld", ret_signal);
+            
+            NSLog(@"count:%ld", arr.count);
         });
         
     }
+
+    NSLog(@"%@", arr);
     
+    //没有信号量会先执行输出字符串@"-------"
+    //创建0信号量后,先执行网络任务,完成后再输出字符串@"---------"
+    //异步操作转同步
+    //dispatch_semaphore_create(0)
+    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+    
+    [[[NSURLSession sharedSession] downloadTaskWithURL:[NSURL URLWithString:@"https://github.com/aipinn/Mooc.git"]
+                                     completionHandler:
+      ^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+          NSLog(@"%@:%@", response, error);
+          
+          dispatch_semaphore_signal(sem);
+      }] resume];
+    
+    dispatch_time_t timeout = dispatch_time(DISPATCH_TIME_NOW, (int64_t)( 3 * NSEC_PER_SEC));
+    dispatch_semaphore_wait(sem, timeout);
+    
+    NSLog(@"------------");
+    
+
 }
 
 /**

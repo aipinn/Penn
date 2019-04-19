@@ -19,6 +19,7 @@
 #import "PNBlockViewController.h"
 #import "PNWaterModel.h"
 #import "PNGCDViewController.h"
+#import "PNAreaViewController.h"
 
 typedef void(^NBlock)(void);
 
@@ -60,7 +61,6 @@ typedef void(^NBlock)(void);
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self inheritAndCategoryFunTest];
-    [self operation];
 
     //字符串存在静态区,不会被ARC释放
     id o1 = @"aipinn";
@@ -92,32 +92,7 @@ typedef void(^NBlock)(void);
     
 }
 
-- (void)operation {
-    __weak typeof(self) weakself = self;
-    self.block = ^{
-        NSLog(@"%@", @[weakself]);
-    };
-    
-}
-- (void)operation1 {
-    __weak typeof(self) weakself = self;
-    self.block = ^{
-        __typeof(weakself)strongSelf = weakself;
-        //只是发消息没啥,但是下面操作就不行了
-        NSLog(@"%@", @[strongSelf]);
-    };
-}
 
-- (void)operation2 {
-    __weak typeof(self) weakself = self;
-    self.block = ^{
-        __typeof(weakself)strongSelf = weakself;
-        //简单判断
-        if (strongSelf) {
-            NSLog(@"%@", @[strongSelf]);
-        }
-    };
-}
 
 - (void)doSome:(NSString *)str {
     
@@ -216,6 +191,11 @@ void ReversedStr(char *str) {
     PNGCDViewController * gcd = [[PNGCDViewController alloc]init];
     [self.navigationController pushViewController:gcd animated:YES];
 }
+- (IBAction)testArea:(id)sender {
+    PNAreaViewController *area = [[PNAreaViewController alloc] init];
+    [self.navigationController pushViewController:area animated:YES];
+}
+
 
 #pragma mark -  //继承分类方法测试
 - (void)inheritAndCategoryFunTest{

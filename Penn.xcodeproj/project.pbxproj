@@ -11,6 +11,8 @@
 		236BAA10209FEA4B006BD6B9 /* PNViewButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA0F209FEA4B006BD6B9 /* PNViewButton.xib */; };
 		236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */; };
 		236BAA15209FEC81006BD6B9 /* PNEmptyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */; };
+		3D0029DF22602CAA004F66D3 /* JYPlaceholdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0029DE22602CAA004F66D3 /* JYPlaceholdView.swift */; };
+		3D0029E32260B9B4004F66D3 /* Penn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0029E22260B9B3004F66D3 /* Penn.swift */; };
 		3D01E9AB221CF178002AB423 /* PNThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01E9AA221CF178002AB423 /* PNThreadViewController.m */; };
 		3D01E9AE221D07D0002AB423 /* PNOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01E9AD221D07D0002AB423 /* PNOperationController.m */; };
 		3D01E9B1221D3FCB002AB423 /* PNRunLoopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01E9B0221D3FCB002AB423 /* PNRunLoopController.m */; };
@@ -19,6 +21,8 @@
 		3D0C2A60212D558D0015D85C /* PNDataStructureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C2A5E212D558D0015D85C /* PNDataStructureController.xib */; };
 		3D0C2A62212D55B30015D85C /* PNProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C2A61212D55B30015D85C /* PNProfileViewController.xib */; };
 		3D0D39FF22241C8B0007057E /* PNImgViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D39FE22241C8B0007057E /* PNImgViewCell.m */; };
+		3D0D3A0F2228CB950007057E /* PNAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D3A0D2228CB940007057E /* PNAreaViewController.m */; };
+		3D0D3A102228CB950007057E /* PNAreaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0D3A0E2228CB940007057E /* PNAreaViewController.xib */; };
 		3D15B23421F56D28002BA785 /* NSString+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15B23221F56D27002BA785 /* NSString+PNAdd.m */; };
 		3D15B23721F56D3F002BA785 /* UIView+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15B23521F56D3F002BA785 /* UIView+PNAdd.m */; };
 		3D15B23A21F571CD002BA785 /* UITextView+PNAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15B23921F571CD002BA785 /* UITextView+PNAdd.m */; };
@@ -146,6 +150,8 @@
 		236BAA12209FEC77006BD6B9 /* PNEmptyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNEmptyButton.m; sourceTree = "<group>"; };
 		236BAA14209FEC81006BD6B9 /* PNEmptyButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNEmptyButton.xib; sourceTree = "<group>"; };
 		2AAB1F823A83E0823CAEB201 /* libPods-PennTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PennTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D0029DE22602CAA004F66D3 /* JYPlaceholdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYPlaceholdView.swift; sourceTree = "<group>"; };
+		3D0029E22260B9B3004F66D3 /* Penn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Penn.swift; sourceTree = "<group>"; };
 		3D01E9A9221CF178002AB423 /* PNThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNThreadViewController.h; sourceTree = "<group>"; };
 		3D01E9AA221CF178002AB423 /* PNThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNThreadViewController.m; sourceTree = "<group>"; };
 		3D01E9AC221D07D0002AB423 /* PNOperationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNOperationController.h; sourceTree = "<group>"; };
@@ -160,6 +166,9 @@
 		3D0C2A61212D55B30015D85C /* PNProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNProfileViewController.xib; sourceTree = "<group>"; };
 		3D0D39FD22241C8B0007057E /* PNImgViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNImgViewCell.h; sourceTree = "<group>"; };
 		3D0D39FE22241C8B0007057E /* PNImgViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNImgViewCell.m; sourceTree = "<group>"; };
+		3D0D3A0C2228CB940007057E /* PNAreaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNAreaViewController.h; sourceTree = "<group>"; };
+		3D0D3A0D2228CB940007057E /* PNAreaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNAreaViewController.m; sourceTree = "<group>"; };
+		3D0D3A0E2228CB940007057E /* PNAreaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PNAreaViewController.xib; sourceTree = "<group>"; };
 		3D15B23221F56D27002BA785 /* NSString+PNAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PNAdd.m"; sourceTree = "<group>"; };
 		3D15B23321F56D28002BA785 /* NSString+PNAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PNAdd.h"; sourceTree = "<group>"; };
 		3D15B23521F56D3F002BA785 /* UIView+PNAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PNAdd.m"; sourceTree = "<group>"; };
@@ -444,6 +453,9 @@
 				3D01E9AD221D07D0002AB423 /* PNOperationController.m */,
 				3D01E9AF221D3FCB002AB423 /* PNRunLoopController.h */,
 				3D01E9B0221D3FCB002AB423 /* PNRunLoopController.m */,
+				3D0D3A0C2228CB940007057E /* PNAreaViewController.h */,
+				3D0D3A0D2228CB940007057E /* PNAreaViewController.m */,
+				3D0D3A0E2228CB940007057E /* PNAreaViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -572,6 +584,7 @@
 		D5AAC5761FC7F63E00A9BD86 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3D0029DE22602CAA004F66D3 /* JYPlaceholdView.swift */,
 				D5AAC5581FC7EAA700A9BD86 /* PNCrazyButton.h */,
 				D5AAC5591FC7EAA700A9BD86 /* PNCrazyButton.m */,
 				D5AAC55D1FC7EAD100A9BD86 /* PNCrazyButton.xib */,
@@ -747,6 +760,7 @@
 				D5B7C2491F611501001FA29C /* Main.storyboard */,
 				D5B7C24C1F611501001FA29C /* Assets.xcassets */,
 				D5B7C24E1F611501001FA29C /* LaunchScreen.storyboard */,
+				3D0029E22260B9B3004F66D3 /* Penn.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -935,6 +949,7 @@
 				3D3255192110693900E593F1 /* coretext-image-1.jpg in Resources */,
 				D529F36D1FD296B8008C67F3 /* action-remove@2x.png in Resources */,
 				3D0C2A60212D558D0015D85C /* PNDataStructureController.xib in Resources */,
+				3D0D3A102228CB950007057E /* PNAreaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,7 +980,6 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/DSAlert-OC/DSAlert_OC.framework",
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
-				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -979,7 +993,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DSAlert_OC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -1020,6 +1033,7 @@
 			files = (
 				3DF2F8EB2179B43100BDE143 /* PNContainerViewController.m in Sources */,
 				3D15B23A21F571CD002BA785 /* UITextView+PNAdd.m in Sources */,
+				3D0D3A0F2228CB950007057E /* PNAreaViewController.m in Sources */,
 				3D17593B2101B3520027C7DB /* PNMsgForward.m in Sources */,
 				D529F3731FD29B50008C67F3 /* BaseModel.m in Sources */,
 				BCD36667219825F900AF9D5F /* PNContainerTransitionContext.m in Sources */,
@@ -1059,10 +1073,12 @@
 				BC05683B20A41349009FB674 /* PNParent.m in Sources */,
 				BC05683820A4132C009FB674 /* PNGrandparent.m in Sources */,
 				BCD3666A21982A8900AF9D5F /* PNUpTabViewController.m in Sources */,
+				3D0029DF22602CAA004F66D3 /* JYPlaceholdView.swift in Sources */,
 				3DFB089720E2139C00DC22BC /* PNTextViewController.m in Sources */,
 				3DCAC87621787F1E0096B75F /* PNFromViewController.m in Sources */,
 				BCD5FDC5216F9F8400EBF1E5 /* PNMLZListController.m in Sources */,
 				3D325523211409E200E593F1 /* PNClassClustersViewController.m in Sources */,
+				3D0029E32260B9B4004F66D3 /* Penn.swift in Sources */,
 				3D3E6C01210071D300C7573B /* PNRuntimeController.m in Sources */,
 				236BAA13209FEC77006BD6B9 /* PNEmptyButton.m in Sources */,
 				D5B7C2451F611501001FA29C /* AppDelegate.m in Sources */,

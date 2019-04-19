@@ -33,7 +33,41 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(40, 60, 120, 80)];
+    view.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:view];
     
+    CABasicAnimation *fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeAnim.fromValue = @1.0;
+    fadeAnim.toValue = @0.1;
+    fadeAnim.duration = 2;
+    [view.layer addAnimation:fadeAnim forKey:@"opacity"];
+    view.layer.opacity = 0.1;
+    
+
+    JYPlaceholdView *plv = [[JYPlaceholdView alloc]initWithFrame:UIScreen.mainScreen.bounds
+                                                           title:@"你好"
+                                                        subTitle:@"Hello world !"
+                                                         imgName:@"no_network"
+                                                        btnTitle:@"带你回家"];
+    [self.view addSubview:plv];
+
+    [plv mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(@0);
+    }];
+ 
+    
+    
+    
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+
 }
 
 - (IBAction)testSlideGestureAndBack:(id)sender {

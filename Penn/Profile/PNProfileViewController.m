@@ -40,7 +40,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PNImgViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    PNImgViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell00"];
+    if (!cell) {
+        cell = [[PNImgViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell00"];
+    }
+//    PNImgViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.num = 3;
     return cell;
 }
